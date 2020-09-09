@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", iniciar_pagina);
 
 function iniciar_pagina() {
     let btn_lapiz = document.querySelector("#btn_lapiz");
-    let btn_borrar = document.querySelector("#btn_borrar");	 
+	let btn_borrar = document.querySelector("#btn_borrar");	
+	let btn_guardar = document.querySelector("#btn_descargar");	 
     let pintar = Boolean(false);
     let herramienta;
     let tamano;
@@ -17,6 +18,8 @@ function iniciar_pagina() {
 
 		btn_lapiz.addEventListener("click", seleccionar_lapiz);
 		btn_borrar.addEventListener("click", seleccionar_borrador);
+		btn_reiniciar.addEventListener("click", reiniciar);
+		btn_guardar.addEventListener("click", descargar_imagen);
 		
 
 		c.onmousedown = function (e){
@@ -60,6 +63,17 @@ function iniciar_pagina() {
 			c.setAttribute("width", ancho);
 			c.setAttribute("height", altura);
 		}
+
+		function reiniciar() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+
+		function descargar_imagen() {	
+			let link = document.querySelector('#link');
+			link.setAttribute('download', 'dibujo.png');
+			link.setAttribute('href', document.querySelector("#canvas").toDataURL("image/jpg"));
+			link.click();
+		}	
 
 }
 
