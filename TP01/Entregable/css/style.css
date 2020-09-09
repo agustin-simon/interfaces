@@ -1,0 +1,36 @@
+
+#canvas-container {
+    width: 100%;
+    text-align:center;
+ }
+
+canvas {
+    border:#000 solid 1px;
+    display: inline;
+}
+
+#herramientas-container {
+    width: 100%;
+    text-align:center;
+}
+
+#muestrario {
+    display: inline;
+    width: 5%;
+}
+
+#color_azul{
+    color: white;
+    background-color: #0000FF;
+}
+
+#color_rojo{
+    color: white;
+    background-color: #FF0000;
+}
+
+#color_verde{
+    color: white;
+    background-color: #35C612;
+}
+
