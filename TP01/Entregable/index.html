@@ -28,13 +28,17 @@
 			<input id="btn_lapiz" type="button" value="Lapiz">
 			<input id="btn_reiniciar" type="button" value="Reiniciar">
 			<input id="btn_descargar" type="button" value="Descargar">
-			<button onclick="document.querySelector('.inp_cargar').click();">Select File ...</button>
+			<button id="btn_cargar_imagen">Select File ...</button>
 			<input class="inp_cargar" type="file" style="display: none;">
 			<a id="link"></a>			
+			<input type="button" id="btn_negativo" value="Negativo">
+			<input type="button" id="btn_binarizacion" value="Binarizacion">
+			<input type="button" id="btn_sepia" value="Sepia">
+			
 		</div>
 
 		<input type="range" id="rango_brillo">
-		<input type="button" value="Aplicar Brillo" id="brillo">
+		<input type="button" value="Aplicar Brillo" id="btn_brillo">
 	
 		
 		<script src="js/script.js"></script>
