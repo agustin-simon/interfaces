@@ -10,8 +10,11 @@ function iniciar_pagina() {
 		let btn_brillo = document.querySelector('#btn_brillo');
 		let btn_cargar_imagen = document.querySelector('#btn_cargar_imagen');	
 		let btn_sepia = document.querySelector("#btn_sepia");
+		let btn_reiniciar = document.querySelector("#btn_reiniciar");
 		let btn_negativo = document.querySelector("#btn_negativo");
 		let btn_binarizacion = document.querySelector("#btn_binarizacion");
+		let btn_saturacion = document.querySelector("#btn_saturacion");		
+		let btn_blur = document.querySelector("#btn_blur");	
 		let input = document.querySelector('.inp_cargar');
 		let img_original; 
 		let pintar = Boolean(false);
@@ -34,17 +37,22 @@ function iniciar_pagina() {
 		btn_sepia.addEventListener("click", function(){aplicar_filtro(btn_sepia.value)});
 		btn_negativo.addEventListener("click", function(){aplicar_filtro(btn_negativo.value)});
 		btn_binarizacion.addEventListener("click", function(){aplicar_filtro(btn_binarizacion.value)});
+		btn_saturacion.addEventListener("click", function(){aplicar_filtro(btn_saturacion.value)});
+		btn_blur.addEventListener("click", function(){aplicar_filtro(btn_blur.value)})
+
+
 
 		c.onmousedown = function (e){
 			pintar = true;
 			if( herramienta == "Lapiz" ){
 				ctx.moveTo(e.pageX - c.offsetLeft, e.pageY - c.offsetTop);
-			}
+			}				
 		}
 		c.onmouseup = function(){
 			pintar = false;
 			ctx.beginPath();
-			tamano = document.querySelector("#tamano").value;
+			tamano = document.querySelector("#tamano").value;	
+			img_original = ctx.getImageData(0, 0, c.width, c.height);			
 		}
 		c.onmousemove = function(e){
 			if (pintar) {
@@ -66,12 +74,13 @@ function iniciar_pagina() {
 
 
 		function aplicar_filtro(filtro) {
-			ctx.putImageData(img_original,0,0);
+
+			let imagen_original = img_original;
+			ctx.putImageData(imagen_original,0,0);
 			let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
 			
 			if(filtro == "Negativo") {			
-					let index;
-		
+					let index;		
 					for(let y = 0; y < canvas.height; y++){
 						for(let x = 0; x < canvas.width; x++){
 							index = (x + y * imageData.width) * 4;
@@ -83,7 +92,7 @@ function iniciar_pagina() {
 					ctx.putImageData(imageData, 0, 0);					
 			}
 
-			if(filtro == "Sepia") {			
+			if(filtro == "Sepia") {				
 				let index, r,g,b;				
 	
 				for(let y = 0; y < canvas.height; y++){
@@ -107,13 +116,11 @@ function iniciar_pagina() {
                     	imageData.data[index+1] = g;
                    		imageData.data[index+2] = b;   
 					}
-				}			
-				
+				}				
 				ctx.putImageData(imageData, 0, 0);				
 			}
 
-			if(filtro == "Binarizacion") {
-				ctx.putImageData(img_original,0,0);				
+			if(filtro == "Binarizacion") {			
 				let index,r,g,b;				
 	
 				for(let y = 0; y < canvas.height; y++){
@@ -134,6 +141,59 @@ function iniciar_pagina() {
 				ctx.putImageData(imageData, 0, 0);
 			}
 
+			if(filtro == "Aplicar Saturacion") {	
+				let rango_saturacion = document.querySelector('#rango_saturacion').value;			
+				let index;
+				let contrast = rango_saturacion*2;
+				contrast = (contrast/100) + 1;  
+				var intercept = 152 * (1 - contrast);
+
+				for(let y = 0; y < canvas.height; y++){
+					for(let x = 0; x < canvas.width; x++){
+						index = (x + y * imageData.width) * 4;
+
+						imageData.data[index] = imageData.data[index]*contrast + intercept;
+						imageData.data[index+1] = imageData.data[index+1]*contrast + intercept;
+						imageData.data[index+2] = imageData.data[index+2]*contrast + intercept;
+					}
+				}	
+				ctx.putImageData(imageData, 0, 0);
+			}	
+			
+			if(filtro == "blur"){
+				
+				for (let x = 1; x < imageData.width-1; x++) {
+					for (let y = 1; y < imageData.height-1; y++) {
+						promedioMatriz(x, y, imageData);
+					}
+				}
+	
+				function promedioMatriz(x, y, imageData){
+					let r = 0;
+					let b = 0;
+					let g = 0;
+					
+					r = (getRed(imageData, x-1, y-1) + getRed(imageData, x, y-1) + getRed(imageData, x+1, y-1)
+					+ getRed(imageData, x-1, y) + getRed(imageData, x, y) + getRed(imageData, x+1, y)
+					+ getRed(imageData, x-1, y+1) + getRed(imageData, x, y+1) + getRed(imageData, x+1, y+1))/9;
+		
+					g = (getGreen(imageData, x-1, y-1) + getGreen(imageData, x, y-1)+ getGreen(imageData, x+1, y-1) 
+					+   getGreen(imageData, x-1, y) + getGreen(imageData, x, y) + getGreen(imageData, x+1, y)
+					+   getGreen(imageData, x-1, y+1) + getGreen(imageData, x, y+1) + getGreen(imageData, x+1, y+1))/9;
+			
+					b = (getBlue(imageData, x-1, y-1) + getBlue(imageData, x, y-1) + getBlue(imageData, x+1, y-1)  
+					+   getBlue(imageData, x-1, y) + getBlue(imageData, x, y) + getBlue(imageData, x+1, y+1)  
+					+   getBlue(imageData, x-1, y+1) + getBlue(imageData, x, y+1) + getBlue(imageData, x+1, y+1))/9;
+			
+					let index = (x + y * imageData.width) * 4;
+					imageData.data[index + 0] = r;
+					imageData.data[index + 1] = g;
+					imageData.data[index + 2] = b;
+				}
+		
+				ctx.putImageData(imageData, 0, 0);
+			}
+
 			function getRed(imageData, x, y){
 				let index = (x + y * imageData.width) * 4;
 				return imageData.data[index+0];
@@ -147,12 +207,9 @@ function iniciar_pagina() {
 			function getBlue(imageData, x, y){
 				let index = (x + y * imageData.width) * 4;
 				return imageData.data[index+2];
-			}
-			
+			}			
 
 		}
-
-
 
 		function seleccionar_lapiz() {
 			herramienta = btn_lapiz.value;
@@ -181,7 +238,7 @@ function iniciar_pagina() {
 		function aplicar_brillo() {
 			ctx.putImageData(img_original,0,0);
 			let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);			
-			let valor = document.querySelector("#rango_brillo").value/2+20;			
+			let valor = document.querySelector("#rango_brillo").value/1.5+20;			
 			let index;
 
 			for(let y = 0; y < canvas.height; y++){
@@ -211,7 +268,6 @@ function iniciar_pagina() {
 		function cargar_imagen() {
 			
 			input.onchange = e => {
-
 				let canvas = document.querySelector("#canvas");
 				let context = canvas.getContext("2d");
 
@@ -237,16 +293,14 @@ function iniciar_pagina() {
 							startWidth = (canvas.width / 2) - (imageScaledWidth / 2);
 						} else {
 							startHeigh = (canvas.height / 2) - (imageScaledHeight / 2);
-						}		
-	
+						}	
 						context.drawImage(this, startWidth, startHeigh, imageScaledWidth, imageScaledHeight);						
 						let imageData = context.getImageData(0, 0, c.width, c.height);					
 						ctx.putImageData(imageData, 0, 0);
 						img_original = ctx.getImageData(0, 0, c.width, c.height);	
 					}
 				}
-			}
-			
+			}			
 		}
 
 		

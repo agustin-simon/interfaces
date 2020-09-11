@@ -8,37 +8,43 @@
 
 	</head>
 	<body>
-        
-        <div id="canvas-container"> 
-			<canvas id="canvas"></canvas>
+		
+		<h1>Paint</h1>
+		
+		<div id="canvas-container"> 
+			<div><canvas id="canvas"></canvas></div>
 		</div>
+		
+		<div id="filtros-container">
 
-		<div id="herramientas-container">
-			<label>Color</label>
 			<input type="color" class="form-control" value="#2FCB1A" id="muestrario">
-
 			<select id="tamano">
 				<option value="2">2</option>
 				<option value="5">5</option>
 				<option value="10">10</option>
 				<option value="15">15</option>
-			</select>
-					
-			<input id="btn_borrar" type="button" value="Borrar">
-			<input id="btn_lapiz" type="button" value="Lapiz">
-			<input id="btn_reiniciar" type="button" value="Reiniciar">
-			<input id="btn_descargar" type="button" value="Descargar">
-			<button id="btn_cargar_imagen">Select File ...</button>
-			<input class="inp_cargar" type="file" style="display: none;">
-			<a id="link"></a>			
-			<input type="button" id="btn_negativo" value="Negativo">
-			<input type="button" id="btn_binarizacion" value="Binarizacion">
-			<input type="button" id="btn_sepia" value="Sepia">
-			
+			</select>	
+
+			<div class="btn-group" role="group" aria-label="Basic example">	
+				<button type="button" class="btn btn-secondary" id="btn_borrar"  value="Borrar">Borrador</button>
+				<button type="button" class="btn btn-secondary" id="btn_lapiz"  value="Lapiz">Lapiz</button>
+				<button type="button" class="btn btn-secondary" id="btn_reiniciar"  value="Reiniciar">Resetear</button>
+				<button type="button" class="btn btn-secondary" id="btn_descargar"  value="Descargar">Descargar</button>				
+				<button type="button" class="btn btn-secondary" id="btn_cargar_imagen">Seleccionar imagen ...</button>
+				<input class="inp_cargar btn btn-secondary" type="file" style="display: none;">
+				<a id="link"></a>						
+				<button type="button" class="btn btn-secondary" id="btn_negativo" value="Negativo">Negativo</button>
+				<button type="button" class="btn btn-secondary" id="btn_binarizacion" value="Binarizacion">Binarizacion</button>
+				<button type="button" class="btn btn-secondary" id="btn_sepia" value="Sepia">Sepia</button>
+				<button type="button" class="btn btn-secondary" id="btn_blur" value="blur">Blur</button>
+			</div>
 		</div>
 
 		<input type="range" id="rango_brillo">
 		<input type="button" value="Aplicar Brillo" id="btn_brillo">
+
+		<input type="range" id="rango_saturacion">	
+		<input type="button" value="Aplicar Saturacion" id="btn_saturacion">			
 	
 		
 		<script src="js/script.js"></script>
