@@ -3,12 +3,12 @@
     width: 100%;
     height: 610px;
     text-align:center;
- }
- 
+ } 
 
  canvas {
-    border:#000 solid 1px;
+    border:grey solid 1px;
     display: inline;
+    background-color: white;
 }
 
 #herramientas-container {
@@ -46,3 +46,19 @@ h1 {
     text-align:center;
 }
 
+#range-container {
+    width: 100%;
+    text-align:center;        
+ } 
+
+ #cuerpo {
+    background-color: #9db08d;
+}
+
+#btn_borrar, #btn_lapiz ,#btn_reiniciar ,#btn_descargar ,#btn_cargar_imagen ,#btn_negativo ,#btn_binarizacion ,#btn_sepia,#btn_blur{
+    background-color: #518571;
+}
+
+h1 {
+    color: white;
+}

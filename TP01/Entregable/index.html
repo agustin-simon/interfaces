@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	</head>
-	<body>
+	<body id="cuerpo">
 		
 		<h1>Paint</h1>
 		
@@ -38,13 +38,17 @@
 				<button type="button" class="btn btn-secondary" id="btn_sepia" value="Sepia">Sepia</button>
 				<button type="button" class="btn btn-secondary" id="btn_blur" value="blur">Blur</button>
 			</div>
+
 		</div>
 
-		<input type="range" id="rango_brillo">
-		<input type="button" value="Aplicar Brillo" id="btn_brillo">
+		<div id="range-container">
 
-		<input type="range" id="rango_saturacion">	
-		<input type="button" value="Aplicar Saturacion" id="btn_saturacion">			
+			<input type="range" id="rango_brillo">
+			<input type="button" value="Aplicar Brillo" id="btn_brillo">
+			<input type="range" id="rango_saturacion">	
+			<input type="button" value="Aplicar Saturacion" id="btn_saturacion">
+
+		</div>		
 	
 		
 		<script src="js/script.js"></script>

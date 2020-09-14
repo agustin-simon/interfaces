@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", iniciar_pagina);
 
 function iniciar_pagina() {
 
+	    /* Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'*/
 		let btn_lapiz = document.querySelector("#btn_lapiz");
 		let btn_borrar = document.querySelector("#btn_borrar");	
 		let btn_guardar = document.querySelector("#btn_descargar");	
@@ -19,13 +20,15 @@ function iniciar_pagina() {
 		let img_original; 
 		let pintar = Boolean(false);
 		let herramienta;
-		let tamano;		
-
+		let tamano;	
 		let c = document.querySelector("#canvas");
 		let ctx = c.getContext("2d");
 	
+
+		/*Funcion que setea el tamaño del canvas*/
 		colocar_tamano(600,800);
 
+		/*Agregamos un determinado evento a los elementos previamente seleccionados*/
 		btn_lapiz.addEventListener("click", seleccionar_lapiz);
 		btn_borrar.addEventListener("click", seleccionar_borrador);
 		btn_reiniciar.addEventListener("click", reiniciar);
@@ -41,19 +44,18 @@ function iniciar_pagina() {
 		btn_blur.addEventListener("click", function(){aplicar_filtro(btn_blur.value)})
 
 
-
+		/*Cuando hacemos click la variable 'pintar' se va a poner 'true' */	
 		c.onmousedown = function (e){
-			pintar = true;
-			if( herramienta == "Lapiz" ){
-				ctx.moveTo(e.pageX - c.offsetLeft, e.pageY - c.offsetTop);
-			}				
+			pintar = true;			
 		}
+		/*Cuando soltamos el click la variable 'pintar' se va a poner 'false' */
 		c.onmouseup = function(){
 			pintar = false;
 			ctx.beginPath();
 			tamano = document.querySelector("#tamano").value;	
 			img_original = ctx.getImageData(0, 0, c.width, c.height);			
 		}
+		/*Cuando arrastramos el click la variable, verifica que herramienta esta activa y ejecuta su respectiva accion (pintar/borrar) */
 		c.onmousemove = function(e){
 			if (pintar) {
 				if (herramienta == "Lapiz") {
@@ -68,15 +70,17 @@ function iniciar_pagina() {
 				}
 			}
 		}
+		/*Cuando soltamos click la variable 'pintar' se va a poner 'false' */	
 		c.onmouseout = function(){
 			pintar = false;		
 		};
 
-
 		function aplicar_filtro(filtro) {
 
 			let imagen_original = img_original;
-			ctx.putImageData(imagen_original,0,0);
+			if(imagen_original != null) {
+				ctx.putImageData(imagen_original,0,0);				
+			}
 			let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
 			
 			if(filtro == "Negativo") {			
@@ -226,6 +230,8 @@ function iniciar_pagina() {
 
 		function reiniciar() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.restore();
+			img_original = null;
 		}
 
 		function descargar_imagen() {	
@@ -236,7 +242,9 @@ function iniciar_pagina() {
 		}	
 
 		function aplicar_brillo() {
-			ctx.putImageData(img_original,0,0);
+			if(img_original != null) {
+				ctx.putImageData(img_original,0,0);
+			}
 			let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);			
 			let valor = document.querySelector("#rango_brillo").value/1.5+20;			
 			let index;
