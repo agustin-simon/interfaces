@@ -1,61 +1,49 @@
 "use strict";
 
+//Cuando el DOM carga se ejecuta la pagina
 document.addEventListener("DOMContentLoaded", iniciar_pagina);
 
 function iniciar_pagina() {
 
-	    /* Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'*/
-		let btn_lapiz = document.querySelector("#btn_lapiz");
-		let btn_borrar = document.querySelector("#btn_borrar");	
-		let btn_guardar = document.querySelector("#btn_descargar");	
-		let btn_brillo = document.querySelector('#btn_brillo');
-		let btn_cargar_imagen = document.querySelector('#btn_cargar_imagen');	
-		let btn_sepia = document.querySelector("#btn_sepia");
-		let btn_reiniciar = document.querySelector("#btn_reiniciar");
-		let btn_negativo = document.querySelector("#btn_negativo");
-		let btn_binarizacion = document.querySelector("#btn_binarizacion");
-		let btn_saturacion = document.querySelector("#btn_saturacion");		
-		let btn_blur = document.querySelector("#btn_blur");	
-		let input = document.querySelector('.inp_cargar');
+	    //Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'		
 		let img_original; 
 		let pintar = Boolean(false);
 		let herramienta;
 		let tamano;	
 		let c = document.querySelector("#canvas");
-		let ctx = c.getContext("2d");
-	
+		let ctx = c.getContext("2d");	
 
-		/*Funcion que setea el tamaño del canvas*/
-		colocar_tamano(600,800);
+		//Funcion que setea el tamaño del canvas
+		colocar_tamano(600,800);		
 
-		/*Agregamos un determinado evento a los elementos previamente seleccionados*/
-		btn_lapiz.addEventListener("click", seleccionar_lapiz);
-		btn_borrar.addEventListener("click", seleccionar_borrador);
-		btn_reiniciar.addEventListener("click", reiniciar);
-		btn_guardar.addEventListener("click", descargar_imagen);
-		btn_brillo.addEventListener("click", aplicar_brillo);
-		btn_cargar_imagen.addEventListener("click", function(e){
+		//Agregamos un determinado evento a los elementos previamente seleccionados
+		document.querySelector("#btn_lapiz").addEventListener("click", seleccionar_lapiz);
+		document.querySelector("#btn_borrar").addEventListener("click", seleccionar_borrador);
+		document.querySelector("#btn_reiniciar").addEventListener("click", reiniciar);
+		document.querySelector("#btn_descargar").addEventListener("click", descargar_imagen);
+		document.querySelector('#btn_brillo').addEventListener("click", aplicar_brillo);
+		document.querySelector('#btn_cargar_imagen').addEventListener("click", function(e){
 			document.querySelector(".inp_cargar").click();
 			cargar_imagen();});
-		btn_sepia.addEventListener("click", function(){aplicar_filtro(btn_sepia.value)});
-		btn_negativo.addEventListener("click", function(){aplicar_filtro(btn_negativo.value)});
-		btn_binarizacion.addEventListener("click", function(){aplicar_filtro(btn_binarizacion.value)});
-		btn_saturacion.addEventListener("click", function(){aplicar_filtro(btn_saturacion.value)});
-		btn_blur.addEventListener("click", function(){aplicar_filtro(btn_blur.value)})
+		document.querySelector("#btn_sepia").addEventListener("click", function(){aplicar_filtro(btn_sepia.value)});
+		document.querySelector("#btn_negativo").addEventListener("click", function(){aplicar_filtro(btn_negativo.value)});
+		document.querySelector("#btn_binarizacion").addEventListener("click", function(){aplicar_filtro(btn_binarizacion.value)});
+		document.querySelector("#btn_saturacion").addEventListener("click", function(){aplicar_filtro(btn_saturacion.value)});
+		document.querySelector("#btn_blur").addEventListener("click", function(){aplicar_filtro(btn_blur.value)})
 
 
-		/*Cuando hacemos click la variable 'pintar' se va a poner 'true' */	
+		//Cuando hacemos click la variable 'pintar' se va a poner 'true' 
 		c.onmousedown = function (e){
 			pintar = true;			
 		}
-		/*Cuando soltamos el click la variable 'pintar' se va a poner 'false' */
+		//Cuando soltamos el click la variable 'pintar' se va a poner 'false' 
 		c.onmouseup = function(){
 			pintar = false;
 			ctx.beginPath();
 			tamano = document.querySelector("#tamano").value;	
 			img_original = ctx.getImageData(0, 0, c.width, c.height);			
 		}
-		/*Cuando arrastramos el click la variable, verifica que herramienta esta activa y ejecuta su respectiva accion (pintar/borrar) */
+		//Cuando arrastramos el click la variable, verifica que herramienta esta activa y ejecuta su respectiva accion (pintar/borrar) 
 		c.onmousemove = function(e){
 			if (pintar) {
 				if (herramienta == "Lapiz") {
@@ -65,16 +53,20 @@ function iniciar_pagina() {
 					ctx.stroke();
 				}
 				else if(herramienta == "Borrar"){
-					ctx.beginPath();
-					ctx.clearRect(e.pageX - c.offsetLeft, e.pageY - c.offsetTop,tamano,tamano);
+					ctx.lineTo(e.pageX - c.offsetLeft, e.pageY - c.offsetTop);
+					ctx.lineWidth = document.querySelector("#tamano").value;
+					ctx.strokeStyle = "#FFFFFF";
+					ctx.stroke();
 				}
 			}
 		}
-		/*Cuando soltamos click la variable 'pintar' se va a poner 'false' */	
+		//Cuando soltamos click la variable 'pintar' se va a poner 'false' 	
 		c.onmouseout = function(){
 			pintar = false;		
 		};
 
+
+		//Filtros
 		function aplicar_filtro(filtro) {
 
 			let imagen_original = img_original;
@@ -82,7 +74,8 @@ function iniciar_pagina() {
 				ctx.putImageData(imagen_original,0,0);				
 			}
 			let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
-			
+
+			//Filtro Negativo
 			if(filtro == "Negativo") {			
 					let index;		
 					for(let y = 0; y < canvas.height; y++){
@@ -96,6 +89,7 @@ function iniciar_pagina() {
 					ctx.putImageData(imageData, 0, 0);					
 			}
 
+			//Filtro Sepia
 			if(filtro == "Sepia") {				
 				let index, r,g,b;				
 	
@@ -124,6 +118,7 @@ function iniciar_pagina() {
 				ctx.putImageData(imageData, 0, 0);				
 			}
 
+			//Filtro Binarizacion
 			if(filtro == "Binarizacion") {			
 				let index,r,g,b;				
 	
@@ -145,6 +140,7 @@ function iniciar_pagina() {
 				ctx.putImageData(imageData, 0, 0);
 			}
 
+			//Filtro Saturacion
 			if(filtro == "Aplicar Saturacion") {	
 				let rango_saturacion = document.querySelector('#rango_saturacion').value;			
 				let index;
@@ -163,7 +159,8 @@ function iniciar_pagina() {
 				}	
 				ctx.putImageData(imageData, 0, 0);
 			}	
-			
+
+			//Filtro Blur
 			if(filtro == "blur"){
 				
 				for (let x = 1; x < imageData.width-1; x++) {
@@ -197,7 +194,7 @@ function iniciar_pagina() {
 		
 				ctx.putImageData(imageData, 0, 0);
 			}
-
+			
 			function getRed(imageData, x, y){
 				let index = (x + y * imageData.width) * 4;
 				return imageData.data[index+0];
@@ -213,27 +210,32 @@ function iniciar_pagina() {
 				return imageData.data[index+2];
 			}			
 
-		}
+		}		
 
+		//Seleccionar la herramienta lapiz
 		function seleccionar_lapiz() {
 			herramienta = btn_lapiz.value;
 		}
 
+		//Selecciona la herramienta de borrador
 		function seleccionar_borrador() {
 			herramienta = btn_borrar.value;			
 		}
 
+		//Colocar tamaño al canvas(altura,ancho)
 		function colocar_tamano(altura,ancho) {
 			c.setAttribute("width", ancho);
 			c.setAttribute("height", altura);
 		}
 
+		//Poner el lienzo en blanco
 		function reiniciar() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			ctx.restore();
 			img_original = null;
 		}
 
+		//Descargar imagen 
 		function descargar_imagen() {	
 			let link = document.querySelector('#link');
 			link.setAttribute('download', 'dibujo.png');
@@ -272,9 +274,11 @@ function iniciar_pagina() {
 			}
 		}	
 		
-
+		//Carga imagen desde el disco al canvas.
 		function cargar_imagen() {
 			
+			let input = document.querySelector('.inp_cargar');
+
 			input.onchange = e => {
 				let canvas = document.querySelector("#canvas");
 				let context = canvas.getContext("2d");
