@@ -59,6 +59,10 @@ h1 {
     background-color: #518571;
 }
 
+#input-link {
+    display: none;
+}
+
 h1 {
     color: white;
 }

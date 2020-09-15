@@ -23,6 +23,8 @@ function iniciar_pagina() {
 		let tamano;	
 		let c = document.querySelector("#canvas");
 		let ctx = c.getContext("2d");
+
+		
 	
 
 		/*Funcion que setea el tamaño del canvas*/
@@ -57,6 +59,10 @@ function iniciar_pagina() {
 		}
 		/*Cuando arrastramos el click la variable, verifica que herramienta esta activa y ejecuta su respectiva accion (pintar/borrar) */
 		c.onmousemove = function(e){
+			let x = e.pageX - c.offsetLeft;
+			let y = e.pageY - c.offsetTop;
+			
+			
 			if (pintar) {
 				if (herramienta == "Lapiz") {
 					ctx.lineTo(e.pageX - c.offsetLeft, e.pageY - c.offsetTop);
@@ -65,8 +71,10 @@ function iniciar_pagina() {
 					ctx.stroke();
 				}
 				else if(herramienta == "Borrar"){
-					ctx.beginPath();
-					ctx.clearRect(e.pageX - c.offsetLeft, e.pageY - c.offsetTop,tamano,tamano);
+					ctx.lineTo(e.pageX - c.offsetLeft, e.pageY - c.offsetTop);
+					ctx.lineWidth = document.querySelector("#tamano").value;
+					ctx.strokeStyle = "#FFFFFF";
+					ctx.stroke();
 				}
 			}
 		}
