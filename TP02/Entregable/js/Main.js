@@ -64,7 +64,7 @@ function iniciar_juego() {
         let posX = Math.round(Math.random() * canvas.width);
         let posY = Math.round(Math.random() * canvas.height);
         let color = "#FFF";
-        let ficha = new Ficha(posX, posY, 40, color, ctx, getImg('img/goetze.png'));
+        let ficha = new Ficha(posX, posY, 40, color, ctx, getImg('img/ficha.png'));
         return ficha;
     }
 
