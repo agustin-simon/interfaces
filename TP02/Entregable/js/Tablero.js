@@ -103,7 +103,31 @@ class Tablero {
 			}
 
 
-
+            //Recorre diagonal Izquierda Superior	
+			
+			let cuenta_izq_sup = 1;
+			
+			if(colum > 0 && colum<MAXC) {
+				let aux_fil = fila;
+				let aux_col = colum;
+									
+				while(aux_fil>0 && aux_col<this.columnas) {
+						
+					aux_fil--;
+					aux_col--;
+					
+					if(this.matrix[aux_fil][aux_col] == 1) {
+						cuenta_izq_sup++;
+					} else {
+						break;
+					}
+				}
+				
+				if(cuenta_izq_sup == 4) {
+					System.out.println("Ganaste! Recorre diagonal Izquierda Superior");
+				}
+				
+			}
 
 
         }
