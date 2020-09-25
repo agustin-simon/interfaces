@@ -36,14 +36,22 @@ function iniciar_juego() {
 
     let newMatriz = tablero.getMatriz();
 
-    tablero.addFichaJugador(2,0);
+    
     tablero.addFichaJugador(2,1);
     tablero.addFichaJugador(2,2);
-    tablero.addFichaJugador(1,3);
+    tablero.addFichaJugador(2,3);
 
+    
+    tablero.addFichaJugador(2,2);
+    tablero.addFichaJugador(2,3);
+
+    tablero.addFichaJugador(2,3);
+
+    tablero.addFichaJugador(1,0);
+    tablero.addFichaJugador(1,1);
+    tablero.addFichaJugador(1,2);
     tablero.addFichaJugador(1,3);
-    tablero.addFichaJugador(1,3);
-    tablero.addFichaJugador(1,3);
+ 
 
     tablero.chequearGanador(0,3);
 

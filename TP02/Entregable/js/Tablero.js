@@ -105,30 +105,96 @@ class Tablero {
 
             //Recorre diagonal Izquierda Superior	
 			
-			let cuenta_izq_sup = 1;
-			
-			if(colum > 0 && colum<MAXC) {
-				let aux_fil = fila;
-				let aux_col = colum;
-									
-				while(aux_fil>0 && aux_col<this.columnas) {
-						
-					aux_fil--;
-					aux_col--;
+            let cuenta_izq_sup_der_inf = 1;
+            
+			if(col > 0 && col<this.columnas) {
+				let aux_fil = fil;
+                let aux_col = col;
+
+				while(aux_fil>=0 && aux_col<this.columnas) {                    			
 					
 					if(this.matrix[aux_fil][aux_col] == 1) {
-						cuenta_izq_sup++;
+						cuenta_izq_sup_der_inf++;
+					} else {
+						break;
+                    }
+                    aux_fil--;
+					aux_col--;
+				}
+				if(cuenta_izq_sup_der_inf == 4) {
+					console.log("Ganaste! Recorre diagonal Izquierda Superior");
+				}
+				
+            }
+            
+
+            //Recorre diagonal Derecha Inferior
+			
+			if(col<this.columnas-1) {
+				let aux_fil = fil;
+                let aux_col = col;		
+                			
+				while(aux_fil<this.filas-2) {
+					if(this.matrix[aux_fil][aux_col] == 1) {
+						cuenta_izq_sup_der_inf++;
 					} else {
 						break;
 					}
+					aux_fil++;
+					aux_col++;
+				}	
+				if(cuenta_izq_sup_der_inf == 4) {
+					console.log("Ganaste! Recorre diagonal Derecha Inferior");
 				}
+            }	
+            
+            //Recorre diagonal Derecha Superior				
+			
+			let cuenta_der_sup = 0;
+			
+			if(col < this.columnas) {
+				let aux_fil = fil;
+				let aux_col = col;
 				
-				if(cuenta_izq_sup == 4) {
-					System.out.println("Ganaste! Recorre diagonal Izquierda Superior");
+				while(aux_fil>=0 && aux_col<this.columnas) { // 3-0, 2-1 , 1-2 , 0 -3 			
+					
+					if(this.matrix[aux_fil][aux_col] == 1) {
+						cuenta_der_sup++;
+					} else {
+						break;
+					}
+					
+					aux_fil--;
+					aux_col++;
+									
 				}
-				
+				console.log("das"+cuenta_der_sup)
+				if(cuenta_der_sup == 4) {
+					console.log("Ganaste! Recorre diagonal Derecha Superior	");
+				}
+            }
+            
+            //Recorre diagonal Izquierda Inferior
+			
+			if(fil < this.filas-3 && col<this.columnas && col>2) {
+				let aux_fil = fil;
+				let aux_col = col;	
+                
+				while(aux_col>0 && aux_fil<this.filas) { //1-5 , 2-4, 3-3 , 4-2;
+											
+					if(this.matrix[aux_fil][aux_col] == 1) {
+						cuenta_der_sup++;
+					} else {
+						break;
+					}						
+					aux_fil++;
+					aux_col--;						
+                }				
+                console.log(cuenta_der_sup)	
+				if(cuenta_der_sup == 4) {
+					console.log("Ganaste! Recorre diagonal Izquierda Inferior");
+				}
 			}
-
 
         }
         
