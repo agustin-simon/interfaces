@@ -108,16 +108,26 @@ function iniciar_juego() {
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);     
 
-            let y = tablero.getFinTablero() - (tablero.getValor()/2);
+            /*console.log("pos_colum "+pos_colum)
+            console.log("inicio "+pos_colum)
+            console.log("Inicio tablero: "+ tablero.getInicioTablero());
 
-            ret.setPosition(20,y)
+            console.log("Fin tablero: "+ tablero.getFinTablero());*/
+
+            let val_rest = tablero.getValor()/2;
+            let valor = 1;
+            let valor_final = pos_colum + valor;
+
+            let x = (tablero.getInicioTablero()+(tablero.getValor()*valor_final)) -val_rest ;
+
+            let pos_vacia = calcularFila(pos_colum);
+            console.log(pos_vacia)
+            let y = (tablero.getInicioTablero() + (tablero.getValor()*pos_vacia)) - val_rest ;       
+            console.log("y" + y);           
+
             
-            console.log(cuadrosL[cuadrosL.length-1]);
 
-
-            //console.log("Posicion:" + pos_colum)
-            console.log(cuadrosL[0])
-          if(e.layerX < cuadrosA[cuadrosA.length-1]) {
+          if(e.layerX > cuadrosA[0] && e.layerX < cuadrosA[cuadrosA.length-1] && e.layerY < cuadrosL[0]) {
 
                 if(ret.getTipo() == "r") {
                     console.log("rojo")
@@ -127,6 +137,8 @@ function iniciar_juego() {
                     console.log("azul")
                 juego.playJugadorDos(pos_colum);
                 }
+
+                ret.setPosition(x,y);
 
           }
             tablero.drawFichas();        
@@ -143,8 +155,26 @@ function iniciar_juego() {
     canvas.onmouseup= function(e){ 
         soltar_click(e);
     };
+
+    function calcularFila(colum) {
+        let matrix = tablero.getMatriz();
+    
+        for (let i = tablero.getColumnas()-1; i >=0 ; i--) {
+            if(matrix[i][colum] == 0) {
+                return i;            
+            } 
+        }
+
+        /* for (let i = tablero.getColumnas()-1; i >=0 ; i--) {
+            if(matrix[i][colum] == 0) {
+                return i;            
+            }        
+        }*/
+    }
     
 }
+
+
 
 
 

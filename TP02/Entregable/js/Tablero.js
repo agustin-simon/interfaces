@@ -393,6 +393,14 @@ class Tablero {
         return fin_tablero_largo;
     }
 
+    getInicioTablero() {
+        let tam_final = this.tam.toString();
+        let valor = this.canvasWidth/tam_final; // valor = 150;
+        let inicio_tablero_ancho = valor;
+        let fin_tablero_largo = inicio_tablero_ancho*2;
+        return fin_tablero_largo;
+    }
+
     getValor() {
         let tam_final = this.tam.toString();
         let valor = this.canvasHeight/tam_final; 
