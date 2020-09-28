@@ -10,8 +10,8 @@ class Juego {
 
     comenzarJuego(cantidad) {
         this.tablero.crear();
-        this.tablero.crearFichas(cantidad);
-        this.tablero.crearFichas(cantidad);
+        this.tablero.crearFichas(cantidad/2);
+        this.tablero.crearFichas(cantidad/2);
         this.tablero.drawFichas();
         this.tablero.draw();
     }
@@ -22,6 +22,7 @@ class Juego {
 
     resetearJuego() {
         this.tablero.reiniciar();
+
     }
 
     chequearGanador() {        

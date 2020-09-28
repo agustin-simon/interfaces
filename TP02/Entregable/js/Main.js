@@ -8,17 +8,32 @@ let ret, mouseX , mouseY;
 let seArrastra = false;
 let tamaño, suma;
 
-document.querySelector("#btn_empezar").addEventListener("click", iniciar_juego);
+document.querySelector("#btn_empezar").addEventListener("click", function () {    
+    tamaño = document.querySelector("#val_tamaño").value;
+    if(tamaño>3) {
+        iniciar_juego();        
+    } else if(tamaño == ""){
+        alert("Debe ingresar un valor mayor o igual a 4");
+    } else {
+        alert("El valor ingresado debe ser mayor a 3");
+    }
+});
 
 function iniciar_juego() {
 
-    tamaño = document.querySelector("#val_tamaño").value;
     let longitud = tamaño;
     console.log(longitud);
     suma = Number(tamaño)+Number(4);
     tamaño = suma;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    let jugadorUno = new Jugador("Roberto");
+    let jugadorDos = new Jugador("Agustin");
+
+    let tablero = new Tablero(longitud,longitud,canvasHeight, canvas.width ,ctx, tamaño);
+    
+    let juego = new Juego(jugadorUno,jugadorDos, tablero);
 
     document.querySelector("#val_tamaño").classList.remove('valor_tam');
     document.querySelector("#val_tamaño").classList.add('valor_tam_off');
@@ -28,38 +43,25 @@ function iniciar_juego() {
 
     document.querySelector("#canvas").classList.remove('canvas_off');
     document.querySelector("#canvas").classList.add('canvas_on');
-    
-    let jugadorUno = new Jugador("Roberto");
-    let jugadorDos = new Jugador("Agustin");
 
-    let tablero = new Tablero(longitud,longitud,canvasHeight, canvas.width ,ctx, tamaño);
-    
-    let juego = new Juego(jugadorUno,jugadorDos, tablero);
+    document.querySelector("#btn_reiniciar").classList.remove('btn_off');
+    document.querySelector("#btn_reiniciar").classList.add('btn_on');
 
-    juego.comenzarJuego(1*1);
+    document.querySelector("#btn_reiniciar").addEventListener("click", function() {
+        tablero.reiniciar();
+
+        document.querySelector("#btn_reiniciar").classList.remove('btn_on');
+        document.querySelector("#btn_reiniciar").classList.add('btn_off');
+
+        document.querySelector("#btn_empezar").classList.remove('btn_off');
+        document.querySelector("#btn_empezar").classList.add('btn_on');
+
+        document.querySelector("#val_tamaño").classList.remove('valor_tam_off');
+        document.querySelector("#val_tamaño").classList.add('valor_tam');
+    });    
+
+    juego.comenzarJuego(longitud*longitud);
    
-   /* juego.playJugadorUno(0);
-    juego.playJugadorDos(1);
-
-    juego.playJugadorUno(1);
-    juego.playJugadorDos(2);
-    juego.playJugadorDos(2);
-
-    juego.playJugadorDos(3);
-    juego.playJugadorDos(3);
-    juego.playJugadorDos(3);
-
-    juego.playJugadorUno(2);
-
-    juego.playJugadorUno(3);*/
-    
-
-    /*let newMatriz = tablero.getMatriz();
-
-    console.log(newMatriz);*/
-
-
-
     canvas.onmousedown = function(e) {
         ret = tablero.getUltimaFicha(e.layerX, e.layerY);  
         if(ret != null) {
@@ -106,13 +108,7 @@ function iniciar_juego() {
                 } 
             }          
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);     
-
-            /*console.log("pos_colum "+pos_colum)
-            console.log("inicio "+pos_colum)
-            console.log("Inicio tablero: "+ tablero.getInicioTablero());
-
-            console.log("Fin tablero: "+ tablero.getFinTablero());*/
+            ctx.clearRect(0, 0, canvas.width, canvas.height);    
 
             let val_rest = tablero.getValor()/2;
             let valor = 1;
@@ -122,10 +118,7 @@ function iniciar_juego() {
 
             let pos_vacia = calcularFila(pos_colum);
             console.log(pos_vacia)
-            let y = (tablero.getInicioTablero() + (tablero.getValor()*pos_vacia)) - val_rest ;       
-            console.log("y" + y);           
-
-            
+            let y = (tablero.getInicioTablero() + (tablero.getValor()*pos_vacia)) - val_rest ;               
 
           if(e.layerX > cuadrosA[0] && e.layerX < cuadrosA[cuadrosA.length-1] && e.layerY < cuadrosL[0]) {
 
@@ -164,37 +157,7 @@ function iniciar_juego() {
                 return i;            
             } 
         }
-
-        /* for (let i = tablero.getColumnas()-1; i >=0 ; i--) {
-            if(matrix[i][colum] == 0) {
-                return i;            
-            }        
-        }*/
     }
     
 }
-
-
-
-
-
-    /*function crearFichas(cant) {
-        for (let i = 0; i < cant; i++) {
-            tablero.addFicha(crearFicha());  
-        }
-    }*/
-
-    /*function crearFicha() {     
-        let posX = Math.round(Math.random() * canvas.width);
-        let posY = Math.round(Math.random() * canvas.height);
-        let color = "#FFF";
-        let ficha = new Ficha(posX, posY, 40, color, ctx, getImg('img/ficha.png'));
-        return ficha;
-    }*/
-
-    /*function getImg(src) {
-        let img = new Image();
-        img.src = src;
-        return img;
-    }*/
 

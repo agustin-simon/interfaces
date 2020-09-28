@@ -123,8 +123,8 @@ class Tablero {
 
             //Recorre diagonal Izquierda Superior	
 			
-            let cuenta_izq_sup_der_inf_uno = 1;
-            let cuenta_izq_sup_der_inf_dos = 1;
+            let cuenta_izq_sup_der_inf_uno = 0;
+            let cuenta_izq_sup_der_inf_dos = 0;
             
 			if(col > 0 && col<this.columnas) {
 				let aux_fil = fil;
@@ -243,11 +243,13 @@ class Tablero {
 
     reiniciar() {
         for(let i = 0; i<this.columnas; i++){
-            matrix[i] = [];
+            this.matrix[i] = [];
             for(let j = 0; j<this.filas; j++){
-            matrix[i][j] = 0;
+            this.matrix[i][j] = 0;
             }
         } 
+
+        this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
     addFicha(ficha) {
