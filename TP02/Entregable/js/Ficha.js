@@ -1,12 +1,14 @@
 
 class Ficha {
-    constructor(posX, posY, radius, fill, context, img) {
+    constructor(posX, posY, radius, fill, context, img, dim, tipo) {
         this.posX = posX;
         this.posY = posY;        
         this.radius = radius;
         this.fill = fill;
         this.context = context;
-        this.img = img;        
+        this.img = img;          
+        this.dim = dim;    
+        this.tipo = tipo;  
     }
 
     setFill(fill) {
@@ -37,16 +39,9 @@ class Ficha {
 
     draw() {    
         this.context.fillStyle = this.fill;
-        let imgSize = 70;
+        let imgSize = this.dim;
         this.radius = imgSize / 2;
-        this.context.drawImage(this.img, this.posX - (imgSize / 2), this.posY - (imgSize / 2), imgSize, imgSize);
-        
-
-        /*this.context.fillStyle = this.fill;
-        this.context.beginPath();
-        this.context.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
-        this.context.fill();
-        this.context.closePath();*/   
+        this.context.drawImage(this.img, this.posX - (imgSize / 2), this.posY - (imgSize / 2), imgSize, imgSize);        
     }
 
     getRadius() {
@@ -59,4 +54,9 @@ class Ficha {
         let valor = Math.sqrt(_x * _x + _y * _y) ;
         return valor <= this.radius;
     }
+
+    getTipo() {
+        return this.tipo;
+    }
+    
 }
