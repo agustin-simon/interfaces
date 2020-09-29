@@ -10,8 +10,7 @@ class Juego {
 
     comenzarJuego(cantidad) {
         this.tablero.crear();
-        this.tablero.crearFichas(cantidad/2);
-        this.tablero.crearFichas(cantidad/2);
+        this.tablero.crearFichas(cantidad);
         this.tablero.drawFichas();
         this.tablero.draw();
     }
@@ -62,9 +61,9 @@ class Juego {
 
     chequearJugador(turno) {
         if(turno%2 == 0) {
-            return "Jugador Dos";
+            return "1";
         } else {
-            return "Jugador Uno"
+            return "2";
         }
     }
 

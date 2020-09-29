@@ -4,7 +4,6 @@
 }
 
 .canvas_on{
-
 }
 
 .btn_off {
@@ -21,4 +20,8 @@
 
 .valor_tam_off {
     display: none;
+}
+
+body {
+    background-color: #4db592;
 }

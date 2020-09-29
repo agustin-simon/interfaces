@@ -92,7 +92,6 @@ class Tablero {
         
         if(cuenta_izq_der_uno-1 == 4 || cuenta_izq_der_dos-1 == 4 ) {
             return 1;
-			//console.log("Ganaste! Recorre a la izquierda");
         }
         else {
 
@@ -117,7 +116,6 @@ class Tablero {
 			
 			if(cuenta_abajo_uno == 4 || cuenta_abajo_dos == 4) {
                 return 1;
-				//console.log("Ganaste! Recorre hacia abajo");
 			}
 
 
@@ -126,11 +124,11 @@ class Tablero {
             let cuenta_izq_sup_der_inf_uno = 0;
             let cuenta_izq_sup_der_inf_dos = 0;
             
-			if(col > 0 && col<this.columnas) {
+			if(col >= 0 && col<this.columnas-1) {
 				let aux_fil = fil;
-                let aux_col = col;
-
-				while(aux_fil>=0 && aux_col<this.columnas) {                    			
+                let aux_col = col;               
+                
+				while(aux_fil>0 && aux_col<this.columnas) {                    			
 					
 					if(this.matrix[aux_fil][aux_col] == 1) {
 						cuenta_izq_sup_der_inf_uno++;
@@ -143,22 +141,21 @@ class Tablero {
                     }
                     aux_fil--;
 					aux_col--;
-				}
-				if(cuenta_izq_sup_der_inf_uno == 4 || cuenta_izq_sup_der_inf_dos == 4) {
+                }
+
+				if(cuenta_izq_sup_der_inf_uno-1 == 4 || cuenta_izq_sup_der_inf_dos-1 == 4) {
                     return 1;
-					//console.log("Ganaste! Recorre diagonal Izquierda Superior");
 				}
 				
-            }
-            
+            }            
 
             //Recorre diagonal Derecha Inferior
 			
 			if(col<this.columnas-1) {
 				let aux_fil = fil;
-                let aux_col = col;		
-                			
-				while(aux_fil<this.filas-2) {
+                let aux_col = col;	
+
+				while(aux_fil<this.filas) {
 
 					if(this.matrix[aux_fil][aux_col] == 1) {
 						cuenta_izq_sup_der_inf_uno++;
@@ -166,15 +163,12 @@ class Tablero {
                     else if(this.matrix[aux_fil][aux_col] == 2) {
                         cuenta_izq_sup_der_inf_dos++;
                     }
-                    else {
-						break;
-					}
 					aux_fil++;
 					aux_col++;
-				}	
-				if(cuenta_izq_sup_der_inf_uno == 4 || cuenta_izq_sup_der_inf_dos == 4) {
+                }	
+
+				if(cuenta_izq_sup_der_inf_uno-1 == 4 || cuenta_izq_sup_der_inf_dos-1 == 4) {
                     return 1;
-					//console.log("Ganaste! Recorre diagonal Derecha Inferior");
 				}
             }	
             
@@ -186,7 +180,7 @@ class Tablero {
 			if(col < this.columnas) {
 				let aux_fil = fil;
 				let aux_col = col;
-				
+                
 				while(aux_fil>=0 && aux_col<this.columnas) { // 3-0, 2-1 , 1-2 , 0 -3 			
 					
 					if(this.matrix[aux_fil][aux_col] == 1) {
@@ -203,20 +197,21 @@ class Tablero {
 					aux_col++;
 									
                 }
-                
-				if(cuenta_der_sup_uno == 4 || cuenta_der_sup_dos == 4) {
+
+				if(cuenta_der_sup_uno-1 == 4 || cuenta_der_sup_dos-1 == 4) {
                     return 1;
-					//console.log("Ganaste! Recorre diagonal Derecha Superior	");
-				}
-            }
+                }
+            }       
+
             
+
             //Recorre diagonal Izquierda Inferior
 			
-			if(fil < this.filas && col<this.columnas && col>0) {
+			if(fil < this.filas && col>0 && col<this.columnas && col>0) {
 				let aux_fil = fil;
-				let aux_col = col;	
+                let aux_col = col;	
                 
-				while(aux_col>0 && aux_fil<this.filas) { //1-5 , 2-4, 3-3 , 4-2;
+				while(aux_col>= 0 && aux_fil<this.filas) { //1-5 , 2-4, 3-3 , 4-2;
 											
 					if(this.matrix[aux_fil][aux_col] == 1) {
 						cuenta_der_sup_uno++;
@@ -231,9 +226,9 @@ class Tablero {
 					aux_col--;						
                 }				
 
-				if(cuenta_der_sup_uno == 4 || cuenta_der_sup_dos == 4) {
+               
+				if(cuenta_der_sup_uno-1 == 4 || cuenta_der_sup_dos-1 == 4) {
                     return 1;
-					//console.log("Ganaste! Recorre diagonal Izquierda Inferior");
 				}
 			}
 
@@ -252,31 +247,30 @@ class Tablero {
         this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    addFicha(ficha) {
-        this.fichas.push(ficha);
-    }
-
     crearFichas(cantidad) {        
         let tam_final = this.tam.toString();        
         let tamaño_ficha = (this.canvasWidth/tam_final);
+        let val = 45;
+        let espacio= 44;
 
         for (let i = 0; i < cantidad/2; i++) {
-            this.addFicha(this.crearFichaR(tamaño_ficha, this.getImg('img/ficha.png')));  
-            this.addFicha(this.crearFichaB(tamaño_ficha, this.getImg('img/fichaB.png')));  
+            val+=espacio;
+            this.fichas.push(this.crearFichaR(tamaño_ficha, this.getImg('img/fichaRed.png'),val));  
+            this.fichas.push(this.crearFichaB(tamaño_ficha, this.getImg('img/fichaBlue.png'),val));  
         }
     }
 
-    crearFichaR(tamaño_ficha, imagen) {     
-        let posX = Math.round(Math.random() * canvasWidth);
-        let posY = Math.round(Math.random() * canvasHeight);
+    crearFichaR(tamaño_ficha, imagen, val) {         
+        let posX = 65;
+        let posY = val;
         let color = "#FFF";
         let ficha = new Ficha(posX, posY, tamaño_ficha, color, ctx, imagen, tamaño_ficha,"r");
         return ficha;
     }
 
-    crearFichaB(tamaño_ficha, imagen) {     
-        let posX = Math.round(Math.random() * canvasWidth);
-        let posY = Math.round(Math.random() * canvasHeight);
+    crearFichaB(tamaño_ficha, imagen, val) { 
+        let posX = 835;
+        let posY = val;
         let color = "#FFF";
         let ficha = new Ficha(posX, posY, tamaño_ficha, color, ctx, imagen, tamaño_ficha,"a");
         return ficha;
@@ -285,7 +279,7 @@ class Tablero {
 
     getUltimaFicha(x, y) {
         for (let i = 0; i < this.fichas.length; i++) {
-            const element = this.fichas[i];
+            let element = this.fichas[i];
             if (element.isPointInside(x, y)) {
                 this.lastElement = element;
                 return element;
@@ -302,6 +296,7 @@ class Tablero {
         if(this.lastElement != null) {
             this.lastElement.draw();
         } 
+        this.draw();
     }
 
     draw() {
@@ -309,8 +304,6 @@ class Tablero {
         
         let valor = this.canvasWidth/tam_final; // valor = 150;
         
-        //this.getCuadros();
-
         for (let i = 2; i < (tam_final-2); i++) {        
             for (let j = 1; j < (tam_final-3); j++) {
                 this.cargar_imagen(valor*i,valor*j, valor);       
@@ -322,9 +315,7 @@ class Tablero {
     cargar_imagen(x,y,val) {	
         let imagen = new Image();
         imagen.src = "img/tablero150.png";
-        imagen.onload=function() { 
-            ctx.drawImage(imagen,x,y,val,val); 
-        }
+        ctx.drawImage(imagen,x,y,val,val); 
     }
 
     getCuadrosAncho() {

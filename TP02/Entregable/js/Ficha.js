@@ -9,6 +9,7 @@ class Ficha {
         this.img = img;          
         this.dim = dim;    
         this.tipo = tipo;  
+        this.turno;
     }
 
     setFill(fill) {
@@ -57,6 +58,14 @@ class Ficha {
 
     getTipo() {
         return this.tipo;
+    }
+
+    getTurno() {
+        return this.turno;
+    }
+
+    setTurno(turno) {
+        this.turno = turno;
     }
     
 }
