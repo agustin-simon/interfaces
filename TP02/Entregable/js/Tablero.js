@@ -250,7 +250,13 @@ class Tablero {
         let tam_final = this.tam.toString();        
         let tamaño_ficha = (this.canvasWidth/tam_final);
         let val = 45;
-        let espacio= 44;
+        let espacio;
+        console.log("tamaño "+tam_final)
+        if(tam_final>10) {
+            espacio = 32;
+        } else {
+            espacio = 44;
+        }
 
         for (let i = 0; i < cantidad/2; i++) {
             val+=espacio;
@@ -398,5 +404,6 @@ class Tablero {
         let valor = this.canvasHeight/tam_final; 
         return valor;
     }  
+
     
 }

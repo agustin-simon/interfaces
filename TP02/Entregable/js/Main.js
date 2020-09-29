@@ -17,15 +17,7 @@ let turno = 0;
 document.querySelector("#btn_empezar").addEventListener("click", function () {   
     //Obtenemos el valor ingresado por el usuario. 
     tamaño = document.querySelector("#val_tamaño").value;
-
-   
-    if(tamaño>4 && tamaño<10) { //Si es mayor a 4 y menor a 10, el juego comenzara.
-        iniciar_juego();        
-    } else if(tamaño == ""){ //Si el input esta vacio, se muestra un error.
-        error_01();
-    } else {
-        error_02(); //Si el valor ingresado no cumple, se muestra un error.
-    }
+    iniciar_juego();    
 });
 
 
@@ -224,12 +216,6 @@ function iniciar_juego() {
 
         document.querySelector("#nombre_jugador_uno").classList.remove('btn_on');
         document.querySelector("#nombre_jugador_uno").classList.add('btn_off'); 
-
-        document.querySelector("#img_error_uno").classList.remove('btn_on');
-        document.querySelector("#img_error_uno").classList.add('btn_off'); 
-
-        document.querySelector("#img_error_dos").classList.remove('btn_on');
-        document.querySelector("#img_error_dos").classList.add('btn_off'); 
     }
 
     //Desactiva los estilos del menu principal.
@@ -264,18 +250,6 @@ function iniciar_juego() {
 
     }    
     
-}
-
-//Muestra el error en pantalla 
-function error_01() {
-    document.querySelector("#img_error_uno").classList.remove('btn_off');
-    document.querySelector("#img_error_uno").classList.add('btn_on'); 
-}
-
-//Muestra el error en pantalla 
-function error_02() {
-    document.querySelector("#img_error_dos").classList.remove('btn_off');
-    document.querySelector("#img_error_dos").classList.add('btn_on'); 
 }
 
 

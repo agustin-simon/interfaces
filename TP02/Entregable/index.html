@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Test Fichas</title>
+		<title>TP02 - Entregable</title>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
@@ -10,7 +10,11 @@
 		<div id="container">
 			<input type="button" value="Empezar" id="btn_empezar" class="btn_on">
 			<input type="button" value="Reiniciar" id="btn_reiniciar" class="btn_off">
-			<input type="text" id="val_tamaño" class="valor_tam">
+			<select id="val_tamaño" class="valor_tam">
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+			  </select>			
 			<div id="canvas-container"> 
 				<canvas id="canvas" width="900" height="900" class="canvas_off"></canvas>
 			</div>
@@ -18,11 +22,7 @@
 		<h2 class="btn_on" id="titulo_jugador_uno">Jugador uno</h2>
 		<input type="text" id="nombre_jugador_uno" class="valor_tam" value="Azules" class="btn_on">
 		<h2 class="btn_on" id="titulo_jugador_dos">Jugador dos</h2>
-		<input type="text" id="nombre_jugador_dos" class="valor_tam" value="Rojas" class="btn_on">		
-
-		<div>
-			<img src="img/error.png" alt="error" id="img_error_uno" class="btn_off">
-			<img src="img/error2.png" alt="error" id="img_error_dos" class="btn_off">
+		<input type="text" id="nombre_jugador_dos" class="valor_tam" value="Rojas" class="btn_on">	
 		</div>
 
 		<script src="js/Ficha.js"></script>
