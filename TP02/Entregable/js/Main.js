@@ -34,11 +34,7 @@ function iniciar_juego() {
     ctx.fillStyle = "#4db592";
     ctx.font = "30px Verdana";
     ctx.fillStyle = "white";
-<<<<<<< HEAD
     ctx.fillText("Click para comenzar", 10, 250);
-=======
-    ctx.fillText("Click para comenzar", 250, 35);
->>>>>>> master
     
     //Creamos los jugadores con sus respectivos nombres.
     let jugadorUno = new Jugador(document.querySelector("#nombre_jugador_uno").value);
