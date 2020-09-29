@@ -62,15 +62,18 @@ class Tablero {
 			
 			if(this.matrix[fil][j] == 1) {
 				cuenta_izq_der_uno++;
-            } 
-            
+            } else {
+                break;
+            }
+        }
+
+        for(let j = col; j < this.columnas; j++){ 
+			            
             if(this.matrix[fil][j] == 2) {
 				cuenta_izq_der_dos++;
-			} 
-			
-			if(this.matrix[fil][j] == 0) {
-				break;
-			}
+			} else {
+                break;
+            }
         }
         
         //Recorre a la izquierda
@@ -79,15 +82,18 @@ class Tablero {
 			
 			if(this.matrix[fil][j] == 1) {
 				cuenta_izq_der_uno++;
-            }
-            
+            } else {
+                break;
+            }					
+        }
+
+        for(let j = col; j >= 0; j--){ 
+			            
             if(this.matrix[fil][j] == 2) {
 				cuenta_izq_der_dos++;
-			}
-
-			if(this.matrix[fil][j] == 0) {
-				break;
-			}					
+			} else {
+                break;
+            }				
         }
         
         if(cuenta_izq_der_uno-1 == 4 || cuenta_izq_der_dos-1 == 4 ) {
@@ -98,20 +104,24 @@ class Tablero {
             let cuenta_abajo_uno = 0;
             let cuenta_abajo_dos = 0;
 			
-			//Recorre hacia abajo
+            //Recorre hacia abajo            
+
 			for(let j = fil; j < this.filas; j++){ 
 				
 				if(this.matrix[j][col] == 1) {
 					cuenta_abajo_uno++;
-                }	
-                
+                } else {
+                    break;
+                }				
+            }
+            
+            for(let j = fil; j < this.filas; j++){ 
+				                
                 if(this.matrix[j][col] == 2) {
 					cuenta_abajo_dos++;
-                }	
-                
-				if(this.matrix[j][col] == 0) {
-					break;
-				}					
+                } else {
+                    break;
+                }					
 			}
 			
 			if(cuenta_abajo_uno == 4 || cuenta_abajo_dos == 4) {
@@ -120,20 +130,29 @@ class Tablero {
 
 
             //Recorre diagonal Izquierda Superior	
-			
+            
+
             let cuenta_izq_sup_der_inf_uno = 0;
             let cuenta_izq_sup_der_inf_dos = 0;
             
 			if(col >= 0 && col<this.columnas-1) {
 				let aux_fil = fil;
                 let aux_col = col;               
-                
+
 				while(aux_fil>0 && aux_col<this.columnas) {                    			
 					
 					if(this.matrix[aux_fil][aux_col] == 1) {
 						cuenta_izq_sup_der_inf_uno++;
-                    } 
-                    else if(this.matrix[aux_fil][aux_col] == 2) {
+                    } else {
+						break;
+                    }
+                    aux_fil--;
+					aux_col--;
+                }
+
+                while(aux_fil>0 && aux_col<this.columnas) {                    			
+					
+                    if(this.matrix[aux_fil][aux_col] == 2) {
                         cuenta_izq_sup_der_inf_dos++;
                     }
                     else {
@@ -150,7 +169,8 @@ class Tablero {
             }            
 
             //Recorre diagonal Derecha Inferior
-			
+            
+
 			if(col<this.columnas-1) {
 				let aux_fil = fil;
                 let aux_col = col;	
@@ -159,13 +179,23 @@ class Tablero {
 
 					if(this.matrix[aux_fil][aux_col] == 1) {
 						cuenta_izq_sup_der_inf_uno++;
-                    } 
-                    else if(this.matrix[aux_fil][aux_col] == 2) {
-                        cuenta_izq_sup_der_inf_dos++;
+                    } else {
+                        break;
                     }
 					aux_fil++;
 					aux_col++;
                 }	
+
+                while(aux_fil<this.filas) {
+
+					if(this.matrix[aux_fil][aux_col] == 2) {
+                        cuenta_izq_sup_der_inf_dos++;
+                    } else {
+                        break;
+                    }
+					aux_fil++;
+					aux_col++;
+                }
 
 				if(cuenta_izq_sup_der_inf_uno-1 == 4 || cuenta_izq_sup_der_inf_dos-1 == 4) {
                     return 1;
@@ -173,29 +203,37 @@ class Tablero {
             }	
             
             //Recorre diagonal Derecha Superior				
-			
+            
             let cuenta_der_sup_uno = 0;
             let cuenta_der_sup_dos = 0;
 			
 			if(col < this.columnas) {
 				let aux_fil = fil;
 				let aux_col = col;
-                
+
 				while(aux_fil>=0 && aux_col<this.columnas) { // 3-0, 2-1 , 1-2 , 0 -3 			
 					
 					if(this.matrix[aux_fil][aux_col] == 1) {
 						cuenta_der_sup_uno++;
                     } 
-                    else if(this.matrix[aux_fil][aux_col] == 2) {
-                        cuenta_der_sup_dos++;
-                    }
                     else {
 						break;
 					}
 					
 					aux_fil--;
-					aux_col++;
-									
+					aux_col++;									
+                }
+
+                while(aux_fil>=0 && aux_col<this.columnas) { // 3-0, 2-1 , 1-2 , 0 -3 			
+					
+                    if(this.matrix[aux_fil][aux_col] == 2) {
+                        cuenta_der_sup_dos++;
+                    }
+                    else {
+						break;
+					}					
+					aux_fil--;
+					aux_col++;									
                 }
 
 				if(cuenta_der_sup_uno-1 == 4 || cuenta_der_sup_dos-1 == 4) {
@@ -206,17 +244,27 @@ class Tablero {
             
 
             //Recorre diagonal Izquierda Inferior
-			
+            
 			if(fil < this.filas && col>0 && col<this.columnas && col>0) {
 				let aux_fil = fil;
                 let aux_col = col;	
                 
+
 				while(aux_col>= 0 && aux_fil<this.filas) { //1-5 , 2-4, 3-3 , 4-2;
 											
 					if(this.matrix[aux_fil][aux_col] == 1) {
 						cuenta_der_sup_uno++;
                     } 
-                    else if(this.matrix[aux_fil][aux_col] == 2) {
+                    else {
+						break;
+					}						
+					aux_fil++;
+					aux_col--;						
+                }	
+                
+                while(aux_col>= 0 && aux_fil<this.filas) { //1-5 , 2-4, 3-3 , 4-2;
+											
+					if(this.matrix[aux_fil][aux_col] == 2) {
                         cuenta_der_sup_dos++;
                     }
                     else {
@@ -224,7 +272,7 @@ class Tablero {
 					}						
 					aux_fil++;
 					aux_col--;						
-                }				
+                }	
 
                
 				if(cuenta_der_sup_uno-1 == 4 || cuenta_der_sup_dos-1 == 4) {
