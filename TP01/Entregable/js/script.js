@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", iniciar_pagina);
 
 function iniciar_pagina() {
 
-<<<<<<< HEAD
+
 	    /* Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'*/
 
 	    //Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'		
->>>>>>> master
+
 		let img_original; 
 		let pintar = Boolean(false);
 		let herramienta;
@@ -81,10 +81,6 @@ function iniciar_pagina() {
 			pintar = false;		
 		};
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 		//Filtros
 		function aplicar_filtro(filtro) {
 
@@ -93,11 +89,7 @@ function iniciar_pagina() {
 				ctx.putImageData(imagen_original,0,0);				
 			}
 			let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
-<<<<<<< HEAD
 			
-=======
-
->>>>>>> master
 			//Filtro Negativo
 			if(filtro == "Negativo") {			
 					let index;		
@@ -182,11 +174,7 @@ function iniciar_pagina() {
 				}	
 				ctx.putImageData(imageData, 0, 0);
 			}	
-<<<<<<< HEAD
 			
-=======
-
->>>>>>> master
 			//Filtro Blur
 			if(filtro == "blur"){
 				
@@ -239,11 +227,7 @@ function iniciar_pagina() {
 
 		}		
 
-<<<<<<< HEAD
 		//Selecciona la herramienta lapiz
-=======
-		//Seleccionar la herramienta lapiz
->>>>>>> master
 		function seleccionar_lapiz() {
 			herramienta = btn_lapiz.value;
 		}
@@ -253,32 +237,20 @@ function iniciar_pagina() {
 			herramienta = btn_borrar.value;			
 		}
 
-<<<<<<< HEAD
 		//Coloca tamaño al canvas(altura,ancho)
-=======
-		//Colocar tamaño al canvas(altura,ancho)
->>>>>>> master
 		function colocar_tamano(altura,ancho) {
 			c.setAttribute("width", ancho);
 			c.setAttribute("height", altura);
 		}
 
-<<<<<<< HEAD
 		//Pone el lienzo en blanco
-=======
-		//Poner el lienzo en blanco
->>>>>>> master
 		function reiniciar() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			ctx.restore();
 			img_original = null;
 		}
 
-<<<<<<< HEAD
         //Descarga imagen 
-=======
-		//Descargar imagen 
->>>>>>> master
 		function descargar_imagen() {	
 			let link = document.querySelector('#link');
 			link.setAttribute('download', 'dibujo.png');
@@ -318,12 +290,8 @@ function iniciar_pagina() {
 			}
 		}	
 		
-<<<<<<< HEAD
 
 		//Carga una imagen del disco hacia el canvas
-=======
-		//Carga imagen desde el disco al canvas.
->>>>>>> master
 		function cargar_imagen() {
 			
 			let input = document.querySelector('.inp_cargar');
