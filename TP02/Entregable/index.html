@@ -6,17 +6,23 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<input type="button" value="Empezar" id="btn_empezar" class="btn_on">
-		<input type="button" value="Reiniciar" id="btn_reiniciar" class="btn_off">
-		<input type="text" id="val_tamaño" class="valor_tam">
-		<div id="canvas-container"> 
-			<canvas id="canvas" width="900" height="900" class="canvas_off"></canvas>
+		<img src="img/enlinea.png" alt="logo de juego" class="btn_on" id="img_logo">
+		<div id="container">
+			<input type="button" value="Empezar" id="btn_empezar" class="btn_on">
+			<input type="button" value="Reiniciar" id="btn_reiniciar" class="btn_off">
+			<input type="text" id="val_tamaño" class="valor_tam">
+			<div id="canvas-container"> 
+				<canvas id="canvas" width="900" height="900" class="canvas_off"></canvas>
+			</div>
 		</div>
+		<h2 class="btn_on" id="titulo_jugador_uno">Jugador uno</h2>
+		<input type="text" id="nombre_jugador_uno" class="valor_tam" value="Azules" class="btn_on">
+		<h2 class="btn_on" id="titulo_jugador_dos">Jugador dos</h2>
+		<input type="text" id="nombre_jugador_dos" class="valor_tam" value="Rojas" class="btn_on">
+
 		
-		<div id="a"></div>
-		<div id="b"></div>
-		<div id="c"></div>
-			
+		<img src="img/error.png" alt="error" id="img_error" class="btn_off">
+
 		<script src="js/Ficha.js"></script>
 		<script src="js/Juego.js"></script>
 		<script src="js/Jugador.js"></script>		

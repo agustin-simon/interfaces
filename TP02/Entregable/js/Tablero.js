@@ -243,7 +243,6 @@ class Tablero {
             this.matrix[i][j] = 0;
             }
         } 
-
         this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
@@ -264,7 +263,7 @@ class Tablero {
         let posX = 65;
         let posY = val;
         let color = "#FFF";
-        let ficha = new Ficha(posX, posY, tamaño_ficha, color, ctx, imagen, tamaño_ficha,"r");
+        let ficha = new Ficha(posX, posY, tamaño_ficha, color, ctx, imagen, tamaño_ficha,"r",1);
         return ficha;
     }
 
@@ -272,7 +271,7 @@ class Tablero {
         let posX = 835;
         let posY = val;
         let color = "#FFF";
-        let ficha = new Ficha(posX, posY, tamaño_ficha, color, ctx, imagen, tamaño_ficha,"a");
+        let ficha = new Ficha(posX, posY, tamaño_ficha, color, ctx, imagen, tamaño_ficha,"a",2);
         return ficha;
     }
 

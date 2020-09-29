@@ -1,6 +1,6 @@
 
 class Ficha {
-    constructor(posX, posY, radius, fill, context, img, dim, tipo) {
+    constructor(posX, posY, radius, fill, context, img, dim, tipo, turno) {
         this.posX = posX;
         this.posY = posY;        
         this.radius = radius;
@@ -9,7 +9,7 @@ class Ficha {
         this.img = img;          
         this.dim = dim;    
         this.tipo = tipo;  
-        this.turno;
+        this.turno = turno;
     }
 
     setFill(fill) {

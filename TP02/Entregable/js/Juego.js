@@ -21,7 +21,6 @@ class Juego {
 
     resetearJuego() {
         this.tablero.reiniciar();
-
     }
 
     chequearGanador() {        
@@ -30,9 +29,9 @@ class Juego {
 
         let ganador = this.tablero.chequearGanador(val_fil,val_col);
 
-        if(ganador == 1) {
-            alert("Gano " + this.chequearJugador(this.turno));
-        } 
+        if(ganador == 1)  {
+            alert("Gano " + this.chequearJugador(this.turno));            
+        }
     }
 
     playJugadorUno(columna) {

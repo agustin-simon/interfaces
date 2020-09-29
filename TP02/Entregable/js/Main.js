@@ -14,7 +14,7 @@ document.querySelector("#btn_empezar").addEventListener("click", function () {
     if(tamaño>4 && tamaño<10) {
         iniciar_juego();        
     } else if(tamaño == ""){
-        alert("Debe ingresar un valor mayor o igual a 4");
+        error_01();
     } else {
         alert("El valor ingresado debe ser mayor a 3");
     }
@@ -26,53 +26,36 @@ function iniciar_juego() {
     console.log(longitud);
     suma = Number(tamaño)+Number(4);
     tamaño = suma;
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#4db592";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.font = "30px Verdana";
     ctx.fillStyle = "white";
     ctx.fillText("Click para comenzar", 250, 250);
+    
 
-    let jugadorUno = new Jugador("Roberto");
-    let jugadorDos = new Jugador("Agustin");
+    let jugadorUno = new Jugador(document.querySelector("#nombre_jugador_uno").value);
+    let jugadorDos = new Jugador(document.querySelector("#nombre_jugador_dos").value);
 
     let tablero = new Tablero(longitud,longitud,canvasHeight, canvas.width ,ctx, tamaño);
     let juego = new Juego(jugadorUno,jugadorDos, tablero);
 
-    document.querySelector("#val_tamaño").classList.remove('valor_tam');
-    document.querySelector("#val_tamaño").classList.add('valor_tam_off');
-
-    document.querySelector("#btn_empezar").classList.remove('btn_on');
-    document.querySelector("#btn_empezar").classList.add('btn_off');
-
-    document.querySelector("#canvas").classList.remove('canvas_off');
-    document.querySelector("#canvas").classList.add('canvas_on');
-
-    document.querySelector("#btn_reiniciar").classList.remove('btn_off');
-    document.querySelector("#btn_reiniciar").classList.add('btn_on');    
+    cambiarEstilos();  
 
     document.querySelector("#btn_reiniciar").addEventListener("click", function() {
+        cambiarEstilos();
         tablero.reiniciar();
-
-        document.querySelector("#btn_reiniciar").classList.remove('btn_on');
-        document.querySelector("#btn_reiniciar").classList.add('btn_off');
-
-        document.querySelector("#btn_empezar").classList.remove('btn_off');
-        document.querySelector("#btn_empezar").classList.add('btn_on');
-
-        document.querySelector("#val_tamaño").classList.remove('valor_tam_off');
-        document.querySelector("#val_tamaño").classList.add('valor_tam');
+        cambiarEstilos2() 
     });    
 
-    juego.comenzarJuego(longitud*longitud);
-   
-    canvas.onmousedown = function(e) {
-        ret = tablero.getUltimaFicha(e.layerX, e.layerY); 
+    juego.comenzarJuego(longitud*longitud);   
 
-        if(ret != null) {
+    canvas.onmousedown = function(e) {
+        ret = tablero.getUltimaFicha(e.layerX, e.layerY);  
+        
+        if(ret != null && ret.getTurno() == juego.chequearJugador(turno)) {
+            console.log("turnos " + turno);
             seArrastra = true;
-            console.log("entra")
+            console.log("entra")                       
         } 
         else {
             console.log("No hay objeto");
@@ -83,14 +66,11 @@ function iniciar_juego() {
         mouseX = e.layerX;
         mouseY = e.layerY;           
         
-        document.querySelector("#a").innerHTML = mouseX;
-        document.querySelector("#b").innerHTML = mouseY;
-
         if(seArrastra) {        
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = "#4db592";
             ctx.fillRect(0, 0, canvas.width, canvas.height);            
-            tablero.drawFichas();        
+            tablero.drawFichas();                
             ret.setPosition(mouseX,mouseY);
         }        
     }
@@ -104,7 +84,7 @@ function iniciar_juego() {
         if(ret) {
              
             let cuadrosA = tablero.getCuadrosAncho();
-            let cuadrosL = tablero.getCuadrosLargo();
+            //let cuadrosL = tablero.getCuadrosLargo();
             let pos_colum = 0;
 
             for (let i = 0; i < cuadrosA.length; i++) {
@@ -129,14 +109,23 @@ function iniciar_juego() {
 
           if(e.layerX > cuadrosA[0] && e.layerX < cuadrosA[cuadrosA.length-1] && e.layerY < tablero.getValor()) {
 
-                if(ret.getTipo() == "r") {
-                juego.playJugadorUno(pos_colum); 
-                } 
-                else {
-                juego.playJugadorDos(pos_colum);
-                }
-                turno++;
-                ret.setPosition(x-1,y+2);
+                if(ret.getTurno() == juego.chequearJugador(turno)) {
+                    
+                    if(ret.getTipo() == "r") {
+                        juego.playJugadorUno(pos_colum); 
+                        ret.setTurno(0);
+                        turno++;
+                        aplicar_texto_jugador("Turno de "+jugadorUno.getNombre(), "white");
+                    } 
+                    else {
+                        juego.playJugadorDos(pos_colum);
+                        ret.setTurno(0);
+                        turno++;
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        aplicar_texto_jugador("Turno de "+jugadorDos.getNombre(), "white");
+                    }               
+                    ret.setPosition(x-1,y+2);
+                }   
           }
             tablero.drawFichas();  
         }
@@ -161,7 +150,57 @@ function iniciar_juego() {
         }
     }
 
+    function aplicar_texto_jugador(texto, color) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#4db592";
+        ctx.font = "30px Verdana";
+        ctx.fillStyle = color;
+        ctx.fillText(texto, 380, 50);
+    }
+
+    function cambiarEstilos() {
+        document.querySelector("#val_tamaño").classList.remove('valor_tam');
+        document.querySelector("#val_tamaño").classList.add('valor_tam_off');
     
+        document.querySelector("#btn_empezar").classList.remove('btn_on');
+        document.querySelector("#btn_empezar").classList.add('btn_off');
+    
+        document.querySelector("#canvas").classList.remove('canvas_off');
+        document.querySelector("#canvas").classList.add('canvas_on');
+    
+        document.querySelector("#btn_reiniciar").classList.remove('btn_off');
+        document.querySelector("#btn_reiniciar").classList.add('btn_on'); 
+
+        document.querySelector("#img_logo").classList.remove('btn_on');
+        document.querySelector("#img_logo").classList.add('btn_off'); 
+
+        document.querySelector("#titulo_jugador_uno").classList.remove('btn_on');
+        document.querySelector("#titulo_jugador_uno").classList.add('btn_off'); 
+
+        document.querySelector("#titulo_jugador_dos").classList.remove('btn_on');
+        document.querySelector("#titulo_jugador_dos").classList.add('btn_off'); 
+    }
+
+    function cambiarEstilos2() {
+        document.querySelector("#val_tamaño").classList.remove('valor_tam_off');
+        document.querySelector("#val_tamaño").classList.add('valor_tam');
+    
+        document.querySelector("#btn_empezar").classList.remove('btn_off');
+        document.querySelector("#btn_empezar").classList.add('btn_on');
+    
+        document.querySelector("#canvas").classList.remove('canvas_on');
+        document.querySelector("#canvas").classList.add('canvas_off');
+    
+        document.querySelector("#btn_reiniciar").classList.remove('btn_on');
+        document.querySelector("#btn_reiniciar").classList.add('btn_off'); 
+
+        document.querySelector("#img_logo").classList.remove('btn_off');
+        document.querySelector("#img_logo").classList.add('btn_on'); 
+
+
+    }    
     
 }
+
+
 
