@@ -7,7 +7,7 @@ function iniciar_pagina() {
 
 <<<<<<< HEAD
 	    /* Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'*/
-=======
+
 	    //Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'		
 >>>>>>> master
 		let img_original; 
@@ -15,21 +15,18 @@ function iniciar_pagina() {
 		let herramienta;
 		let tamano;	
 		let c = document.querySelector("#canvas");
-<<<<<<< HEAD
 		let ctx = c.getContext("2d");
 
 		/*Funcion que setea el tamaño del canvas*/
 		colocar_tamano(600,800);
 
 		/*Agregamos un determinado evento a los elementos previamente seleccionados*/
-=======
 		let ctx = c.getContext("2d");	
 
 		//Funcion que setea el tamaño del canvas
 		colocar_tamano(600,800);		
 
 		//Agregamos un determinado evento a los elementos previamente seleccionados
->>>>>>> master
 		document.querySelector("#btn_lapiz").addEventListener("click", seleccionar_lapiz);
 		document.querySelector("#btn_borrar").addEventListener("click", seleccionar_borrador);
 		document.querySelector("#btn_reiniciar").addEventListener("click", reiniciar);
