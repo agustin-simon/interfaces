@@ -5,22 +5,12 @@ document.addEventListener("DOMContentLoaded", iniciar_pagina);
 
 function iniciar_pagina() {
 
-
-	    /* Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'*/
-
 	    //Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'		
-
 		let img_original; 
 		let pintar = Boolean(false);
 		let herramienta;
 		let tamano;	
 		let c = document.querySelector("#canvas");
-		let ctx = c.getContext("2d");
-
-		/*Funcion que setea el tamaño del canvas*/
-		colocar_tamano(600,800);
-
-		/*Agregamos un determinado evento a los elementos previamente seleccionados*/
 		let ctx = c.getContext("2d");	
 
 		//Funcion que setea el tamaño del canvas
@@ -55,19 +45,13 @@ function iniciar_pagina() {
 		}
 		//Cuando arrastramos el click la variable, verifica que herramienta esta activa y ejecuta su respectiva accion (pintar/borrar) 
 		c.onmousemove = function(e){
-			let x = e.pageX - c.offsetLeft;
-			let y = e.pageY - c.offsetTop;
-			
-			
 			if (pintar) {
-				//Lapiz
 				if (herramienta == "Lapiz") {
 					ctx.lineTo(e.pageX - c.offsetLeft, e.pageY - c.offsetTop);
 					ctx.lineWidth = document.querySelector("#tamano").value;
 					ctx.strokeStyle = document.querySelector("#muestrario").value;
 					ctx.stroke();
 				}
-				//Borrador
 				else if(herramienta == "Borrar"){
 					ctx.lineTo(e.pageX - c.offsetLeft, e.pageY - c.offsetTop);
 					ctx.lineWidth = document.querySelector("#tamano").value;
@@ -81,6 +65,7 @@ function iniciar_pagina() {
 			pintar = false;		
 		};
 
+
 		//Filtros
 		function aplicar_filtro(filtro) {
 
@@ -89,7 +74,7 @@ function iniciar_pagina() {
 				ctx.putImageData(imagen_original,0,0);				
 			}
 			let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
-			
+
 			//Filtro Negativo
 			if(filtro == "Negativo") {			
 					let index;		
@@ -174,7 +159,7 @@ function iniciar_pagina() {
 				}	
 				ctx.putImageData(imageData, 0, 0);
 			}	
-			
+
 			//Filtro Blur
 			if(filtro == "blur"){
 				
@@ -227,7 +212,7 @@ function iniciar_pagina() {
 
 		}		
 
-		//Selecciona la herramienta lapiz
+		//Seleccionar la herramienta lapiz
 		function seleccionar_lapiz() {
 			herramienta = btn_lapiz.value;
 		}
@@ -237,20 +222,20 @@ function iniciar_pagina() {
 			herramienta = btn_borrar.value;			
 		}
 
-		//Coloca tamaño al canvas(altura,ancho)
+		//Colocar tamaño al canvas(altura,ancho)
 		function colocar_tamano(altura,ancho) {
 			c.setAttribute("width", ancho);
 			c.setAttribute("height", altura);
 		}
 
-		//Pone el lienzo en blanco
+		//Poner el lienzo en blanco
 		function reiniciar() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			ctx.restore();
 			img_original = null;
 		}
 
-        //Descarga imagen 
+		//Descargar imagen 
 		function descargar_imagen() {	
 			let link = document.querySelector('#link');
 			link.setAttribute('download', 'dibujo.png');
@@ -258,7 +243,6 @@ function iniciar_pagina() {
 			link.click();
 		}	
 
-		//Aplica el filtro de brillo a la imagen del canvas
 		function aplicar_brillo() {
 			if(img_original != null) {
 				ctx.putImageData(img_original,0,0);
@@ -290,8 +274,7 @@ function iniciar_pagina() {
 			}
 		}	
 		
-
-		//Carga una imagen del disco hacia el canvas
+		//Carga imagen desde el disco al canvas.
 		function cargar_imagen() {
 			
 			let input = document.querySelector('.inp_cargar');
