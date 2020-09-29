@@ -15,10 +15,6 @@ class Juego {
         this.tablero.draw();
     }
 
-    terminarJuego() {
-
-    }
-
     resetearJuego() {
         this.tablero.reiniciar();
     }
@@ -30,7 +26,7 @@ class Juego {
         let ganador = this.tablero.chequearGanador(val_fil,val_col);
 
         if(ganador == 1)  {
-            alert("Gano " + this.chequearJugador(this.turno));            
+           return 1;
         }
     }
 
@@ -60,9 +56,9 @@ class Juego {
 
     chequearJugador(turno) {
         if(turno%2 == 0) {
-            return "1";
-        } else {
             return "2";
+        } else {
+            return "1";
         }
     }
 

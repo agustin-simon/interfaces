@@ -397,7 +397,6 @@ class Tablero {
         let tam_final = this.tam.toString();
         let valor = this.canvasHeight/tam_final; 
         return valor;
-    }
-
+    }  
     
 }
