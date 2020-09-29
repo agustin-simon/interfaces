@@ -14,7 +14,6 @@ class Tablero {
         this.fin_tablero_largo;
         this.fil;
         this.col;
-
     }
 
     crear() {
