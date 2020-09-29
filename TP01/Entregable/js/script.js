@@ -1,21 +1,35 @@
 "use strict";
 
+//Cuando el DOM carga se ejecuta la pagina
 document.addEventListener("DOMContentLoaded", iniciar_pagina);
 
 function iniciar_pagina() {
 
+<<<<<<< HEAD
 	    /* Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'*/
+=======
+	    //Obtenemos todos los elementos del DOM HTML mediante el ID con 'QuerySelector'		
+>>>>>>> master
 		let img_original; 
 		let pintar = Boolean(false);
 		let herramienta;
 		let tamano;	
 		let c = document.querySelector("#canvas");
+<<<<<<< HEAD
 		let ctx = c.getContext("2d");
 
 		/*Funcion que setea el tamaño del canvas*/
 		colocar_tamano(600,800);
 
 		/*Agregamos un determinado evento a los elementos previamente seleccionados*/
+=======
+		let ctx = c.getContext("2d");	
+
+		//Funcion que setea el tamaño del canvas
+		colocar_tamano(600,800);		
+
+		//Agregamos un determinado evento a los elementos previamente seleccionados
+>>>>>>> master
 		document.querySelector("#btn_lapiz").addEventListener("click", seleccionar_lapiz);
 		document.querySelector("#btn_borrar").addEventListener("click", seleccionar_borrador);
 		document.querySelector("#btn_reiniciar").addEventListener("click", reiniciar);
@@ -31,18 +45,18 @@ function iniciar_pagina() {
 		document.querySelector("#btn_blur").addEventListener("click", function(){aplicar_filtro(btn_blur.value)})
 
 
-		/*Cuando hacemos click la variable 'pintar' se va a poner 'true' */	
+		//Cuando hacemos click la variable 'pintar' se va a poner 'true' 
 		c.onmousedown = function (e){
 			pintar = true;			
 		}
-		/*Cuando soltamos el click la variable 'pintar' se va a poner 'false' */
+		//Cuando soltamos el click la variable 'pintar' se va a poner 'false' 
 		c.onmouseup = function(){
 			pintar = false;
 			ctx.beginPath();
 			tamano = document.querySelector("#tamano").value;	
 			img_original = ctx.getImageData(0, 0, c.width, c.height);			
 		}
-		/*Cuando arrastramos el click la variable, verifica que herramienta esta activa y ejecuta su respectiva accion (pintar/borrar) */
+		//Cuando arrastramos el click la variable, verifica que herramienta esta activa y ejecuta su respectiva accion (pintar/borrar) 
 		c.onmousemove = function(e){
 			let x = e.pageX - c.offsetLeft;
 			let y = e.pageY - c.offsetTop;
@@ -65,11 +79,15 @@ function iniciar_pagina() {
 				}
 			}
 		}
-		/*Cuando soltamos click la variable 'pintar' se va a poner 'false' */	
+		//Cuando soltamos click la variable 'pintar' se va a poner 'false' 	
 		c.onmouseout = function(){
 			pintar = false;		
 		};
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 		//Filtros
 		function aplicar_filtro(filtro) {
 
@@ -78,7 +96,11 @@ function iniciar_pagina() {
 				ctx.putImageData(imagen_original,0,0);				
 			}
 			let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> master
 			//Filtro Negativo
 			if(filtro == "Negativo") {			
 					let index;		
@@ -163,7 +185,11 @@ function iniciar_pagina() {
 				}	
 				ctx.putImageData(imageData, 0, 0);
 			}	
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> master
 			//Filtro Blur
 			if(filtro == "blur"){
 				
@@ -198,7 +224,7 @@ function iniciar_pagina() {
 		
 				ctx.putImageData(imageData, 0, 0);
 			}
-
+			
 			function getRed(imageData, x, y){
 				let index = (x + y * imageData.width) * 4;
 				return imageData.data[index+0];
@@ -214,9 +240,13 @@ function iniciar_pagina() {
 				return imageData.data[index+2];
 			}			
 
-		}
+		}		
 
+<<<<<<< HEAD
 		//Selecciona la herramienta lapiz
+=======
+		//Seleccionar la herramienta lapiz
+>>>>>>> master
 		function seleccionar_lapiz() {
 			herramienta = btn_lapiz.value;
 		}
@@ -226,20 +256,32 @@ function iniciar_pagina() {
 			herramienta = btn_borrar.value;			
 		}
 
+<<<<<<< HEAD
 		//Coloca tamaño al canvas(altura,ancho)
+=======
+		//Colocar tamaño al canvas(altura,ancho)
+>>>>>>> master
 		function colocar_tamano(altura,ancho) {
 			c.setAttribute("width", ancho);
 			c.setAttribute("height", altura);
 		}
 
+<<<<<<< HEAD
 		//Pone el lienzo en blanco
+=======
+		//Poner el lienzo en blanco
+>>>>>>> master
 		function reiniciar() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			ctx.restore();
 			img_original = null;
 		}
 
+<<<<<<< HEAD
         //Descarga imagen 
+=======
+		//Descargar imagen 
+>>>>>>> master
 		function descargar_imagen() {	
 			let link = document.querySelector('#link');
 			link.setAttribute('download', 'dibujo.png');
@@ -279,8 +321,12 @@ function iniciar_pagina() {
 			}
 		}	
 		
+<<<<<<< HEAD
 
 		//Carga una imagen del disco hacia el canvas
+=======
+		//Carga imagen desde el disco al canvas.
+>>>>>>> master
 		function cargar_imagen() {
 			
 			let input = document.querySelector('.inp_cargar');
