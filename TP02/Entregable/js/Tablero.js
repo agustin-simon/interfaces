@@ -14,7 +14,6 @@ class Tablero {
         this.fin_tablero_largo;
         this.fil;
         this.col;
-
     }
 
     crear() {
@@ -299,7 +298,6 @@ class Tablero {
         let tamaño_ficha = (this.canvasWidth/tam_final);
         let val = 45;
         let espacio;
-        console.log("tamaño "+tam_final)
         if(tam_final>10) {
             espacio = 32;
         } else {
@@ -452,6 +450,10 @@ class Tablero {
         let valor = this.canvasHeight/tam_final; 
         return valor;
     }  
+
+    vaciarFichas() {
+        this.fichas = [];
+    }
 
     
 }
