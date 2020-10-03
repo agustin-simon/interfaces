@@ -296,18 +296,23 @@ class Tablero {
     crearFichas(cantidad) {        
         let tam_final = this.tam.toString();        
         let tamaño_ficha = (this.canvasWidth/tam_final);
-        let val = 45;
+        let val = 75;
         let espacio;
         if(tam_final>10) {
-            espacio = 32;
+            espacio = 25;
         } else {
             espacio = 44;
         }
 
         for (let i = 0; i < cantidad/2; i++) {
-            val+=espacio;
-            this.fichas.push(this.crearFichaR(tamaño_ficha, this.getImg('img/fichaRed.png'),val));  
-            this.fichas.push(this.crearFichaB(tamaño_ficha, this.getImg('img/fichaBlue.png'),val));  
+            if((i<cantidad/3)) {
+                val+=espacio;
+                this.fichas.push(this.crearFichaR(tamaño_ficha, this.getImg('img/fichaRed.png'),val));  
+                this.fichas.push(this.crearFichaB(tamaño_ficha, this.getImg('img/fichaBlue.png'),val));  
+            } else {
+                this.fichas.push(this.crearFichaR(tamaño_ficha, this.getImg('img/fichaRed.png'),val));  
+                this.fichas.push(this.crearFichaB(tamaño_ficha, this.getImg('img/fichaBlue.png'),val));  
+            }
         }
     }
 
@@ -320,7 +325,7 @@ class Tablero {
     }
 
     crearFichaB(tamaño_ficha, imagen, val) { 
-        let posX = 835;
+        let posX = 533;
         let posY = val;
         let color = "#FFF";
         let ficha = new Ficha(posX, posY, tamaño_ficha, color, ctx, imagen, tamaño_ficha,"a",2);
@@ -352,21 +357,31 @@ class Tablero {
 
     draw() {
         let tam_final = this.tam.toString();
-        
-        let valor = this.canvasWidth/tam_final; // valor = 150;
-        
+        let valor_ancho = this.canvasWidth/tam_final; // valor = 150;
+        let valor_largo = this.canvasHeight/tam_final; // valor = 150;
+
         for (let i = 2; i < (tam_final-2); i++) {        
-            for (let j = 1; j < (tam_final-3); j++) {
-                this.cargar_imagen(valor*i,valor*j, valor);       
+            for (let j = 0; j < (tam_final-3); j++) {
+               if(j >= 1) {
+                this.cargar_imagen_tabla(valor_ancho*i, valor_largo*j, valor_ancho, valor_largo);   
+               } else {
+                this.cargar_imagen_flecha(valor_ancho*i, valor_largo*j, valor_ancho, valor_largo);   
+               }
             }            
         }
         
     }
 
-    cargar_imagen(x,y,val) {	
+    cargar_imagen_tabla(x,y,val_an,val_lar) {	
         let imagen = new Image();
         imagen.src = "img/tablero150.png";
-        ctx.drawImage(imagen,x,y,val,val); 
+        ctx.drawImage(imagen,x,y,val_an,val_lar); 
+    }
+
+    cargar_imagen_flecha(x,y,val_an,val_lar) {
+        let imagen = new Image();
+        imagen.src = "img/flecha.png";
+        ctx.drawImage(imagen,x,y,val_an,val_lar); 
     }
 
     getCuadrosAncho() {
