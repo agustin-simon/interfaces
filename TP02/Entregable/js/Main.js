@@ -194,6 +194,7 @@ function iniciar_juego() {
                 ctx.fillStyle = "#4db592";
                 ctx.font = "30px Verdana";
                 ctx.fillStyle = "white";
+                
 
                 if(ganador) {  
                     document.querySelector("#j2").classList.remove('btn_on_blue');
