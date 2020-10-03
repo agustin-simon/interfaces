@@ -44,6 +44,7 @@ function iniciar_juego() {
     ctx.font = "30px Verdana";
     ctx.fillStyle = "white";
     ctx.fillText("Click para comenzar", 135, 560); 
+    
     ctx.fillText("Turno del Jugador uno", 133, 590); 
 
 
