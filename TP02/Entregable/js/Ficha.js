@@ -45,6 +45,13 @@ class Ficha {
         this.context.drawImage(this.img, this.posX - (imgSize / 2), this.posY - (imgSize / 2), imgSize, imgSize);        
     }
 
+    drawS(imagen) {    
+        this.context.fillStyle = this.fill;
+        let imgSize = this.dim;
+        this.radius = imgSize / 2;
+        this.context.drawImage(imagen, this.posX - (imgSize / 2), this.posY - (imgSize / 2), imgSize, imgSize);        
+    }
+
     getRadius() {
         return this.radius;
     }
