@@ -382,7 +382,7 @@ class Tablero {
         let imagen = new Image();
         imagen.src = "img/flecha.png";
         ctx.drawImage(imagen,x,y,val_an,val_lar); 
-    }
+    }    
 
     getCuadrosAncho() {
         let tam_final = this.tam.toString();

@@ -72,12 +72,18 @@ function iniciar_juego() {
         ret = tablero.getUltimaFicha(e.layerX, e.layerY);  
 
         if(ret != null && ret.getTurno() == juego.chequearJugador(turno)) {
-            seArrastra = true;                      
+            seArrastra = true;   
         } 
         else {
             console.log("No hay objeto");
         }
     }    
+
+    function getImg(src) {
+        let img = new Image();
+        img.src = src;
+        return img;
+    }
     
     function posicion_mouse(e) {
         mouseX = e.layerX;
@@ -96,7 +102,7 @@ function iniciar_juego() {
             document.querySelector("#j1").classList.remove('btn_on_red');
             document.querySelector("#j1").classList.add('btn_on'); 
         }
-
+        
 
         if(click > 0 && click <2) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);         
@@ -111,10 +117,18 @@ function iniciar_juego() {
             ctx.fillStyle = "#4db592"; 
             ctx.fillRect(0, 0, canvas.width, canvas.height);            
             tablero.drawFichas();                
-            ret.setPosition(mouseX,mouseY);          
+            ret.setPosition(mouseX,mouseY); 
+            console.log(ret.getTipo())
+            if(ret.getTipo() == "r") {
+                ret.drawS(getImg("img/fichaRedClick.png"));  
+            } else {
+                ret.drawS(getImg("img/fichaBlueClick.png"));  
+            }         
+
             ctx.fillStyle = "#4db592";
             ctx.font = "30px Verdana";
-            ctx.fillStyle = "white";         
+            ctx.fillStyle = "white"; 
+
         }        
     }
     
@@ -151,7 +165,7 @@ function iniciar_juego() {
 
 
 
-          if(e.layerX > cuadrosA[0] && e.layerX < cuadrosA[cuadrosA.length-1] && e.layerY < tablero.getValor()*2) {
+          if(e.layerX > cuadrosA[0] && e.layerX < cuadrosA[cuadrosA.length-1] && e.layerY < tablero.getValor()) {
 
                 if(ret.getTurno() == juego.chequearJugador(turno)) {
                     
@@ -171,10 +185,9 @@ function iniciar_juego() {
                         //aplicar_texto_jugador("Turno de "+jugadorDos.getNombre()+" (rojas)", "white");
                         ganador = false;
                     }              
-                    ret.setPosition(x-1,y+2);
+                    ret.setPosition(x-1,y+2);                    
                 }   
-          }
-            tablero.drawFichas(); 
+          }           
             
             if(juego.chequearGanador() == 1) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -197,10 +210,12 @@ function iniciar_juego() {
                     document.querySelector("#j2").classList.remove('btn_on');
                     document.querySelector("#j2").classList.add('btn_off');  
 
-                    ctx.fillText("¡Ganador "+jugadorUno.getNombre()+"!", 250, 250);                    
+                    ctx.fillText("¡Ganador "+jugadorUno.getNombre()+"!", 250, 250);               
                 }
                 tablero.vaciarFichas();
-            }
+            } else {
+                tablero.drawFichas(); 
+            }        
             
         }
         let newMatriz = tablero.getMatriz();
@@ -224,15 +239,6 @@ function iniciar_juego() {
                 return i;            
             } 
         }
-    }
-
-    //Aplica un texto dentro del canvas.
-    function aplicar_texto_jugador(texto, color) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#4db592";
-        ctx.font = "30px Verdana";
-        ctx.fillStyle = color;
-        ctx.fillText(texto, 300, 750);
     }
 
     //Activa los estilos del menu principal.
