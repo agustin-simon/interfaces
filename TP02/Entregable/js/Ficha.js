@@ -60,6 +60,10 @@ class Ficha {
         return this.tipo;
     }
 
+    setTipo(tipo) {
+        this.tipo = tipo;
+    }
+
     getTurno() {
         return this.turno;
     }

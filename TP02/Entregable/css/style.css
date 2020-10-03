@@ -24,9 +24,30 @@
 
 body {
     background-color: #4db592;
+    overflow-x: hidden;
 }
 
 h1 {
     color: white;
-    background-color: white;
 }
+
+#j2 {
+    position: absolute;
+    top: 26px;
+    left: 500px;
+}
+
+.btn_off_blue {
+}
+
+.btn_on_blue{
+    color: blue;
+}
+
+.btn_off_red {
+}
+
+.btn_on_red{
+    color: red;
+}
+
