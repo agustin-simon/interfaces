@@ -301,7 +301,7 @@ class Tablero {
         if(tam_final>10) {
             espacio = 25;
         } else {
-            espacio = 44;
+            espacio = 40;
         }
 
         for (let i = 0; i < cantidad/2; i++) {
@@ -343,7 +343,8 @@ class Tablero {
         }        
     }
 
-    drawFichas() {        
+    drawFichas() { 
+            
         for (let i = 0; i < this.fichas.length; i++) {
             if(this.fichas[i] != this.lastElement) {
                 this.fichas[i].draw();
@@ -352,6 +353,7 @@ class Tablero {
         if(this.lastElement != null) {
             this.lastElement.draw();
         } 
+        
         this.draw();
     }
 
