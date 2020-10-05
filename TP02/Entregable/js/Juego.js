@@ -11,8 +11,8 @@ class Juego {
     comenzarJuego(cantidad) {
         this.tablero.crear();
         this.tablero.crearFichas(cantidad);
-        this.tablero.drawFichas();
-        this.tablero.draw();
+        //this.tablero.drawFichas();
+        //this.tablero.draw();
     }
 
     resetearJuego() {

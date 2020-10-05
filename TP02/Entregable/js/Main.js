@@ -10,6 +10,10 @@ let ctx = canvas.getContext("2d");
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
+
+let x_original;
+let y_original;
+
 let ret, mouseX , mouseY;
 let seArrastra = false;
 let tamaño, suma;
@@ -39,16 +43,19 @@ function iniciar_juego() {
     let jugadorUno = new Jugador(document.querySelector("#nombre_jugador_dos").value);
 
     //
+    //Creamos el tablero de nuestro juego.
+    let tablero = new Tablero(longitud,longitud,canvasHeight, canvas.width ,ctx, tamaño);
+
     ctx.clearRect(0, 0, canvas.width, 500);
     ctx.fillStyle = "#4db592";
     ctx.font = "30px Verdana";
     ctx.fillStyle = "white";
     ctx.fillText("Click para comenzar", 135, 560); 
     ctx.fillText("Turno del Jugador uno", 133, 590); 
+    tablero.drawFichas();
+    
 
 
-    //Creamos el tablero de nuestro juego.
-    let tablero = new Tablero(longitud,longitud,canvasHeight, canvas.width ,ctx, tamaño);
     
     //Reinicia la partida del juego.
     document.querySelector("#btn_reiniciar").addEventListener("click", function() {
@@ -65,17 +72,26 @@ function iniciar_juego() {
 
     //Iniciamos el juego con las medidas correspondientes.
     juego.comenzarJuego(longitud*longitud);
+    
 
     canvas.onmousedown = function(e) {
         //Obtenemos la ultima ficha clickeada.
         ret = tablero.getUltimaFicha(e.layerX, e.layerY);  
+        
+        if(ret) {
+            x_original = ret.getPosX();
+            y_original = ret.getPosY(); 
+        }
+
 
         if(ret != null && ret.getTurno() == juego.chequearJugador(turno)) {
-            seArrastra = true;   
+            seArrastra = true; 
         } 
         else {
             console.log("No hay objeto");
         }
+
+        tablero.drawFichas();
     }    
 
     function getImg(src) {
@@ -94,6 +110,7 @@ function iniciar_juego() {
 
             document.querySelector("#j2").classList.remove('btn_on_blue');
             document.querySelector("#j2").classList.add('btn_on'); 
+            
         } else {
             document.querySelector("#j2").classList.remove('btn_on');
             document.querySelector("#j2").classList.add('btn_on_blue'); 
@@ -108,25 +125,25 @@ function iniciar_juego() {
             ctx.fillStyle = "#4db592";
             ctx.font = "30px Verdana";
             ctx.fillStyle = "white";
-            tablero.drawFichas();              
+            tablero.drawFichas();      
         }  
         
-        if(seArrastra) {        
+        if(seArrastra) {   
+            ret.setPosition(mouseX,mouseY);      
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#4db592"; 
-            ctx.fillRect(0, 0, canvas.width, canvas.height);            
-            tablero.drawFichas();                
-            ret.setPosition(mouseX,mouseY); 
-            console.log(ret.getTipo())
+            //ctx.fillStyle = "#4db592"; 
+            //ctx.fillRect(0, 0, canvas.width, canvas.height);  
+                     
+            tablero.drawFichas();          
+            
+
             if(ret.getTipo() == "r") {
-                ret.drawS(getImg("img/fichaRedClick.png"));  
+                ret.drawS(getImg("img/fichaRedClick.png"));
+                tablero.draw();  
             } else {
                 ret.drawS(getImg("img/fichaBlueClick.png"));  
-            }         
-
-            ctx.fillStyle = "#4db592";
-            ctx.font = "30px Verdana";
-            ctx.fillStyle = "white"; 
+                tablero.draw();
+            }     
 
         }        
     }
@@ -134,9 +151,9 @@ function iniciar_juego() {
     function soltar_click(e) {            
         seArrastra = false;   
         ctx.clearRect(0, 0, canvas.width, canvas.height);      
-        ctx.fillStyle = "#4db592"; 
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        tablero.drawFichas();        
+        //ctx.fillStyle = "#4db592"; 
+        //ctx.fillRect(0, 0, canvas.width, canvas.height);
+        tablero.drawFichas(); 
         //Comprueba si la ficha existe
         if(ret) {
 
@@ -164,35 +181,40 @@ function iniciar_juego() {
 
 
 
-          if(e.layerX > cuadrosA[0] && e.layerX < cuadrosA[cuadrosA.length-1] && e.layerY < tablero.getValor()) {
-
+          if(e.layerX > cuadrosA[0] && e.layerX < cuadrosA[cuadrosA.length-1] && e.layerY < tablero.getValor()*3) {
                 if(ret.getTurno() == juego.chequearJugador(turno)) {
                     
                     if(ret.getTipo() == "r") { 
                         juego.playJugadorUno(pos_colum); 
                         ret.setTurno(0);
                         turno++;  
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);   
+                        //ctx.clearRect(0, 0, canvas.width, canvas.height);   
                         //aplicar_texto_jugador("Turno de "+jugadorUno.getNombre()+" (azules)", "white");                   
-                        ganador = true;                        
+                        ganador = true;                     
                     } 
                     else {
                         juego.playJugadorDos(pos_colum);
                         ret.setTurno(0);
                         turno++; 
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        //ctx.clearRect(0, 0, canvas.width, canvas.height);
                         //aplicar_texto_jugador("Turno de "+jugadorDos.getNombre()+" (rojas)", "white");
                         ganador = false;
-                    }              
-                    ret.setPosition(x-1,y+2);                    
+                    }     
+                    ret.setPosition(x-1,y+2);           
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);     
                 }   
-          }           
+          }  else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ret.setPosition(x_original, y_original);
+            tablero.drawFichas();
+          }         
             
             if(juego.chequearGanador() == 1) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = "#4db592";
                 ctx.font = "30px Verdana";
-                ctx.fillStyle = "white";
+                ctx.fillStyle = "white";                
+                //tablero.drawFichas();
 
                 if(ganador) {  
                     document.querySelector("#j2").classList.remove('btn_on_blue');
@@ -212,11 +234,12 @@ function iniciar_juego() {
                     ctx.fillText("¡Ganador "+jugadorUno.getNombre()+"!", 250, 250);               
                 }
                 tablero.vaciarFichas();
-            } else {
+            } else {     
+                ctx.clearRect(0, 0, canvas.width, canvas.height);           
                 tablero.drawFichas(); 
-            }        
-            
+            }             
         }
+        
         let newMatriz = tablero.getMatriz();
         console.log(newMatriz);
     }
