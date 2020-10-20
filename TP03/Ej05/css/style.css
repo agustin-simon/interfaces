@@ -1,0 +1,22 @@
+
+.pj{ 
+    height: 228px; 
+    width: 150px; 
+    background: url(../img/pj.png);
+    margin: 0 auto; 
+    animation: run 1.5s steps(4) infinite;  
+}
+
+@keyframes run{
+    0%{
+    background-position: 0px;
+    }
+
+    100%{
+    background-position: -600px; 
+    }
+}
+
+body {
+    background-color: #f7f7f7;
+}
