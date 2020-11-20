@@ -3,6 +3,10 @@
     margin: 0px 0px 0px 0px;
 }
 
+#menu-lista{
+    list-style: none;
+}
+
 .normal {
     background: rgb(102,254,144);
     background: linear-gradient(180deg, rgba(102,254,144,1) 0%, rgba(240,114,167,1) 66%);
@@ -165,7 +169,7 @@ h3 {
 }
 
 .box-buscador {  
-    display: grid;  
+    display: grid; 
     width: 100%;
     height: 100%;
     align-items: center;
@@ -314,10 +318,11 @@ h3 {
 
 #menu-hamburguesa {
     position: absolute;
+    left: 0%;
     z-index: 20;
     display: none;
     /*background-color: red;*/
-    background-color: #292929;    
+    background-color: #292929;
 }
 
 #menu-modo{
@@ -478,6 +483,7 @@ h3 {
 }
 
 .col-contenido {
+    height: 86%;
     background-color: #a1a2a1;
     border-radius: 13px;
     border: 0px solid #000000;
@@ -493,7 +499,7 @@ h3 {
 
 .box-contenido {
     padding: 25px;
-  box-sizing: border-box;
+    box-sizing: border-box;
     height: 100%;
     background-color: red;
 }
@@ -505,7 +511,7 @@ h3 {
     border-radius: 100px;
     border: 0px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+    margin: 10px 0px 0px 0px !important;
 }
 
 .txt-btn-ayuda {
