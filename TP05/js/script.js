@@ -68,6 +68,7 @@ btn_lupa.addEventListener("click", function() {
         setTimeout(function(){ 
             buscador.style.height = 50+"%";
             buscador.style.width = 90+"%";
+            buscador.style.display = "block";
         }, 100);
        
 
@@ -75,6 +76,7 @@ btn_lupa.addEventListener("click", function() {
     else { 
         buscador.style.height = 0+"%";
         buscador.style.width = 0+"%";
+        buscador.style.display = "none";
     }    
 });
 

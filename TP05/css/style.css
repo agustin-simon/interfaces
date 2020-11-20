@@ -186,6 +186,7 @@ h3 {
     font-family: "Poppins";
     text-decoration: none;
     outline: none;
+    display: none;
 }
 
 .btn-ul {
