@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+    <link rel="stylesheet" href="css/style.css">    
+
+    <title>Playlists</title>
+</head>
+<body class="normal">
+
+    <div class="container container-nav-home">
+        <div class="row nav-home">
+            <div class="col-xs-2 col-md-1  col-lg-1 nav-hamburguesa">
+                <div class="box">
+                    <button id="btn-lupa"><img src="img/Hambur.png" id="img-hambur"></button>
+                    <div id="menu-hamburguesa">
+                        <ul id="menu-lista">
+                            <li >
+                            <img src="img/Icono-Biblioteca.png" id="img-icono-biblioteca"><a class="txt txt-a">Tu biblioteca</a> 
+                            </li>
+                            <li>
+                            <img src="img/Icono-Home.png" id="img-icono-home"><a class="txt txt-a">Home</a> 
+                            </li>
+                            <li>
+                            <img src="img/Icono-Home.png" id="img-icono-home"><a class="txt txt-a" id="a-modo">Modo</a> <img src="img/Icono-flecha.png" id="img-icono-flecha">
+                            <div id="menu-modo">
+                                <ul id="menu-lista-modo">
+                                    <li >
+                                    <img src="img/Icono-Biblioteca.png" id="img-icono-modo"><a class="txt txt-a">Conducir</a> 
+                                    </li>
+                                    <li>
+                                    <img src="img/Icono-Home.png" id="img-icono-modo"><a class="txt txt-a">Correr</a> 
+                                    </li>
+                                    <li>
+                                    <img src="img/Icono-Home.png" id="img-icono-modo"><a class="txt txt-a">Caminar</a> 
+                                    </li>
+                                    <li>
+                                    <img src="img/Icono-Home.png" id="img-icono-modo"><a class="txt txt-a">Normal</a> 
+                                    </li>
+                                </ul>
+                            </div>
+                            </li>
+                            <img src="img/Icono-Home.png" id="img-icono-home"><a class="txt txt-a">Ayuda</a> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>            
+            </div> 
+            <div class="col-xs-7 col-md-10 col-lg-10 col-buscador">
+                <div class="box box-buscador">
+                    <input type="text" class="buscador" id="input-buscador">
+                </div>            
+            </div> 
+            <div class="col-xs-3 col-md-1 col-lg-1 nav-profile">
+                <div class="box">
+                    <button id="btn-lupa"><img src="img/Lupa.png" id="img-lupa"> </button>
+                    <a href=""><img src="img/Profile.png" id="img-profile"></a>    
+                </div>            
+            </div> 
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-nav-buscador" id="col-buscador">
+                <div class="box" id="box-buscador-historial">
+                   <ul class="btn-ul">
+                        <li>
+                            <h2>Filtros</h2>
+                        </li>
+                        <li class="btn-li">
+                            <button class="btn-filtro-principal">Música</button><button class="btn-filtro-principal">Podcast</button>
+                        </li>  
+                        <li class="btn-li">
+                            <button class="btn-filtro-secundario">MAS ESCUCHADOS</button>
+                            <button class="btn-filtro-secundario">ROCK</button>
+                            <button class="btn-filtro-secundario">80'S</button>
+                        </li> 
+
+                        <li class="btn-li">
+                            <button class="btn-filtro-secundario">ENTRENAMIENTO</button>
+                            <button class="btn-filtro-secundario">ESTUDIO</button>
+                            <button class="btn-filtro-secundario">RELAX</button>
+                        </li>  
+
+                        <li class="btn-li">
+                            <button class="btn-filtro-buscar">BUSCAR</button>
+                        </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container container-playlists">     
+
+        <div class="row a">            
+            <div class="col-xs-1">
+                <div class="box">
+                    <img src="img/Back.png" id="img-back">                   
+                </div> 
+            </div> 
+            <div class="col-xs-11">
+                <div class="box"> 
+                </div> 
+            </div> 
+        </div>
+
+        <div class="row g">
+            <div class="col-xs-12 col-playlist">
+                <div class="box">
+                    <img src="img/Album-Playlist.png" class="img-album-playlist">
+                </div> 
+            </div> 
+        </div>
+
+        <div class="row h">
+            <div class="col-xs">
+                <div class="box">
+                    <h3 class="titulo-playlist">Tus Playlists</h3>
+                </div> 
+            </div> 
+        </div>
+
+        <div class="row i">
+            <div class="col-xs-4 col-tabla">
+                <h3 class="tabla-titulo">Nombre</h3>                
+            </div>    
+
+            <div class="col-xs-2 col-tabla">
+                <img src="img/Icono-Reloj.png" class="img-reloj-lista">
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <img src="img/Icono-Corazon.png" class="img-corazon-lista">
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <img src="img/Icono-Basura.png" class="img-corazon-lista">            
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <img src="img/Icono-Play.png" class="img-corazon-lista">              
+            </div> 
+        </div>
+
+        <div class="row j">
+            <div class="col-xs-4 col-tabla">
+                <h3 class="tabla-valor">De Fiesta</h3>                
+            </div>    
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">2020</h3>       
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">16K</h3>       
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <img src="img/Icono-Basura.png" class="img-corazon-lista">            
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">56</h3>              
+            </div> 
+        </div>
+
+        <div class="row k">
+            <div class="col-xs-4 col-tabla">
+                <h3 class="tabla-valor">Entrenar</h3>                
+            </div>    
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">2018</h3>       
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">12K</h3>       
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <img src="img/Icono-Basura.png" class="img-corazon-lista">            
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">78</h3>             
+            </div> 
+        </div>
+
+        <div class="row l">
+            <div class="col-xs-4 col-tabla">
+                <h3 class="tabla-valor">Chill</h3>                
+            </div>    
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">2016</h3>       
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">4K</h3>       
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <img src="img/Icono-Basura.png" class="img-corazon-lista">            
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">21</h3>               
+            </div> 
+        </div>
+
+        <div class="row m">
+            <div class="col-xs-4 col-tabla">
+                <h3 class="tabla-valor">Mates</h3>                
+            </div>    
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">2012</h3>       
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">25K</h3>       
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <img src="img/Icono-Basura.png" class="img-corazon-lista">            
+            </div>  
+
+            <div class="col-xs-2 col-tabla">
+                <h3 class="tabla-valor">1.5K</h3>               
+            </div> 
+        </div>
+    </div>
+
+    <div class="container container-reproductor"> 
+        <div class="row row-reproductor">
+            <div class="col-xs-2 col-reproductor">  
+                <img src="img/Icono-flecha-rotate.png" class="img-flecha-rep">
+            </div> 
+
+            <div class="col-xs-10">  
+                <input type="range" class="linea-reproductor">
+            </div> 
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-12">    
+                <h3 class="titulo-cancion-reproductor">Led Zeppelin - Stairway to Heaven</h3>         
+            </div> 
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-3">
+                           
+            </div> 
+            <div class="col-xs-6 col-reproductor">
+                <img src="img/Icono-Reproductor-Left.png" class="icono-repr">   
+                <img src="img/Icono-Reproductor-Stop.png" class="icono-repr"> 
+                <img src="img/Icono-Reproductor-Right.png" class="icono-repr">     
+            </div>
+            <div class="col-xs-3 col-sonido">
+                <img src="img/Icono-Reproductor-Sonido.png" class="icono-repr-sonido">                
+            </div> 
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

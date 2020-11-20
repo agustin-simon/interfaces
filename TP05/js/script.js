@@ -79,7 +79,7 @@ btn_lupa.addEventListener("click", function() {
 });
 
 
-/*let col_buscador = document.querySelector("#col-buscador");
+let col_buscador = document.querySelector("#col-buscador");
 let box_buscador = document.querySelector("#box-buscador-historial");
 let contador_nav_buscador = 1;
 
@@ -88,7 +88,7 @@ buscador.addEventListener("click", function() {
     contador_nav_buscador++;
     if(contador_nav_buscador % 2 == 0) {
         setTimeout(function(){ 
-            col_buscador.style.height = 30+"px";
+            col_buscador.style.height = 230+"px";
             box_buscador.style.display = "block";
         }, 100);
     }
@@ -97,5 +97,42 @@ buscador.addEventListener("click", function() {
         box_buscador.style.display = "none";
     }    
 });
-*/
+
+
+let btn_filtros_principal = document.querySelectorAll(".btn-filtro-principal");
+let btn_filtros_secundarios = document.querySelectorAll(".btn-filtro-secundario");
+let btn_contador_p = true;
+let btn_contador_s = 0;
+
+btn_filtros_principal.forEach( boton => {
+    boton.addEventListener("click", function() {            
+        if(btn_contador_p) {
+            boton.classList.remove("btn-filtro-principal");
+            boton.classList.add("btn-filtro-principal-presionado");    
+            btn_contador_p = false;    
+            console.log(false)  
+        } else {
+            boton.classList.remove("btn-filtro-principal-presionado");
+            boton.classList.add("btn-filtro-principal");
+            btn_contador_p = true;  
+            console.log(true)
+        }       
+    });
+});
+
+btn_filtros_secundarios.forEach( boton => {
+    boton.addEventListener("click",function() {
+        if(btn_contador_s % 2 == 0) {
+            boton.classList.remove("btn-filtro-secundario");
+            boton.classList.add("btn-filtro-secundario-presionado");
+            btn_contador_s++;
+        } else {
+            boton.classList.remove("btn-filtro-secundario-presionado");
+            boton.classList.add("btn-filtro-secundario");
+            btn_contador_s++;
+        } 
+        
+    });
+});
+
 
