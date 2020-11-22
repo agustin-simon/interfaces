@@ -138,3 +138,17 @@ btn_filtros_secundarios.forEach( boton => {
 });
 
 
+
+/*let btn_votacion_negativo = document.querySelector("#btn-votacion-neg");
+let btn_votacion_positivo = document.querySelector("#btn-votacion-pos");
+let votacion_valor = 80;
+
+btn_votacion_negativo.addEventListener("click" , function() {
+    
+});
+
+btn_votacion_positivo.addEventListener("click" , function() {
+    alert("pos");
+});
+*/
+

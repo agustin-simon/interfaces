@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+    <link rel="stylesheet" href="css/style.css">    
+
+    <title>Playlists - Canciones</title>
+</head>
+<body class="normal">
+
+    <div class="container container-nav-home">
+        <div class="row nav-home">
+            <div class="col-xs-2 col-md-1  col-lg-1 nav-hamburguesa">
+                <div class="box">
+                    <button id="btn-lupa"><img src="img/Hambur.png" id="img-hambur"></button>
+                    <div id="menu-hamburguesa">
+                        <ul id="menu-lista">
+                            <li >
+                            <img src="img/Icono-Biblioteca.png" id="img-icono-biblioteca"><a class="txt txt-a">Tu biblioteca</a> 
+                            </li>
+                            <li>
+                            <img src="img/Icono-Home.png" id="img-icono-home"><a class="txt txt-a">Home</a> 
+                            </li>
+                            <li>
+                            <img src="img/Icono-Home.png" id="img-icono-home"><a class="txt txt-a" id="a-modo">Modo</a> <img src="img/Icono-flecha.png" id="img-icono-flecha">
+                            <div id="menu-modo">
+                                <ul id="menu-lista-modo">
+                                    <li >
+                                    <img src="img/Icono-Biblioteca.png" id="img-icono-modo"><a class="txt txt-a">Conducir</a> 
+                                    </li>
+                                    <li>
+                                    <img src="img/Icono-Home.png" id="img-icono-modo"><a class="txt txt-a">Correr</a> 
+                                    </li>
+                                    <li>
+                                    <img src="img/Icono-Home.png" id="img-icono-modo"><a class="txt txt-a">Caminar</a> 
+                                    </li>
+                                    <li>
+                                    <img src="img/Icono-Home.png" id="img-icono-modo"><a class="txt txt-a">Normal</a> 
+                                    </li>
+                                </ul>
+                            </div>
+                            </li>
+                            <img src="img/Icono-Home.png" id="img-icono-home"><a class="txt txt-a">Ayuda</a> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>            
+            </div> 
+            <div class="col-xs-7 col-md-10 col-lg-10 col-buscador">
+                <div class="box box-buscador">
+                    <input type="text" class="buscador" id="input-buscador">
+                </div>            
+            </div> 
+            <div class="col-xs-3 col-md-1 col-lg-1 nav-profile">
+                <div class="box">
+                    <button id="btn-lupa"><img src="img/Lupa.png" id="img-lupa"> </button>
+                    <a href=""><img src="img/Profile.png" id="img-profile"></a>    
+                </div>            
+            </div> 
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-nav-buscador" id="col-buscador">
+                <div class="box" id="box-buscador-historial">
+                   <ul class="btn-ul">
+                        <li>
+                            <h2>Filtros</h2>
+                        </li>
+                        <li class="btn-li">
+                            <button class="btn-filtro-principal">Música</button><button class="btn-filtro-principal">Podcast</button>
+                        </li>  
+                        <li class="btn-li">
+                            <button class="btn-filtro-secundario">MAS ESCUCHADOS</button>
+                            <button class="btn-filtro-secundario">ROCK</button>
+                            <button class="btn-filtro-secundario">80'S</button>
+                        </li> 
+
+                        <li class="btn-li">
+                            <button class="btn-filtro-secundario">ENTRENAMIENTO</button>
+                            <button class="btn-filtro-secundario">ESTUDIO</button>
+                            <button class="btn-filtro-secundario">RELAX</button>
+                        </li>  
+
+                        <li class="btn-li">
+                            <button class="btn-filtro-buscar">BUSCAR</button>
+                        </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container container-playlist-canciones">     
+
+        <div class="row album-divs">            
+            <div class="col-xs-1">
+                <div class="box">
+                    <img src="img/Back.png" id="img-back">                   
+                </div> 
+            </div> 
+            <div class="col-xs-8">
+                <div class="box"> 
+                </div> 
+            </div> 
+            <div class="col-xs-3">
+                <div class="box"> 
+                    <img src="img/Icono-Com.png" class="img-com">    
+                    <img src="img/Icono-Lapiz.png" class="img-lapiz">     
+                </div> 
+            </div> 
+        </div>
+
+        <div class="row album-divs">            
+            <div class="col-xs-12 col-album">
+                <img src="img/PlayList-Fiesta.png" class="img-album-lay">  
+            </div>
+        </div>
+
+        <div class="row album-divs">            
+            <div class="col-xs-12 col-album-descripcion">
+                <h3 class="titulo-playlist">Canciones</h3>
+            </div>
+        </div>
+
+        <div class="row album-divs">            
+            <div class="col-xs-12 col-album-canciones">
+                <table class="tabla-canciones">
+                    <tr>
+                      <th><img src="img/Icono-Play.png" class="img-reloj-lista"></th>
+                      <th>Cancion</th>
+                      <th>Album</th>
+                      <th><img src="img/Icono-Reloj.png" class="img-reloj-lista"></th>
+                      <th><img src="img/Icono-Corazon.png" class="img-reloj-lista"></th>
+                    </tr>
+                    <tr>
+                      <td><img src="img/Icono-Play-White.png" class="img-reloj-lista"></td>
+                      <td>Good Times...</td>
+                      <td>Mothership</td>
+                      <td>1969</td>
+                      <td>16k</td>
+                    </tr>
+                    <tr>
+                      <td><img src="img/Icono-Play-White.png" class="img-reloj-lista"></td>
+                      <td>Communicatio...</td>
+                      <td>Mothership</td>
+                      <td>1969</td>
+                      <td>16k</td>
+                    </tr>
+                    <tr>
+                       <td><img src="img/Icono-Play-White.png" class="img-reloj-lista"></td>
+                       <td>Dazed and..</td>
+                       <td>Mothership</td>
+                       <td>1969</td>
+                       <td>16k</td>
+                    </tr>
+                    <tr>
+                       <td><img src="img/Icono-Play-White.png" class="img-reloj-lista"></td>
+                       <td>"Babe I'm...</td>
+                       <td>Mothership</td>
+                       <td>1969</td>
+                       <td>16k</td>
+                    </tr>                    
+                  </table>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
