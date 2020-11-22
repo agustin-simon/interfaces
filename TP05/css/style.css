@@ -277,12 +277,6 @@ h3 {
     height: 34px;
 }
 
-#img-lupa {
-    width: 22px;
-    height: 22px;
-    color: red;
-}
-
 #img-icono-biblioteca {
     width: 16px;
     height: 12px;
@@ -722,7 +716,8 @@ h3 {
     display: grid;
     row-gap: 1px;
     grid-template-rows: 25px 12px 45px; 
-    
+    position: fixed;
+    width: 100%;    
 }
 
 .row-reproductor {
@@ -1000,4 +995,15 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.box-icono-medio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-icono-derecho {
+    display: flex;
+    justify-content: space-around;
 }
