@@ -361,7 +361,7 @@ h3 {
 
 @font-face {
     font-family: "Poppins-Medium";
-    src: url('../fonts/Poppins-Medium.ttf');
+    src: url('../fonts/Poppins-Light.ttf');
 }
 
 @font-face {
@@ -917,4 +917,87 @@ h3 {
 .img-com {
     height: 35px;
     width: 35px;
+}
+
+
+/* CANCION  - HTML */
+
+
+.container-cancion {
+
+    display: grid;
+    row-gap: 10px;
+    grid-template-rows: 45px 270px 80px; 
+    grid-template-columns: 20px 1fr 20px;    
+}
+
+.col-cancion {
+    display: flex;
+    justify-content: center;
+}
+
+.col-cancion-sync {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cancion-reproductor {
+    height: 3px;
+    width: 320px;
+}
+
+.img-cancion {
+    width: 179px;
+    height: 264px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));    
+    border-radius: 13px;
+    border: white 2px solid;    
+}
+
+.row-cancion {
+    grid-column-start: 2;
+    grid-column-end: 3;    
+}
+
+.num-reproductor {
+    color: #FEFEFE;
+    font-family: "Poppins-Medium";
+    text-align: center;
+    font-size: 13px;
+}
+
+.col-cancion-rep {    
+    display: flex;
+    justify-content: space-around;
+}
+
+.box-reproductor {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box-cancion-start {
+    display: flex;
+    justify-content: start;
+}
+
+.box-cancion-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-cancion-reproductor {
+
+    display: grid;
+    row-gap: 2px;
+    grid-template-rows: 15px 15px 15px 65px 28px; 
+    grid-template-columns: 20px 1fr 20px;   
+}
+
+.col-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
