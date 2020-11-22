@@ -691,14 +691,12 @@ h3 {
     font-size: 14px;
 }
 
-.img-reloj-lista {
+.elemento-tabla {
     width: 12px;
     height: 12px;
 }
-
-.img-corazon-lista {
-    width: 12px;
-    height: 12px;
+.icono-blanco{
+    color:#FFEFF6;
 }
 
 .tabla-titulo {
@@ -816,18 +814,20 @@ h3 {
     font-family: "Poppins-Medium";
     text-align: center;
     font-size: 15px;
+    border-collapse: collapse;
+
 }
 
 .tabla-canciones td {
     height: 60px;
     width: 100px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #8a111150;
 }
 
 .tabla-canciones th {
     color: black;
     height: 30px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #8a111150;
 }
 
 .div-votacion {
@@ -906,27 +906,6 @@ h3 {
     font-family: "Poppins-Medium";
     text-align: center;
     font-size: 14px;
-}
-
-.tabla-canciones {
-    color: white;
-    font-family: "Poppins-Medium";
-    text-align: center;
-    font-size: 15px;
-    border-collapse: collapse;
-}
-
-.tabla-canciones td {
-    height: 60px;
-    width: 100px;
-    border-bottom: 1px solid white;
-}
-
-.tabla-canciones th {
-    border-top: 1px solid white;
-    color: black;
-    height: 30px;
-    border-bottom: 1px solid white;
 }
 
 .img-lapiz {
