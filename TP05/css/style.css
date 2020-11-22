@@ -913,6 +913,7 @@ h3 {
     font-family: "Poppins-Medium";
     text-align: center;
     font-size: 15px;
+    border-collapse: collapse;
 }
 
 .tabla-canciones td {
