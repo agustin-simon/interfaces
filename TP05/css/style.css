@@ -884,8 +884,16 @@ h3 {
     color: #BF0000;
 }
 
+.btn-negativo-activo:hover{
+    color: #d40303;
+}
+
 .btn-positivo-activo{
     color: #00B21C;
+}
+
+.btn-positivo-activo:hover{
+    color: #04cf22;
 }
 
 .img-vot-negativo {
