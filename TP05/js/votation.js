@@ -4,6 +4,7 @@ let votacion_negativo = false;
 let votacion_positivo = false;
 let total_voto_positivo = 1;
 let total_voto_negativo = 1;
+let porcentaje_inicial = Math.trunc((total_voto_positivo/(total_voto_positivo + total_voto_negativo)) * 100);
 
 btn_votacion_negativo.addEventListener("click" , function() {
     if(votacion_positivo){
@@ -50,8 +51,7 @@ btn_votacion_positivo.addEventListener("click" , function() {
 let calcularPorcentaje = () =>{
     let total_votos = total_voto_positivo + total_voto_negativo;
     valor = Math.trunc((total_voto_positivo/total_votos) * 100);
-    aplicarColor(valor);
-    document.querySelector(".txt-porcentaje").innerHTML = valor+"%"; 
+    animatedValue(porcentaje_inicial, valor); 
 }
 
 let aplicarColor = (valor) =>{
@@ -63,6 +63,37 @@ let aplicarColor = (valor) =>{
     }
     if(valor <= 40){
         document.querySelector(".txt-porcentaje").style.color = "#BF0000";
+    }
+}
+
+let animatedValue = (inicio, fin) =>{
+    if(inicio == fin){
+        aplicarColor(inicio);
+        document.querySelector(".txt-porcentaje").innerHTML = inicio+"%";
+    }
+    if (inicio < fin){
+        var current = inicio;
+        var stepTime = Math.abs(Math.floor(3000 / current-fin));
+        var timer = setInterval(function() {
+            current ++;
+            aplicarColor(current);
+            document.querySelector(".txt-porcentaje").innerHTML = current+"%";
+            if (current == fin) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }
+    if (inicio > fin){
+        var current = inicio;
+        var stepTime = Math.abs(Math.floor(3000 / current-fin));
+        var timer = setInterval(function() {
+            current --;
+            aplicarColor(current);
+            document.querySelector(".txt-porcentaje").innerHTML = current+"%";
+            if (current == fin) {
+                clearInterval(timer);
+            }
+        }, stepTime);
     }
 }
 
