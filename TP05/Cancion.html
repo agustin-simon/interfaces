@@ -21,31 +21,31 @@
                     <div id="menu-hamburguesa">
                         <ul id="menu-lista">
                             <li >
-                            <img src="img/Icono-Biblioteca.png" id="img-icono-biblioteca"><a class="txt txt-a">Tu biblioteca</a> 
+                                <i class="fas fa-list icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a">Tu biblioteca</a> 
                             </li>
                             <li>
-                            <img src="img/Icono-Home.png" id="img-icono-home"><a class="txt txt-a">Home</a> 
+                                <i class="fas fa-home icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a">Home</a> 
                             </li>
                             <li>
-                            <img src="img/Icono-Home.png" id="img-icono-home"><a class="txt txt-a" id="a-modo">Modo</a> <img src="img/Icono-flecha.png" id="img-icono-flecha">
+                                <i class="fas fa-headphones-alt icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a" id="a-modo">Modo</a> <i class="fas fa-chevron-down icono-blanco" id="img-icono-flecha"></i>
                             <div id="menu-modo">
                                 <ul id="menu-lista-modo">
                                     <li >
-                                    <img src="img/Icono-Biblioteca.png" id="img-icono-modo"><a class="txt txt-a">Conducir</a> 
+                                        <i class="fas fa-car icono-blanco-fuerte" id="img-icono-modo"></i><a class="txt txt-a">Conducir</a> 
                                     </li>
                                     <li>
-                                    <img src="img/Icono-Home.png" id="img-icono-modo"><a class="txt txt-a">Correr</a> 
+                                        <i class="fas fa-running icono-blanco-fuerte" id="img-icono-modo"></i><a class="txt txt-a">Correr</a> 
                                     </li>
                                     <li>
-                                    <img src="img/Icono-Home.png" id="img-icono-modo"><a class="txt txt-a">Caminar</a> 
+                                        <i class="fas fa-walking icono-blanco-fuerte" id="img-icono-modo"></i> <a class="txt txt-a">Caminar</a> 
                                     </li>
                                     <li>
-                                    <img src="img/Icono-Home.png" id="img-icono-modo"><a class="txt txt-a">Normal</a> 
+                                        <i class="fas fa-guitar icono-blanco-fuerte"  id="img-icono-modo"></i><a class="txt txt-a">Normal</a> 
                                     </li>
                                 </ul>
                             </div>
                             </li>
-                            <img src="img/Icono-Home.png" id="img-icono-home"><a class="txt txt-a">Ayuda</a> 
+                            <i class="far fa-question-circle icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a">Ayuda</a> 
                             </li>
                         </ul>
                     </div>
@@ -53,14 +53,15 @@
             </div> 
             <div class="col-xs-7 col-md-10 col-lg-10 col-buscador">
                 <div class="box box-buscador">
-                    <input type="text" class="buscador" id="input-buscador">
+                    <input type="text" class="buscador" id="input-buscador">    
+                    <a><i class="fas fa-search fa-lg icono-blanco-fuerte" id="img-lupa"></i></a>                    
                 </div>            
             </div> 
+
             <div class="col-xs-3 col-md-1 col-lg-1 nav-profile">
-                <div class="box">
-                    <button id="btn-lupa"><i class="fas fa-search fa-lg icono-blanco" id="img-lupa"></i></button>
-                    <i class="fas fa-bell fa-lg icono-blanco"></i>
-                    <a href=""><img src="img/Profile.png" id="img-profile"></a>    
+                <div class="box box-nav-iconos">                      
+                    <a class="nav-icono-campana"><i class="fas fa-bell fa-lg icono-blanco-fuerte"></i></a>                    
+                    <a class="nav-icono-profile"><i class="fas fa-user-circle fa-2x icono-blanco-fuerte" id="img-profile"></i></a>    
                 </div>            
             </div> 
         </div>
@@ -69,8 +70,9 @@
             <div class="col-xs-12 col-nav-buscador" id="col-buscador">
                 <div class="box" id="box-buscador-historial">
                    <ul class="btn-ul">
-                        <li>
-                            <h2>Filtros</h2>
+                        <li class="li-filtros-titulo">
+                            <i class="fas fa-chevron-up fa-posicion-icono fa-lg icono-blanco-fuerte" id="img-icono-up"></i>
+                            <h2 class="fa-posicion-titulo">Filtros</h2>
                         </li>
                         <li class="btn-li">
                             <button class="btn-filtro-principal">Música</button><button class="btn-filtro-principal">Podcast</button>

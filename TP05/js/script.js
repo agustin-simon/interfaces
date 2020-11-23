@@ -58,17 +58,22 @@ a_modo.addEventListener("click", function(){
 });
 
 let btn_lupa = document.querySelector("#img-lupa");
+let btn_up = document.querySelector("#img-icono-up");
 let buscador = document.querySelector("#input-buscador");
 let contador_buscador = 1;
 
 
-btn_lupa.addEventListener("click", function() {
+btn_up.addEventListener("click", function() {
     contador_buscador++;
     if(contador_buscador % 2 == 0) {
         setTimeout(function(){ 
-            buscador.style.height = 50+"%";
-            buscador.style.width = 90+"%";
+            buscador.style.height = 100+"%";
+            buscador.style.width = 100+"%";
             buscador.style.display = "block";
+            col_buscador.style.height = 230+"px";
+            box_buscador.style.display = "block";
+            btn_lupa.style.display = "none";
+            btn_lupa.style.position = "absolute";
         }, 100);
        
 
@@ -77,28 +82,39 @@ btn_lupa.addEventListener("click", function() {
         buscador.style.height = 0+"%";
         buscador.style.width = 0+"%";
         buscador.style.display = "none";
+        col_buscador.style.height = 0+"%";
+        box_buscador.style.display = "none";
+        btn_lupa.style.display = "block";
+    }    
+});
+
+btn_lupa.addEventListener("click", function() {
+    contador_buscador++;
+    if(contador_buscador % 2 == 0) {
+        setTimeout(function(){ 
+            buscador.style.height = 50+"%";
+            buscador.style.width = 90+"%";
+            buscador.style.display = "block";
+            col_buscador.style.height = 230+"px";
+            box_buscador.style.display = "block";
+            btn_lupa.style.display = "none";
+        }, 100);
+       
+
+    }
+    else { 
+        buscador.style.height = 0+"%";
+        buscador.style.width = 0+"%";
+        buscador.style.display = "none";
+        col_buscador.style.height = 0+"%";
+        box_buscador.style.display = "none";
+        btn_lupa.style.display = "block";
     }    
 });
 
 
 let col_buscador = document.querySelector("#col-buscador");
 let box_buscador = document.querySelector("#box-buscador-historial");
-let contador_nav_buscador = 1;
-
-
-buscador.addEventListener("click", function() {
-    contador_nav_buscador++;
-    if(contador_nav_buscador % 2 == 0) {
-        setTimeout(function(){ 
-            col_buscador.style.height = 230+"px";
-            box_buscador.style.display = "block";
-        }, 100);
-    }
-    else { 
-        col_buscador.style.height = 0+"%";
-        box_buscador.style.display = "none";
-    }    
-});
 
 
 let btn_filtros_principal = document.querySelectorAll(".btn-filtro-principal");
@@ -137,38 +153,4 @@ btn_filtros_secundarios.forEach( boton => {
     });
 });
 
-
-let btn_votacion_negativo = document.querySelector("#a-negativo");
-let btn_votacion_positivo = document.querySelector("#a-positivo");
-let votacion_negativo = 0;
-let votacion_positivo = 0;
-let activado = true;
-
-btn_votacion_negativo.addEventListener("click" , function() {
-    if(votacion_negativo % 2 == 0) {
-        btn_votacion_negativo.classList.remove("btn-desactivado");
-        btn_votacion_negativo.classList.add("btn-negativo-activo");
-        activado = true;
-    } 
-    else {
-        btn_votacion_negativo.classList.remove("btn-negativo-activo");
-        btn_votacion_negativo.classList.add("btn-desactivado");
-        activado = false;
-    }
-    votacion_negativo++;   
-});
-
-btn_votacion_positivo.addEventListener("click" , function() {
-    if(votacion_positivo % 2 == 0) {
-        btn_votacion_positivo.classList.remove("btn-desactivado");
-        btn_votacion_positivo.classList.add("btn-positivo-activo");
-        activado = true;
-    }
-    else {
-        btn_votacion_positivo.classList.remove("btn-positivo-activo");
-        btn_votacion_positivo.classList.add("btn-desactivado");
-        activado = false;
-    }
-    votacion_positivo++;
-});
 
