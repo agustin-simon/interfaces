@@ -540,33 +540,28 @@ h3 {
 }
 
 .a{
-    background-color: red;
     grid-column-start: 2;
     grid-column-end: 3;
 }
 
 .b{
-    background-color: blue;
     grid-column-start: 2;
     grid-column-end: 3;
-    border-bottom: 1px solid #8A1111;
+    border-bottom: 1px solid #8a111150;
 }
 
 .c{
-    background-color: violet;
     grid-column-start: 2;
     grid-column-end: 3;
 }
 
 .d{
-    background-color: yellow;
     grid-column-start: 2;
     grid-column-end: 3;
-    border-bottom: 1px solid #8A1111;
+    border-bottom: 1px solid #8a111150;
 }
 
 .e{
-    background-color: purple;
     grid-column-start: 2;
     grid-column-end: 3;
 }
@@ -604,6 +599,12 @@ h3 {
 
 .canciones {
     padding-top: 20px;
+}
+
+.box-titulo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 
@@ -809,7 +810,7 @@ h3 {
     color: #FEFEFE;
     font-family: "Poppins-Medium";
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
     border-collapse: collapse;
 
 }
@@ -844,11 +845,16 @@ h3 {
     border: 0px solid;
     padding:3%;
 }
-.btn-negativo{
+
+.btn-desactivado{
+    color: grey;
+}
+
+.btn-negativo-activo{
     color: #BF0000;
 }
 
-.btn-positivo{
+.btn-positivo-activo{
     color: #00B21C;
 }
 

@@ -138,17 +138,37 @@ btn_filtros_secundarios.forEach( boton => {
 });
 
 
-
-/*let btn_votacion_negativo = document.querySelector("#btn-votacion-neg");
-let btn_votacion_positivo = document.querySelector("#btn-votacion-pos");
-let votacion_valor = 80;
+let btn_votacion_negativo = document.querySelector("#a-negativo");
+let btn_votacion_positivo = document.querySelector("#a-positivo");
+let votacion_negativo = 0;
+let votacion_positivo = 0;
+let activado = true;
 
 btn_votacion_negativo.addEventListener("click" , function() {
-    
+    if(votacion_negativo % 2 == 0) {
+        btn_votacion_negativo.classList.remove("btn-desactivado");
+        btn_votacion_negativo.classList.add("btn-negativo-activo");
+        activado = true;
+    } 
+    else {
+        btn_votacion_negativo.classList.remove("btn-negativo-activo");
+        btn_votacion_negativo.classList.add("btn-desactivado");
+        activado = false;
+    }
+    votacion_negativo++;   
 });
 
 btn_votacion_positivo.addEventListener("click" , function() {
-    alert("pos");
+    if(votacion_positivo % 2 == 0) {
+        btn_votacion_positivo.classList.remove("btn-desactivado");
+        btn_votacion_positivo.classList.add("btn-positivo-activo");
+        activado = true;
+    }
+    else {
+        btn_votacion_positivo.classList.remove("btn-positivo-activo");
+        btn_votacion_positivo.classList.add("btn-desactivado");
+        activado = false;
+    }
+    votacion_positivo++;
 });
-*/
 

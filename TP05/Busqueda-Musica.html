@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
     <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">   
 
     <title>Busqueda Musica</title>
 </head>
@@ -56,7 +57,8 @@
             </div> 
             <div class="col-xs-3 col-md-1 col-lg-1 nav-profile">
                 <div class="box">
-                    <button id="btn-lupa"><img src="img/Lupa.png" id="img-lupa"> </button>
+                    <button id="btn-lupa"><i class="fas fa-search fa-lg icono-blanco" id="img-lupa"></i></button>
+                    <i class="fas fa-bell fa-lg icono-blanco"></i>
                     <a href=""><img src="img/Profile.png" id="img-profile"></a>    
                 </div>            
             </div> 
@@ -97,14 +99,14 @@
     <div class="container container-busqueda-musica">
         <div class="row a">
             
-            <div class="col-xs-1">
+            <div class="col-xs-2">
                 <div class="box">
                     <img src="img/Back.png" id="img-back">                   
                 </div> 
             </div> 
 
-            <div class="col-xs-11">
-                <div class="box">
+            <div class="col-xs-10">
+                <div class="box box-titulo">
                     <h2>Resultados</h2>            
                 </div> 
             </div> 
@@ -151,28 +153,61 @@
         </div>
 
         <div class="row e">
-            <div class="col-xs">
+            <div class="col-xs-12">
                 <div class="box">
-                    <ul class="list-canciones">
-                        <li class="canciones">
-                            Comfortably Numb Pink Floyd 1979 800k
-                        </li>
-                        <li class="canciones">
-                            Time Pink Floyd 1973 125k
-                        </li>
-                        <li class="canciones">
-                            High Hopes Pink Floyd 1994 115k
-                        </li>
-                        <li class="canciones">
-                           The Final Cut Pink Floyd 1983 105k
-                        </li>
-                        <li class="canciones">
-                            Shine on you Crazy Diamond Pink Floyd 1975 100k
-                        </li>
-                        <li class="canciones">
-                            Pings on the Wing Pink Floyd 1977 100k
-                        </li>
-                    </ul>
+                    <table class="tabla-canciones">
+                        <tr>
+                            <th><i class="fas fa-play elemento-tabla"></i></th>
+                            <th>Canción</th>
+                            <th>Album</th>
+                            <th><i class="fas fa-clock elemento-tabla"></i></th>
+                            <th><i class="fas fa-heart elemento-tabla"></i></th>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
+                          <td>Comfortably Num..</td>
+                          <td>Pink Floyd</td>
+                          <td>1979</td>
+                          <td>800k</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
+                          <td>Time</td>
+                          <td>Pink Floyd</td>
+                          <td>1973</td>
+                          <td>125k</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
+                           <td>High Hopes</td>
+                           <td>Pink Floyd</td>
+                           <td>1994</td>
+                           <td>115k</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
+                           <td>The Final Cut</td>
+                           <td>Pink Floyd</td>
+                           <td>1983</td>
+                           <td>105k</td>
+                        </tr>  
+                        
+                        <tr>
+                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
+                           <td>Shine on you ..</td>
+                           <td>Pink Floyd</td>
+                           <td>1975</td>
+                           <td>100k</td>
+                        </tr>  
+
+                        <tr>
+                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
+                           <td>Pings on the..</td>
+                           <td>Pink Floyd</td>
+                           <td>1977 </td>
+                           <td>100k</td>
+                        </tr> 
+                    </table>
                 </div> 
             </div> 
         </div>
