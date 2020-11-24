@@ -63,14 +63,14 @@ let buscador = document.querySelector("#input-buscador");
 let contador_buscador = 1;
 
 
-btn_up.addEventListener("click", function() {
+btn_up.addEventListener("click", function() {    
     contador_buscador++;
     if(contador_buscador % 2 == 0) {
         setTimeout(function(){ 
             buscador.style.height = 100+"%";
             buscador.style.width = 100+"%";
             buscador.style.display = "block";
-            col_buscador.style.height = 230+"px";
+            col_buscador.style.height = 230+"px";            
             box_buscador.style.display = "block";
             btn_lupa.style.display = "none";
             btn_lupa.style.position = "absolute";

@@ -25,11 +25,16 @@
     display: grid;
     row-gap: 0px;
     grid-template-rows: 62px 15px;
+    width: 100%;
 }
 
 .container div {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
+}
+
+.container-footer {
+    display: none;
 }
 
 .nav-icono-campana {
@@ -118,8 +123,8 @@ h3 {
 .col-nav-buscador{
     position: relative;
     background-color: #292929;
-    height: 2px;
-    border-bottom: 2px solid #292929;   
+    height: 1px;
+    z-index: 1;
 }
 
 #col-buscador {
@@ -397,7 +402,7 @@ h3 {
 .container-index {
     display: grid;
     row-gap: 10px;
-    grid-template-rows: 45px 170px 150px 220px; 
+    grid-template-rows: 45px 45px 170px 120px 210px; 
     grid-template-columns: 20px 1fr 20px;
 }
 
@@ -1050,4 +1055,140 @@ h3 {
 .box-icono-derecho {
     display: flex;
     justify-content: space-around;
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    .container-nav-home {
+        display: grid;
+        row-gap: 0px;
+        grid-template-rows: 62px 79px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container-home {
+        display: grid;
+        row-gap: 10px;
+        grid-template-rows: 100px 240px 10px 100px 240px 3px 24px 340px;
+        grid-template-columns: 17% 1fr 5%;
+        width: 100%;        
+    }
+
+    .container-footer {
+        display: grid;
+        row-gap: 10px;
+        grid-template-rows: 80px;
+        width: 100%;  
+        position: fixed;
+        top: 950px;
+        border-top: 1px solid pink;
+    }
+
+    .nav-home {
+        background-color: #292929;  
+        height: 141px;
+    }
+
+    .row-publicidad {
+        grid-column-start: 0;
+        grid-column-end: 2;  
+        grid-row-start: 1;
+        grid-row-end: 12;
+        background-color: #292929;
+    }
+
+    .row-footer {
+        background-color: #292929;
+        height: 100%;
+    }
+
+    .col-carrousel-desktop {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        padding-left: 70px !important;
+    }
+
+    .row-carrousel {
+        grid-column-start: 2;
+        grid-column-end: 3;        
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    #img-lupa {
+        display: none;
+    }
+
+    .box-buscador {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-nav-buscador{
+        position: absolute;
+        background-color: #292929;
+        height: 1px;
+        z-index: -2;
+    }  
+
+    .buscador {
+        display: block;
+        width: 80%;
+        height: 35%;
+        border-radius: 100px;
+        font-size: 12px;    
+        text-align: center;
+        font-family: "Poppins";
+        text-decoration: none;
+        outline: none;
+        z-index: 5;
+    }
+
+    .box-centrado {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;        
+    }
+
+    .txt-footer {
+        color: white;
+        font-size: 16px;
+    }
+
+    .secondary-text-desktop {
+        font-size: 30px;
+        padding-left: 25px;
+    }
+
+    .logo-footer {
+        width: 47px;
+        height: 49px;
+    }
+
+    .img-bandera-argentina {
+        width: 48px;
+        height: 30px;
+    }
+
+    #img-hambur {
+        display: none;
+    }
+
+    .img-logo-nav {
+        width: 110px;
+        height: 110px;
+    }
+
+    .box-menu {
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-album {
+        margin-left: 55px !important;
+    }
 }
