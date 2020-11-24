@@ -1272,6 +1272,8 @@ h3 {
     .d{
         grid-column-start: 2;
         grid-column-end: 3;
+        background: rgba(255, 255, 255, 0.075);
+        border-radius: 15px;
     }
 
     .e{
@@ -1282,6 +1284,7 @@ h3 {
     .col-playlist-recomendadas {
         border-left: 1px solid rgba(248, 245, 245, 0.24);
         background: rgba(255, 255, 255, 0.075);
+        height: 100%;
     }
 
     .col-playlist-desktop  {
@@ -1290,6 +1293,7 @@ h3 {
 
     .box-playlist-recomendadas { 
         display: flex;
+        align-items: center;
         height: 50%;        
     }
 
