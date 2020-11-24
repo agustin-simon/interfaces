@@ -12,7 +12,6 @@
     background-attachment: fixed;
 }
 
-
 .ayuda {
     background-color: #5a5e5c;
     height: 100%;
@@ -34,6 +33,14 @@
 }
 
 .container-footer {
+    display: none;
+}
+
+.row-publicidad {
+    display: none;
+}
+
+.img-logo-nav{
     display: none;
 }
 
@@ -92,6 +99,14 @@ h3 {
     border-radius: 100px;
     border: 0px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.row-recomendados {
+    display: none;
+}
+
+.titulo-desktop {
+    display: none;
 }
 
 
@@ -228,7 +243,7 @@ h3 {
 }
 
 .fa-posicion-titulo {
-    padding-left: 110px;
+    padding-left: 25%;
 }
 
 .fa-posicion-icono {
@@ -578,7 +593,6 @@ h3 {
 .b{
     grid-column-start: 2;
     grid-column-end: 3;
-    border-bottom: 1px solid #8a111150;
 }
 
 .c{
@@ -1059,6 +1073,8 @@ h3 {
 
 @media only screen and (min-width: 1024px) {
     
+    /* HOME - HTML*/
+
     .container-nav-home {
         display: grid;
         row-gap: 0px;
@@ -1096,6 +1112,7 @@ h3 {
         grid-row-start: 1;
         grid-row-end: 12;
         background-color: #292929;
+        display: block;
     }
 
     .row-footer {
@@ -1107,7 +1124,9 @@ h3 {
         display: grid;
         justify-items: center;
         align-items: center;
+        background: rgba(255, 255, 255, 0.075);
         padding-left: 70px !important;
+        border-radius: 25px;
     }
 
     .row-carrousel {
@@ -1178,10 +1197,11 @@ h3 {
         display: none;
     }
 
-    .img-logo-nav {
+    .img-logo-nav-desktop {
         width: 110px;
         height: 110px;
-    }
+        display: block;
+    }    
 
     .box-menu {
         display: flex;
@@ -1190,5 +1210,100 @@ h3 {
 
     .img-album {
         margin-left: 55px !important;
+    }    
+
+    .btn-filtro-secundario-desktop {
+        height: 32px;
+        width: 134px;
+        text-decoration: none;
+        background: #F3F0F0;   
+        outline: none;
+        text-decoration: none;
+        border-radius: 100px;
+        border: 0px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        font-family: "Poppins";
+        font-size: 14px;
     }
+
+    .btn-filtro-principal {
+        height: 40px;
+        width: 144px;
+        text-decoration: none;
+        background: #F3F0F0;
+        outline: none;
+        text-decoration: none;
+        border-radius: 100px;
+        border: 0px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        font-family: "Poppins";
+        font-size: 16px;
+    }
+
+    /*PLAYLIST - HTML*/
+
+    .container-playlists {
+
+        display: grid;
+        row-gap: 10px;
+        column-gap: 55px;
+        grid-template-rows: 100px 45px 163px 530px; 
+        grid-template-columns: 17% 1fr 1fr 5%; 
+        width: 100%;     
+    }
+
+    .a{
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    .b{
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    .c{
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    .d{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .e{
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+
+    .col-playlist-recomendadas {
+        border-left: 1px solid rgba(248, 245, 245, 0.24);
+        background: rgba(255, 255, 255, 0.075);
+    }
+
+    .col-playlist-desktop  {
+        border-bottom: 1px solid rgba(248, 245, 245, 0.24);
+    }
+
+    .box-playlist-recomendadas { 
+        display: flex;
+        height: 50%;        
+    }
+
+    .titulo-desktop {
+        font-size: 30px;
+        margin-left: 10px !important;
+    }
+
+    .row-recomendados {
+        display: block;
+    }
+    
+    .titulo-desktop {
+        display: block;
+    }
+    
 }

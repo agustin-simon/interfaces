@@ -88,6 +88,26 @@ btn_up.addEventListener("click", function() {
     }    
 });
 
+
+buscador.addEventListener("click", function() {
+    contador_buscador++;
+    if(contador_buscador % 2 == 0) {
+        setTimeout(function(){ 
+            col_buscador.style.height = 230+"px";
+            col_buscador.style.width = 50+"%";
+            col_buscador.style.top = 130+"px";
+            col_buscador.style.left = 25+"%";
+            box_buscador.style.display = "block";
+        }, 100);
+       
+
+    }
+    else { 
+        col_buscador.style.height = 0+"%";
+        box_buscador.style.display = "none";
+    }    
+});
+
 btn_lupa.addEventListener("click", function() {
     contador_buscador++;
     if(contador_buscador % 2 == 0) {

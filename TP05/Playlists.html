@@ -100,10 +100,44 @@
 
     <div class="container container-playlists">
 
+        <div class="row row-publicidad">
+            <div class="col-xs">
+                <div class="box box-menu">
+                    <ul id="menu-lista">
+                        <li >
+                            <i class="fas fa-list icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a">Tu biblioteca</a> 
+                        </li>
+                        <li>
+                            <i class="fas fa-home icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a">Home</a> 
+                        </li>
+                        <li>
+                            <i class="fas fa-headphones-alt icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a" id="a-modo">Modo</a> <i class="fas fa-chevron-down icono-blanco" id="img-icono-flecha"></i>
+                        <div id="menu-modo">
+                            <ul id="menu-lista-modo">
+                                <li >
+                                    <i class="fas fa-car icono-blanco-fuerte" id="img-icono-modo"></i><a class="txt txt-a">Conducir</a> 
+                                </li>
+                                <li>
+                                    <i class="fas fa-running icono-blanco-fuerte" id="img-icono-modo"></i><a class="txt txt-a">Correr</a> 
+                                </li>
+                                <li>
+                                    <i class="fas fa-walking icono-blanco-fuerte" id="img-icono-modo"></i> <a class="txt txt-a">Caminar</a> 
+                                </li>
+                                <li>
+                                    <i class="fas fa-guitar icono-blanco-fuerte"  id="img-icono-modo"></i><a class="txt txt-a">Normal</a> 
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div> 
+            </div> 
+        </div>  
+
         <div class="row a">
             <div class="col-xs-1">
-                <div class="box">
+                <div class="box box-centrado">
                     <img src="img/Back.png" id="img-back">
+                    <h3 class="titulo-desktop">Biblioteca</h3>
                 </div>
             </div>
             <div class="col-xs-11">
@@ -112,7 +146,7 @@
             </div>
         </div>
 
-        <div class="row g">
+        <div class="row b">
             <div class="col-xs-12 col-playlist">
                 <div class="box">
                     <img src="img/Album-Playlist.png" class="img-album-playlist">
@@ -120,14 +154,15 @@
             </div>
         </div>
 
-        <div class="row h">
-            <div class="col-xs">
+        <div class="row c">
+            <div class="col-xs col-playlist-desktop">
                 <div class="box">
                     <h3 class="titulo-playlist">Tus Playlists</h3>
                 </div>
             </div>
         </div>
-        <div class="row album-divs">
+
+        <div class="row album-divs d">
             <div class="col-xs-12 col-album-canciones">
                 <table class="tabla-canciones">
                     <tr>
@@ -205,38 +240,47 @@
                 </table>
             </div>
         </div> 
+
+        <div class="row row-recomendados">
+            <div class="col-xs col-playlist-recomendadas">
+                <div class="box box-playlist-recomendadas">
+                    <img src="img/PlayList-Correr.png" class="img-album">
+                    <img src="img/PlayList-Estudio.png" class="img-album">                    
+                </div>
+                <div class="box box-playlist-recomendadas">
+                    <img src="img/PlayList-Relax.png" class="img-album">
+                    <img src="img/PlayList-Conduciendo.png" class="img-album">                
+                </div>
+               
+            </div>
+        </div>
+
     </div>
         
-    <div class="container container-reproductor">
-        <div class="row row-reproductor">
-            <div class="col-xs-2 col-reproductor">
-                <img src="img/Icono-flecha-rotate.png" class="img-flecha-rep">
-            </div>
-
-            <div class="col-xs-10">
-                <input type="range" class="linea-reproductor">
-            </div>
-        </div>
-
-        <div class="row row-reproductor">
-            <div class="col-xs-12">
-                <h3 class="titulo-cancion-reproductor">Led Zeppelin - Stairway to Heaven</h3>
-            </div>
-        </div>
-
-        <div class="row row-reproductor">
+    <div class="container container-footer">
+        
+        <div class="row row-footer">
             <div class="col-xs-3">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">Acerca de</h3>
+                    <h3 class="txt-footer">Ayuda</h3>
+                </div> 
+            </div> 
 
-            </div>
-            <div class="col-xs-6 col-reproductor">
-                <img src="img/Icono-Reproductor-Left.png" class="icono-repr">
-                <img src="img/Icono-Reproductor-Stop.png" class="icono-repr">
-                <img src="img/Icono-Reproductor-Right.png" class="icono-repr">
-            </div>
-            <div class="col-xs-3 col-sonido">
-                <img src="img/Icono-Reproductor-Sonido.png" class="icono-repr-sonido">
-            </div>
+            <div class="col-xs-6">
+                <div class="box box-centrado">
+                    <img src="img/Logo.png" class="logo-footer">
+                </div> 
+            </div> 
+
+            <div class="col-xs-3">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">©2020 Spoiler Five Inc.</h3>
+                    <img src="img/Bandera-Argentina.webp" class="img-bandera-argentina">
+                </div> 
+            </div> 
         </div>
+
     </div>
 
         <script src="js/script.js"></script>
