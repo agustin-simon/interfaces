@@ -14,9 +14,10 @@
 
     <div class="container container-nav-home">
         <div class="row nav-home">
-            <div class="col-xs-2 col-md-1  col-lg-1 nav-hamburguesa">
-                <div class="box">
+            <div class="col-xs-2 col-md-2 col-lg-2 nav-hamburguesa">
+                <div class="box box-centrado">
                     <button id="btn-lupa"><img src="img/Hambur.png" id="img-hambur"></button>
+                    <img src="img/Logo.png" class="img-logo-nav img-logo-nav-desktop">
                     <div id="menu-hamburguesa">
                         <ul id="menu-lista">
                             <li >
@@ -50,14 +51,14 @@
                     </div>
                 </div>            
             </div> 
-            <div class="col-xs-7 col-md-10 col-lg-10 col-buscador">
+            <div class="col-xs-7 col-md-7 col-lg-8 col-buscador">
                 <div class="box box-buscador">
                     <input type="text" class="buscador" id="input-buscador">    
                     <a><i class="fas fa-search fa-lg icono-blanco-fuerte" id="img-lupa"></i></a>                    
                 </div>            
             </div> 
 
-            <div class="col-xs-3 col-md-1 col-lg-1 nav-profile">
+            <div class="col-xs-3 col-md-3 col-lg-2 nav-profile">
                 <div class="box box-nav-iconos">                      
                     <a class="nav-icono-campana"><i class="fas fa-bell fa-lg icono-blanco-fuerte"></i></a>                    
                     <a class="nav-icono-profile"><i class="fas fa-user-circle fa-2x icono-blanco-fuerte" id="img-profile"></i></a>    
@@ -74,18 +75,18 @@
                             <h2 class="fa-posicion-titulo">Filtros</h2>
                         </li>
                         <li class="btn-li">
-                            <button class="btn-filtro-principal">Música</button><button class="btn-filtro-principal">Podcast</button>
+                            <button class="btn-filtro-principal btn-filtro-principal-desktop">Música</button><button class="btn-filtro-principal btn-filtro-principal-desktop">Podcast</button>
                         </li>  
                         <li class="btn-li">
-                            <button class="btn-filtro-secundario">MAS ESCUCHADOS</button>
-                            <button class="btn-filtro-secundario">ROCK</button>
-                            <button class="btn-filtro-secundario">80'S</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">MAS ESCUCHADOS</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">ROCK</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">80'S</button>
                         </li> 
 
                         <li class="btn-li">
-                            <button class="btn-filtro-secundario">ENTRENAMIENTO</button>
-                            <button class="btn-filtro-secundario">ESTUDIO</button>
-                            <button class="btn-filtro-secundario">RELAX</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">ENTRENAMIENTO</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">ESTUDIO</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">RELAX</button>
                         </li>  
 
                         <li class="btn-li">
@@ -97,8 +98,42 @@
         </div>
     </div>
 
-    <div class="container container-playlist-canciones">     
-        <div class="row album-divs">            
+    <div class="container container-playlist-canciones"> 
+        
+        <div class="row row-publicidad">
+            <div class="col-xs">
+                <div class="box box-menu">
+                    <ul id="menu-lista">
+                        <li >
+                            <i class="fas fa-list icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a">Tu biblioteca</a> 
+                        </li>
+                        <li>
+                            <i class="fas fa-home icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a">Home</a> 
+                        </li>
+                        <li>
+                            <i class="fas fa-headphones-alt icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a" id="a-modo">Modo</a> <i class="fas fa-chevron-down icono-blanco" id="img-icono-flecha"></i>
+                        <div id="menu-modo">
+                            <ul id="menu-lista-modo">
+                                <li >
+                                    <i class="fas fa-car icono-blanco-fuerte" id="img-icono-modo"></i><a class="txt txt-a">Conducir</a> 
+                                </li>
+                                <li>
+                                    <i class="fas fa-running icono-blanco-fuerte" id="img-icono-modo"></i><a class="txt txt-a">Correr</a> 
+                                </li>
+                                <li>
+                                    <i class="fas fa-walking icono-blanco-fuerte" id="img-icono-modo"></i> <a class="txt txt-a">Caminar</a> 
+                                </li>
+                                <li>
+                                    <i class="fas fa-guitar icono-blanco-fuerte"  id="img-icono-modo"></i><a class="txt txt-a">Normal</a> 
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="row album-divs row-playlist-back-titulo">            
             <div class="col-xs-1">
                 <div class="box">
                     <img src="img/Back.png" id="img-back">                   
@@ -116,30 +151,32 @@
             </div> 
         </div>
 
-        <div class="row album-divs">
+        <div class="row album-divs row-playlist-img-descripcion">
             <div class="col-xs-6 col-album">
-                <img src="img/PlayList-Fiesta.png" class="img-album-lay">
+                <div class="box box-centrado">
+                    <img src="img/PlayList-Fiesta.png" class="img-album-lay">
+                </div>
             </div>
             <div class="col-xs-6 col-album-descripcion">
-                <p class="info-album">Mothership es un álbum recopilatorio
-                    del grupo Led Zeppelin que salió a la
-                    venta el 13 de noviembre de 2007.</p>
-                <div class="div-votacion">
-                    <a class="btn-votacion btn-negativo"> <i class="fas fa-caret-down fa-3x"></i></a>
+                <div class="box box-centrado">
+                    <p class="info-album">Esta playlist fue creada para escuchar lo ultimo para bailar, dale play y a mover el esqueleto!!!.</p>
+                    <div class="div-votacion">
+                    <a class="btn-votacion btn-negativo-activo" id="a-negativo"> <i class="fas fa-caret-down fa-3x"></i></a>
                     <h2 class="txt-porcentaje">33%</h2>
-                    <a class="btn-votacion btn-positivo"><i class=" fas fa-caret-up fa-3x"></i></a>
+                    <a class="btn-votacion btn-positivo-activo" id="a-positivo"><i class=" fas fa-caret-up fa-3x"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="row album-divs">            
+        <div class="row album-divs row-playlist-titulo-canciones">            
             <div class="col-xs-12 col-album-descripcion">
                 <h3 class="titulo-playlist">Canciones</h3>
             </div>
         </div>
 
-        <div class="row album-divs">            
-            <div class="col-xs-12 col-album-canciones">
+        <div class="row album-divs row-playlist-tabla-canciones">            
+            <div class="col-xs-12 col-album-canciones box-centrado">
                 <table class="tabla-canciones">
                     <tr>
                         <th><i class="fas fa-play elemento-tabla"></i></th>
@@ -179,6 +216,32 @@
                 </table>
             </div>
         </div>        
+    </div>
+
+    <div class="container container-footer">
+        
+        <div class="row row-footer">
+            <div class="col-xs-3">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">Acerca de</h3>
+                    <h3 class="txt-footer">Ayuda</h3>
+                </div> 
+            </div> 
+
+            <div class="col-xs-6">
+                <div class="box box-centrado">
+                    <img src="img/Logo.png" class="logo-footer">
+                </div> 
+            </div> 
+
+            <div class="col-xs-3">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">©2020 Spoiler Five Inc.</h3>
+                    <img src="img/Bandera-Argentina.webp" class="img-bandera-argentina">
+                </div> 
+            </div> 
+        </div>
+
     </div>
 
     <script src="js/script.js"></script>

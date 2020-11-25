@@ -101,6 +101,7 @@ h3 {
     border-radius: 100px;
     border: 0px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    outline: none;
 }
 
 .primary-btn-desktop {
@@ -745,9 +746,9 @@ h3 {
 
 .titulo-playlist {
     color: #292929;
-    font-family: "Poppins-Medium";
+    font-family: "Poppins";
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .elemento-tabla {
@@ -1142,10 +1143,8 @@ h3 {
     .col-carrousel-desktop {
         display: grid;
         justify-items: center;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.075);
-        padding-left: 70px !important;
-        border-radius: 25px;
+        align-items: center;        
+        padding-left: 70px !important;        
     }
 
     .row-carrousel {
@@ -1154,6 +1153,8 @@ h3 {
         overflow-x: scroll;
         overflow-y: hidden;
         white-space: nowrap;
+        background: rgba(255, 255, 255, 0.075);
+        border-radius: 25px;
     }
 
     #img-lupa {
@@ -1290,22 +1291,13 @@ h3 {
 
     .d{
         grid-column-start: 2;
-        grid-column-end: 3;
-        background: rgba(255, 255, 255, 0.075);
-        border-radius: 15px;
+        grid-column-end: 3;        
     }
 
     .e{
         grid-column-start: 3;
         grid-column-end: 4;
-    }
-
-
-    .col-playlist-recomendadas {
-        background: rgba(255, 255, 255, 0.075);
-        border-radius: 15px;
-        height: 100%;
-    }
+    }   
 
     .col-playlist-desktop  {
         border-bottom: 1px solid rgba(248, 245, 245, 0.24);        
@@ -1332,6 +1324,8 @@ h3 {
 
     .row-recomendados {
         display: block;
+        background: rgba(255, 255, 255, 0.075);
+        border-radius: 15px;
     }
     
     .titulo-desktop {
@@ -1357,6 +1351,7 @@ h3 {
         width: 100%;
         color: #292929;
         text-align: center;
+        display: block;
     }
 
     .box-centrado-desktop {
@@ -1380,6 +1375,48 @@ h3 {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         width: 50%;
         display: block;
+        outline: none;
     }
-    
+
+    .col-album-canciones {
+        background: rgba(255, 255, 255, 0.075);
+        border-radius: 15px;
+    }  
+
+
+    /* PLAYLIST - CANCIONES */
+
+    .container-playlist-canciones {
+
+        display: grid;
+        row-gap: 10px;
+        column-gap: 10px;
+        grid-template-rows: 100px 250px 155px ; 
+        grid-template-columns: 17% 1fr 1fr 5%; 
+        width: 100%;
+    }
+
+    .row-playlist-back-titulo {
+        
+        background-color: yellow;
+    }
+
+    .row-playlist-img-descripcion {       
+        grid-column-start: 2;
+        grid-column-end: 4;  
+        background-color: violet;
+    }
+
+    .row-playlist-titulo-canciones {
+        grid-column-start: 2;
+        grid-column-end: 4;  
+        background-color: blue;
+    }
+
+    .row-playlist-tabla-canciones{
+        grid-column-start: 2;
+        grid-column-end: 4;  
+        background-color: red;
+    }
+
 }
