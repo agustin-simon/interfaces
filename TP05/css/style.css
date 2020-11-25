@@ -1074,6 +1074,10 @@ h3 {
     grid-template-columns: 20px 1fr 20px;   
 }
 
+.oculto{
+    display: none !important;
+}
+
 .col-down {
     display: flex;
     justify-content: center;
