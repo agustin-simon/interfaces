@@ -154,7 +154,7 @@
         <div class="row row-cancion">            
             <div class="col-xs-12">
                 <div class="box">  
-                    <input type="range" class="cancion-reproductor">                              
+                    <input type="range" min="0" step="1" class="cancion-reproductor">                              
                 </div> 
             </div> 
         </div>  
@@ -183,7 +183,8 @@
             <div class="col-xs-8">
                 <div class="box box-reproductor"> 
                     <i class="fas fa-step-backward fa-3x icono-blanco"></i>
-                    <i class="fas fa-play fa-3x icono-blanco"></i>
+                    <i class="fas fa-pause fa-3x icono-blanco iconoPause oculto pp"></i>
+                    <i class="fas fa-play fa-3x icono-blanco iconoPlay pp"></i>
                     <i class="fas fa-step-forward fa-3x icono-blanco"></i>
                 </div> 
             </div> 
@@ -203,5 +204,6 @@
 
     <script src="js/script.js"></script>
     <script src="js/votation.js"></script>
+    <script src="js/reproductor.js"></script>
 </body>
 </html>

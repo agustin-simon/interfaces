@@ -172,5 +172,3 @@ btn_filtros_secundarios.forEach( boton => {
         
     });
 });
-
-
