@@ -881,7 +881,8 @@ h3 {
     text-align: center;
     font-size: 14px;
     border-collapse: collapse;
-
+    width: 100%;
+    height: 80%;
 }
 
 .tabla-canciones td {
@@ -1273,7 +1274,7 @@ h3 {
         display: grid;
         row-gap: 10px;
         column-gap: 55px;
-        grid-template-rows: 100px 210px 450px 15px; 
+        grid-template-rows: 100px 210px 460px 15px; 
         grid-template-columns: 17% 1fr 1fr 5%; 
         width: 100%;     
     }
@@ -1321,6 +1322,14 @@ h3 {
         height: 50%;        
     }
 
+    .img-centrada-top {
+        margin-top: 14px;
+    }
+
+    .img-centrada-bottom {
+        margin-bottom: 14px;
+    }
+
     .titulo-desktop {
         font-size: 30px;
         margin-left: 10px !important;
@@ -1328,8 +1337,8 @@ h3 {
 
     .row-recomendados {
         display: block;
-        background: rgba(255, 255, 255, 0.075);
-        border-radius: 15px;
+        background: rgba(243, 240, 240, 0.3);
+        border-radius: 25px;
     }
     
     .titulo-desktop {
@@ -1394,33 +1403,80 @@ h3 {
 
         display: grid;
         row-gap: 10px;
-        column-gap: 10px;
-        grid-template-rows: 100px 250px 155px ; 
-        grid-template-columns: 17% 1fr 1fr 5%; 
+        column-gap: 55px;
+        grid-template-rows: 100px 250px 40px 375px; 
+        grid-template-columns: 17% 1fr 1fr 1%; 
         width: 100%;
     }
 
     .row-playlist-back-titulo {
-        
-        background-color: yellow;
+        grid-column-start: 2;
+        grid-column-end: 4;  
     }
 
     .row-playlist-img-descripcion {       
         grid-column-start: 2;
         grid-column-end: 4;  
-        background-color: violet;
+        border-bottom: 1px solid rgba(255, 246, 246, 0.288);
     }
 
     .row-playlist-titulo-canciones {
         grid-column-start: 2;
         grid-column-end: 4;  
-        background-color: blue;
     }
 
     .row-playlist-tabla-canciones{
         grid-column-start: 2;
         grid-column-end: 4;  
-        background-color: red;
     }
 
+    .img-album-desktop {
+        width: 146px;
+        height: 196px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));    
+        border-radius: 13px;
+        border: white 2px solid;    
+    }
+
+    .titulo-playlist-desktop {
+        color: #292929;
+        font-family: "Poppins";
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .box-mitad {
+        height: 50%;
+    }
+
+    .info-playlist-desktop {
+        color: white;
+        font-family: "Poppins-Medium";
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .info-album-desktop {
+        color: white;
+        font-family: "Poppins-Medium";
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .primary-btn-desktop-play {
+        color: white;
+        font-family: "Poppins";
+        font-size: 16px;
+        width: 269px;
+        height: 30%;
+        background-color: #292929;
+        text-decoration: none;
+        border-radius: 100px;
+        border: 0px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 15%; 
+        display: block;
+        outline: none;
+    }
+    
 }
