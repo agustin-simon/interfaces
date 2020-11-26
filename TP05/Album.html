@@ -109,7 +109,8 @@
     </div>
 
 
-    <div class="container container-album">
+    <div class="container container-album container-album-desktop">
+       
         <div class="row row-publicidad">
             <div class="col-xs">
                 <div class="box box-menu" id="menu-hamburguesa-desktop">
@@ -150,7 +151,8 @@
                 </div>
             </div>
         </div>
-        <div class="row album-divs">
+
+        <div class="row album-divs album-divs-desktop">
             <div class="col-xs-1">
                 <div class="box">
                     <a href="Home.html"><i class="fas fa-angle-left fa-3x icono-blanco" id="img-back"></i></a>
@@ -162,36 +164,46 @@
             </div>
 
             <div class="col-xs-2">
-                <div class="box">
+                <div class="box box-centrado">
                     <i class="fas fa-download fa-2x icono-blanco"></i>
                 </div>
             </div>
         </div>
 
-        <div class="row album-divs">
-            <div class="col-xs-6 col-album">
-                <img src="img/Album-Led.png" class="img-album-lay">
+        <div class="row album-divs album-divs-desktop">
+            <div class="col-xs-6 col-lg-4 col-album">
+                <img src="img/Album-Led.png" class="img-album-lay img-album-desktop">
             </div>
-            <div class="col-xs-6 col-album-descripcion">
-                <p class="info-album">Mothership es un álbum recopilatorio
-                    del grupo Led Zeppelin que salió a la
-                    venta el 13 de noviembre de 2007.</p>
-                <div class="div-votacion">
-                    <a class="btn-votacion btn-negativo-activo" id="a-negativo"> <i
-                            class="fas fa-caret-down fa-3x"></i></a>
-                    <h2 class="txt-porcentaje"></h2>
-                    <a class="btn-votacion btn-positivo-activo" id="a-positivo"><i
-                            class=" fas fa-caret-up fa-3x"></i></a>
+            <div class="col-xs-6 col-lg-8 col-album-descripcion">
+                <div class="box box-mitad">
+                    <p class="info-album info-album-desktop">Mothership es un álbum recopilatorio
+                        del grupo Led Zeppelin que salió a la
+                        venta el 13 de noviembre de 2007.</p>                    
+                </div>
+                <div class="box box-centrado box-mitad">
+                    <input type="button" value="PLAY" class="primary-btn-desktop-play">
+
+                    <p class="info-playlist-desktop elemento-desactivar"><i
+                            class="fas fa-clock elemento-tabla"></i>-.8:02.</p>
+                    <p class="info-playlist-desktop elemento-desactivar"><i class="fas fa-chart-line"></i>.18.800K</p>
+                    <p class="info-playlist-desktop elemento-desactivar"><i class="fas fa-share-alt"></i>.8</p>
+                    <div class="div-votacion">
+                        <a class="btn-votacion btn-negativo-activo" id="a-negativo"> <i
+                                class="fas fa-caret-down fa-3x"></i></a>
+                        <h2 class="txt-porcentaje">33%</h2>
+                        <a class="btn-votacion btn-positivo-activo" id="a-positivo"><i
+                                class=" fas fa-caret-up fa-3x"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
 
 
-        <div class="row album-divs">
+        <div class="row album-divs album-divs-desktop">
             <div class="col-xs-12 col-album-canciones">
                 <table class="tabla-canciones">
                     <tr>
-                        <th><i class="fas fa-play elemento-tabla"></i></th>
+                        <th class="th-desk"><i class="fas fa-play elemento-tabla"></i></th>
                         <th>Canción</th>
                         <th>Album</th>
                         <th><i class="fas fa-clock elemento-tabla"></i></th>
@@ -229,6 +241,7 @@
             </div>
         </div>
     </div>
+    
     <div class="container container-footer">
         <div class="row row-footer">
             <div class="col-xs-3">

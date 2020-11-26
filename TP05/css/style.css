@@ -1599,13 +1599,15 @@ h3 {
     .container-album-desktop {
         display: grid;
         row-gap: 10px;
-        grid-template-rows: 45px 180px 300px 300px;
+        column-gap: 15px;
+        grid-template-rows: 10%  35% 80% 5%;
         /*grid-template-rows: 45px 180px 300px;*/
         grid-template-columns: 17% 1fr 1fr 1%;
         width: 100%;
     }
 
-    .album-divs {
-        background-color: red;
+    .album-divs-desktop {
+        grid-column-start: 2;
+        grid-column-end: 4;  
     }
 }
