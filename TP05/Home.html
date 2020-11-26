@@ -232,19 +232,18 @@
                 </div>
             </div>
         </div>
-
     </div>
 
-    <div class="container container-reproductor container-reproductor-desktop" style=" display: none;">
+    <div class="container container-reproductor container-reproductor-desktop">
         <div class="row row-reproductor">
             <div class="col-xs-2 col-reproductor">
                 <div class="box box-centrado">
-                    <img src="img/Icono-flecha-rotate.png" class="img-flecha-rep">                    
+                    <img src="img/Icono-flecha-rotate.png" class="img-flecha-rep">
                 </div>
             </div>
 
             <div class="col-xs-10">
-                <input type="range" class="linea-reproductor">
+                <input type="range" min="0" step="1" class="cancion-reproductor">
             </div>
         </div>
 
@@ -262,12 +261,12 @@
                 </div>
             </div>
             <div class="col-xs-6 col-reproductor">
-                <img src="img/Icono-Reproductor-Left.png" class="icono-repr">
-                <img src="img/Icono-Reproductor-Stop.png" class="icono-repr">
-                <img src="img/Icono-Reproductor-Right.png" class="icono-repr">
+                <i class="fas fa-step-backward fa-2x icono-blanco"></i>
+                <i class="fas fa-play fa-2x icono-blanco playAndPause"></i>
+                <i class="fas fa-step-forward fa-2x icono-blanco"></i>
             </div>
             <div class="col-xs-3 col-sonido">
-                <img src="img/Icono-Reproductor-Sonido.png" class="icono-repr-sonido">
+                <i class="fas fa-volume-up fa-lg icono-blanco"></i>
                 <div class="box box-centrado">
                     <h3 class="txt-footer">©2020 Spoiler Five Inc.</h3>
                     <img src="img/Bandera-Argentina.webp" class="img-bandera-argentina">
@@ -275,8 +274,11 @@
             </div>
         </div>
     </div>
-
-    <div class="container container-footer">
+    <div style=" display: none;">
+        <h3 class="num-reproductor" id="cancion-start" >00:00</h3>
+        <h3 class="num-reproductor" id="cancion-end">03:00</h3>
+    </div>
+    <div class="container container-footer"  style=" display: none;">
 
         <div class="row row-footer">
             <div class="col-xs-3">
@@ -299,11 +301,12 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 
     <script src="js/script.js"></script>
+    <script src="js/reproductor.js"></script>
+
 </body>
 
 </html>
