@@ -180,7 +180,7 @@ let flecha_btn = document.querySelector("#a-modo-desktop");
 let menu_modo_desktop = document.querySelector("#menu-modo-desktop")
 let menu_lista_modo_desktop = document.querySelector("#menu-lista-modo-desktop");
 let menu_hamburguesa_desktop = document.querySelector("#menu-hamburguesa-desktop");
-let flecha_abajo = document.querySelector("#img-icono-flecha");
+let flecha_abajo = document.querySelector("#img-icono-flecha-desktop");
 let contador_modo_desktop = 1;
 
 flecha_btn.addEventListener("click", function(){
@@ -192,7 +192,7 @@ flecha_btn.addEventListener("click", function(){
         flecha_abajo.classList.add("fa-chevron-up");
         setTimeout(function(){ 
             menu_modo_desktop.style.display = "block";
-            menu_modo_desktop.style.width = 227+"px";
+            menu_modo_desktop.style.width = 200+"px";
             menu_lista_modo_desktop.style.display = "block";
         }, 100);
        
@@ -203,5 +203,27 @@ flecha_btn.addEventListener("click", function(){
         menu_modo_desktop.style.height = 1+"px";  
         menu_modo_desktop.style.width = 1+"px";  
         menu_lista_modo_desktop.style.display = "none";  
+        flecha_abajo.classList.remove("fa-chevron-up");
+        flecha_abajo.classList.add("fa-chevron-down");
     }
+});
+
+
+let btns_corazon = document.querySelectorAll(".btn-corazon");
+let btn_corazon_contador = 0;
+
+
+btns_corazon.forEach( boton => {
+    boton.addEventListener("click", function(){            
+            if(btn_corazon_contador % 2 == 0) {
+                boton.classList.remove("btn-corazon");
+                boton.classList.add("btn-corazon-activado"); 
+                btn_corazon_contador++;
+                
+            } else {
+                boton.classList.remove("btn-corazon-activado");
+                boton.classList.add("btn-corazon"); 
+                btn_corazon_contador++;
+            }         
+    });
 });
