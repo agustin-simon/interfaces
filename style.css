@@ -108,14 +108,6 @@ h3 {
     display: none;
 }
 
-.primary-btn-desktop-play {
-    display: none;
-}
-
-.elemento-desactivar {
-    display: none;
-}
-
 .primary-txt {
     color: white;
     font-family: "Poppins";
@@ -135,10 +127,6 @@ h3 {
 
 .titulo-desktop {
     display: none;
-}
-
-#menu-lista {
-    list-style: none;
 }
 
 
@@ -1123,8 +1111,7 @@ h3 {
     .container-home {
         display: grid;
         row-gap: 10px;
-        grid-template-rows: 10% 25% 1% 10% 25% 1% 10% 30%;
-        /*grid-template-rows: 100px 240px 10px 100px 240px 3px 24px 340px;*/
+        grid-template-rows: 100px 240px 10px 100px 240px 3px 24px 340px;
         grid-template-columns: 17% 1fr 5%;
         width: 100%;        
     }
@@ -1490,10 +1477,6 @@ h3 {
         width: 15%; 
         display: block;
         outline: none;
-    }
-
-    .elemento-desactivar {
-        display: block;
     }
     
 }
