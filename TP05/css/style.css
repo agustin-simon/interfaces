@@ -1591,4 +1591,15 @@ h3 {
         width: 100%;   
         top: 945px;
     }
+    
+    /* ALBUM */
+
+    .container-album-desktop {
+        display: grid;
+        row-gap: 10px;
+        grid-template-rows: 45px 180px 300px;
+        /*grid-template-rows: 45px 180px 300px;*/
+        grid-template-columns: 17% 1fr 1fr 1%;
+        width: 100%;
+    }
 }
