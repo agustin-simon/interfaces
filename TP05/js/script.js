@@ -8,7 +8,7 @@ let contador_hamburguesa = 1;
 
 btn_hamburguesa.addEventListener("click", function() {
     contador_hamburguesa++;
-    if(contador_hamburguesa % 2 == 0) {
+    if(contador_hamburguesa % 2 == 0 && contador_buscador % 2 != 0) {
         menu_hamburguesa.style.height = 150+"px";
         setTimeout(function(){ 
             menu_hamburguesa.style.display = "block";
@@ -110,10 +110,11 @@ buscador.addEventListener("click", function() {
 
 btn_lupa.addEventListener("click", function() {
     contador_buscador++;
-    if(contador_buscador % 2 == 0) {
+    if(contador_buscador % 2 == 0 && contador_hamburguesa % 2 != 0) {
         setTimeout(function(){ 
             buscador.style.height = 50+"%";
             buscador.style.width = 90+"%";
+            buscador.style.marginTop = 6+"%";
             buscador.style.display = "block";
             col_buscador.style.height = 230+"px";
             box_buscador.style.display = "block";

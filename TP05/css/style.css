@@ -217,6 +217,7 @@ h3 {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));    
     border-radius: 13px;
     border: white 2px solid;
+    transition: 0.4s;
 }
 
 .box-buscador {  
@@ -968,14 +969,6 @@ h3 {
     grid-column-end: 3;
 }
 
-.img-album-lay {
-    width: 116px;
-    height: 166px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));    
-    border-radius: 13px;
-    border: white 2px solid;    
-}
-
 .col-album {
     display: flex;
     justify-content: center;
@@ -1479,4 +1472,9 @@ h3 {
         outline: none;
     }
     
+}
+
+.img-album:hover{
+    opacity: .6;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(15px) translateY(0px) translateZ(0px);
 }
