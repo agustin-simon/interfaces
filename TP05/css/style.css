@@ -1315,27 +1315,27 @@ h3 {
         width: 100%;     
     }
 
-    .a{
+    .row-a-playlists-desktop{
         grid-column-start: 2;
         grid-column-end: 4;
     }
 
-    .b{
+    .row-b-playlists-desktop{
         grid-column-start: 2;
         grid-column-end: 3;
     }
 
-    .c{
+    .row-c-playlists-desktop{
         grid-column-start: 3;
         grid-column-end: 4;
     }
 
-    .d{
+    .row-d-playlists-desktop{
         grid-column-start: 2;
         grid-column-end: 3;        
     }
 
-    .e{
+    .row-e-playlists-desktop{
         grid-column-start: 3;
         grid-column-end: 4;
     }   
@@ -1599,9 +1599,13 @@ h3 {
     .container-album-desktop {
         display: grid;
         row-gap: 10px;
-        grid-template-rows: 45px 180px 300px;
+        grid-template-rows: 45px 180px 300px 300px;
         /*grid-template-rows: 45px 180px 300px;*/
         grid-template-columns: 17% 1fr 1fr 1%;
         width: 100%;
+    }
+
+    .album-divs {
+        background-color: red;
     }
 }
