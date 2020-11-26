@@ -1119,6 +1119,15 @@ h3 {
     transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(15px) translateY(0px) translateZ(0px);
 }
 
+.play-tabla{
+    opacity:0;
+    transition: 0.1s;
+}
+
+.play-tabla:hover{
+    opacity:1;
+}
+
 @media only screen and (min-width: 1024px) {
     
     /* HOME - HTML*/
