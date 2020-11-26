@@ -48,6 +48,12 @@
     padding-right: 15px;
 }
 
+.menu_lista_modo_desktop {
+ display: none;
+ width: 1px;
+ height: 1px;
+}
+
 .nav-icono-profile {
     padding-right: 0px;
 }
@@ -498,6 +504,14 @@ h3 {
 #img-logo {  
     width: 110px;
     height: 110px; 
+}
+
+#menu-modo-desktop {
+    position: relative;
+    z-index: 20;
+    display: none;
+    /*background-color: red;*/
+    background-color: #292929;    
 }
 
 
@@ -1532,7 +1546,16 @@ h3 {
     .e-desktop {
         grid-column-start: 2;
         grid-column-end: 4;  
+    } 
+
+    /* REPRODUCTOR - DESKTOP */
+    
+    .container-reproductor-desktop {
+        border-top: 1px solid #FFEFF6;
+        display: grid;
+        grid-template-rows: 25px 12px 45px; 
+        position: fixed;
+        width: 100%;   
+        top: 945px;
     }
-    
-    
 }
