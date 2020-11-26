@@ -99,22 +99,58 @@
 
 
     <div class="container container-busqueda-musica">
-        <div class="row a">
-            
-            <div class="col-xs-2">
-                <div class="box">
-                    <img src="img/Back.png" id="img-back">                   
-                </div> 
-            </div> 
 
-            <div class="col-xs-10">
-                <div class="box box-titulo">
-                    <h2>Resultados</h2>            
+        <div class="row row-publicidad">
+            <div class="col-xs">
+                <div class="box box-menu">
+                    <ul id="menu-lista">
+                        <li >
+                            <i class="fas fa-list icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a">Tu biblioteca</a> 
+                        </li>
+                        <li>
+                            <i class="fas fa-home icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a">Home</a> 
+                        </li>
+                        <li>
+                            <i class="fas fa-headphones-alt icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a" id="a-modo">Modo</a> <i class="fas fa-chevron-down icono-blanco" id="img-icono-flecha"></i>
+                        <div id="menu-modo">
+                            <ul id="menu-lista-modo">
+                                <li >
+                                    <i class="fas fa-car icono-blanco-fuerte" id="img-icono-modo"></i><a class="txt txt-a">Conducir</a> 
+                                </li>
+                                <li>
+                                    <i class="fas fa-running icono-blanco-fuerte" id="img-icono-modo"></i><a class="txt txt-a">Correr</a> 
+                                </li>
+                                <li>
+                                    <i class="fas fa-walking icono-blanco-fuerte" id="img-icono-modo"></i> <a class="txt txt-a">Caminar</a> 
+                                </li>
+                                <li>
+                                    <i class="fas fa-guitar icono-blanco-fuerte"  id="img-icono-modo"></i><a class="txt txt-a">Normal</a> 
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
                 </div> 
             </div> 
         </div>
 
-        <div class="row b">
+        <div class="row a a-desktop">            
+            <div class="col-xs-1 col-lg-4">
+                <div class="box box-centrado">
+                    <img src="img/Back.png" id="img-back"> 
+                    <h3 class="titulo-desktop">Resultados</h3>                                     
+                </div>                 
+            </div> 
+            <div class="col-xs-8 col-lg-6">
+                <div class="box"> 
+                </div> 
+            </div> 
+            <div class="col-xs-3 col-lg-2">
+                <div class="box box-centrado"> 
+                </div> 
+            </div> 
+        </div>
+
+        <div class="row b b-desktop">
             <div class="col-xs-4">
                 <div class="box">
                     <h3 class="tags-busqueda">#Musica</h3>  
@@ -134,7 +170,7 @@
             </div> 
         </div>
 
-        <div class="row c">
+        <div class="row c c-desktop">
             <div class="col-xs-12">
                 <div class="box">
                     <h3 class="secondary-text">Álbumes</h3>
@@ -142,7 +178,7 @@
             </div> 
         </div>
 
-        <div class="row d row-carrousel">
+        <div class="row d row-carrousel d-desktop">
             <div class="col-xs col-carrousel">
                 <div class="box">
                     <img src="img/Profile-PinkFloyd.png" class="img-resultado-profile">
@@ -154,40 +190,35 @@
             </div> 
         </div>
 
-        <div class="row e">
+        <div class="row e e-desktop">
             <div class="col-xs-12">
                 <div class="box">
                     <table class="tabla-canciones">
                         <tr>
-                            <th><i class="fas fa-play elemento-tabla"></i></th>
                             <th>Canción</th>
                             <th>Album</th>
                             <th><i class="fas fa-clock elemento-tabla"></i></th>
                             <th><i class="fas fa-heart elemento-tabla"></i></th>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
                           <td>Comfortably Num..</td>
                           <td>Pink Floyd</td>
                           <td>1979</td>
                           <td>800k</td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
                           <td>Time</td>
                           <td>Pink Floyd</td>
                           <td>1973</td>
                           <td>125k</td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
                            <td>High Hopes</td>
                            <td>Pink Floyd</td>
                            <td>1994</td>
                            <td>115k</td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
                            <td>The Final Cut</td>
                            <td>Pink Floyd</td>
                            <td>1983</td>
@@ -195,7 +226,6 @@
                         </tr>  
                         
                         <tr>
-                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
                            <td>Shine on you ..</td>
                            <td>Pink Floyd</td>
                            <td>1975</td>
@@ -203,13 +233,38 @@
                         </tr>  
 
                         <tr>
-                            <td><i class="fas fa-play elemento-tabla icono-blanco"></i></td>
                            <td>Pings on the..</td>
                            <td>Pink Floyd</td>
                            <td>1977 </td>
                            <td>100k</td>
                         </tr> 
                     </table>
+                </div> 
+            </div> 
+        </div>
+
+    </div>
+
+    <div class="container container-footer">
+        
+        <div class="row row-footer">
+            <div class="col-xs-3">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">Acerca de</h3>
+                    <h3 class="txt-footer">Ayuda</h3>
+                </div> 
+            </div> 
+
+            <div class="col-xs-6">
+                <div class="box box-centrado">
+                    <img src="img/Logo.png" class="logo-footer">
+                </div> 
+            </div> 
+
+            <div class="col-xs-3">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">©2020 Spoiler Five Inc.</h3>
+                    <img src="img/Bandera-Argentina.webp" class="img-bandera-argentina">
                 </div> 
             </div> 
         </div>

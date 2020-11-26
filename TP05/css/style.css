@@ -1287,7 +1287,8 @@ h3 {
         display: grid;
         row-gap: 10px;
         column-gap: 55px;
-        grid-template-rows: 100px 210px 460px 15px; 
+        grid-template-rows: 10% 30% 60%;
+        /*grid-template-rows: 100px 210px 460px 15px;*/
         grid-template-columns: 17% 1fr 1fr 5%; 
         width: 100%;     
     }
@@ -1346,16 +1347,13 @@ h3 {
     .titulo-desktop {
         font-size: 30px;
         margin-left: 10px !important;
+        display: block;
     }
 
     .row-recomendados {
         display: block;
         background: rgba(243, 240, 240, 0.3);
         border-radius: 25px;
-    }
-    
-    .titulo-desktop {
-        display: block;
     }
 
     .img-album-playlist-desktop {
@@ -1495,5 +1493,46 @@ h3 {
     .elemento-desactivar {
         display: block;
     }
+
+
+    /* BUSQUEDA-MUSICA */
+
+    .container-busqueda-musica {
+
+        display: grid;
+        row-gap: 10px;
+        column-gap: 10px;
+        grid-template-rows: 10% 5% 5% 20% 20% 40%; 
+        /*grid-template-rows: 45px 35px 30px 150px 250px; */
+        grid-template-columns: 17% 1fr 1fr 1%; 
+        width: 100%;    
+    }
+
+    .a-desktop {
+        grid-column-start: 2;
+        grid-column-end: 4;  
+    }
+
+    .b-desktop {
+        grid-column-start: 2;
+        grid-column-end: 4;  
+        border-bottom: 1px solid rgba(255, 246, 246, 0.288);
+    }
+
+    .c-desktop {
+        grid-column-start: 2;
+        grid-column-end: 4;  
+    }
+
+    .d-desktop {
+        grid-column-start: 2;
+        grid-column-end: 4;  
+    }
+
+    .e-desktop {
+        grid-column-start: 2;
+        grid-column-end: 4;  
+    }
+    
     
 }
