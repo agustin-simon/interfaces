@@ -173,3 +173,35 @@ btn_filtros_secundarios.forEach( boton => {
         
     });
 });
+
+
+
+let flecha_btn = document.querySelector("#a-modo-desktop");
+let menu_modo_desktop = document.querySelector("#menu-modo-desktop")
+let menu_lista_modo_desktop = document.querySelector("#menu-lista-modo-desktop");
+let menu_hamburguesa_desktop = document.querySelector("#menu-hamburguesa-desktop");
+let flecha_abajo = document.querySelector("#img-icono-flecha");
+let contador_modo_desktop = 1;
+
+flecha_btn.addEventListener("click", function(){
+    contador_modo_desktop++;
+    if(contador_modo_desktop % 2 == 0) {
+        menu_modo_desktop.style.height = 130+"px";
+        menu_hamburguesa_desktop.style.height = 270+"px";
+        flecha_abajo.classList.remove("fa-chevron-down");
+        flecha_abajo.classList.add("fa-chevron-up");
+        setTimeout(function(){ 
+            menu_modo_desktop.style.display = "block";
+            menu_modo_desktop.style.width = 227+"px";
+            menu_lista_modo_desktop.style.display = "block";
+        }, 100);
+       
+
+    }
+    else {
+        menu_hamburguesa_desktop.style.height = 150+"px";
+        menu_modo_desktop.style.height = 1+"px";  
+        menu_modo_desktop.style.width = 1+"px";  
+        menu_lista_modo_desktop.style.display = "none";  
+    }
+});
