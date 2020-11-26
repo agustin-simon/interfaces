@@ -3,6 +3,8 @@
     margin: 0px 0px 0px 0px;
 }
 
+a { color: white; }
+
 .normal {
     background: rgb(102,254,144);
     background: linear-gradient(180deg, rgba(102,254,144,1) 0%, rgba(240,114,167,1) 66%);
