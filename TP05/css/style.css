@@ -514,7 +514,6 @@ h3 {
     background-color: #292929;    
 }
 
-
 /* INICIAR SESION - HTML */
 
 .container-iniciar-sesion {
@@ -1181,7 +1180,7 @@ h3 {
 
     .row-carrousel {
         grid-column-start: 2;
-        grid-column-end: 3;        
+        grid-column-end: 3;   
         overflow-x: scroll;
         overflow-y: hidden;
         white-space: nowrap;
@@ -1547,6 +1546,14 @@ h3 {
         grid-column-start: 2;
         grid-column-end: 4;  
     } 
+
+    #menu-lista-modo-desktop li{
+        list-style: none;
+    }
+
+    #menu-lista-desktop {
+        list-style: none;
+    }
 
     /* REPRODUCTOR - DESKTOP */
     
