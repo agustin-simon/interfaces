@@ -1356,7 +1356,8 @@ h3 {
         display: grid;
         row-gap: 10px;
         column-gap: 55px;
-        grid-template-rows: 100px 250px 40px 375px;
+        grid-template-rows: 15% 35% 40px 375px;
+        /*grid-template-rows: 100px 250px 40px 375px;*/
         grid-template-columns: 17% 1fr 1fr 1%;
         width: 100%;
     }
@@ -1378,8 +1379,6 @@ h3 {
         grid-column-end: 4;
     }
     .img-album-desktop {
-        position: relative;
-        top: -18%;
         width: 146px;
         height: 196px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -1426,7 +1425,7 @@ h3 {
         display: block;
     }
     .btn-corazon-activado {
-        color: #F072A7;
+        color: red;
     }
     .btn-corazon {
         color: white;
@@ -1496,4 +1495,22 @@ h3 {
     .only-mobile{
         display: none;
     }
+
+    /* ALBUM */
+
+    .container-album {
+        display: grid;
+        row-gap: 10px;
+        column-gap: 10px;
+        grid-template-rows: 15% 45% 80% 5%;
+        /*grid-template-rows: 10% 40% 80% 5%;*/
+        grid-template-columns: 17% 1fr 1fr 1%;
+        width: 100%;
+    }
+
+    .album-divs-desktop {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+    
 }
