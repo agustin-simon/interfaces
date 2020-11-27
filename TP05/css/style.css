@@ -1622,4 +1622,8 @@ h3 {
         font-size: 15px;  
         color: #06CC3D;
     }    
+
+    .texto-h2-play {
+        display: block;
+    }
 }

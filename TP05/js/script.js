@@ -209,50 +209,7 @@ flecha_btn.addEventListener("click", function () {
 });
 
 
-let btns_corazon = document.querySelectorAll(".btn-corazon");
-let pop_up_like = document.querySelector("#pop-up-like");
-let btn_pop_up_comentar = document.querySelector("#btn-pop-up");
-let btn_corazon_contador = 0;
 
-
-btns_corazon.forEach(boton => {
-    boton.addEventListener("click", function () {
-        if (btn_corazon_contador % 2 == 0) {
-            boton.classList.remove("btn-corazon");
-            boton.classList.add("btn-corazon-activado");
-            pop_up_like.style.display = "block"
-            btn_corazon_contador++;
-
-        } else {
-            boton.classList.remove("btn-corazon-activado");
-            boton.classList.add("btn-corazon");
-            pop_up_like.style.display = "none"
-            btn_corazon_contador++;
-        }
-    });
-});
-
-btn_pop_up_comentar.addEventListener("click" , function() {
-    pop_up_like.style.display = "none"
-});
-
-let btn_filtros_desktop = document.querySelectorAll(".btn-filtro-secundario-desktop");
-let btn_filtros_cuenta = 0;
-
-btn_filtros_desktop.forEach(boton => {
-    boton.addEventListener("click", function(){
-        
-        if(btn_filtros_cuenta % 2 == 0) {
-            boton.style.backgroundColor = "#66FE90";
-            btn_filtros_cuenta++;
-        }
-
-        else {
-            boton.style.backgroundColor = "#F3F0F0";
-            btn_filtros_cuenta++;
-        }
-    })
-});
 
 
 
