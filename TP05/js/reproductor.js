@@ -1,12 +1,14 @@
 function cargaPagina() {
     let estado = "play";
     let barraProgreso = document.querySelector(".cancion-reproductor-desktop");
+    let barraProgresoMobileGrande = document.querySelector(".cancion-reproductor-mobile-grande");
     let barraProgresoMobile = document.querySelector(".cancion-reproductor-mobile");
-    
-
     let tiempoTotal = 180;
+    
     barraProgreso.max = tiempoTotal;
     barraProgreso.value = 0;
+    barraProgresoMobileGrande.max = tiempoTotal;
+    barraProgresoMobileGrande.value = 0;
     barraProgresoMobile.max = tiempoTotal;
     barraProgresoMobile.value = 0;
     document.querySelector("#cancion-end").innerHTML = secondsToString(tiempoTotal);

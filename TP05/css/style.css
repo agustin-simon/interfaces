@@ -407,7 +407,6 @@ h3 {
     position: relative;
     z-index: 20;
     display: none;
-    /*background-color: red;*/
     background-color: #292929;    
 }
 
@@ -462,24 +461,6 @@ h3 {
     grid-template-columns: 20px 1fr 20px;
 }
 
-.row-logo {
-    background-color: red;
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
-.row-txt {
-    background-color: rgb(90, 202, 165);
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
-.row-btns {
-    background-color: rgb(238, 222, 5);
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
 .btns {
     display: grid;
     grid-gap: 34px;
@@ -513,7 +494,6 @@ h3 {
     position: relative;
     z-index: 20;
     display: none;
-    /*background-color: red;*/
     background-color: #292929;    
 }
 
@@ -1547,7 +1527,6 @@ h3 {
         row-gap: 10px;
         column-gap: 10px;
         grid-template-rows: 10% 5% 5% 20% 20% 50%; 
-        /*grid-template-rows: 45px 35px 30px 150px 250px; */
         grid-template-columns: 17% 1fr 1fr 1%; 
         width: 100%;    
     }
@@ -1604,5 +1583,9 @@ h3 {
 
     .container-reproductor-mobile{
         display:none;
+    }
+
+    .cancion-reproductor-mobile-grande{
+        width: 100%!important;
     }
 }
