@@ -1570,5 +1570,49 @@ h3 {
         grid-column-start: 2;
         grid-column-end: 4;
     }
+
+    #pop-up-like {
+        display: none;
+        position: absolute;
+        width: 560px;
+        height: 400px;
+        left: 35%;
+        background-color:#292929;
+        bottom: 20%;
+        border-radius: 14px;        
+    }
+
+    #btn-pop-up {
+        position: relative;
+        width: 187.59px;
+        height: 36.78px;
+        background: linear-gradient(180deg, #66FE90 0%, rgba(255, 255, 255, 0) 100%), #06CC3D;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 100px;
+        color: BLACK;
+        font-family: "Poppins";
+        text-align: center;
+        font-size: 20px;             
+        left: 33%; 
+        margin-top: 10px;
+        outline: none;
+    }
+
+    #input-txt-pop-up {
+        margin-top: 5%;
+        margin-left: 7%;
+        width: 85%;
+        height: 60%;
+        border: none;
+        border-radius: 14px;
+        outline: none;
+    }
+
+    .txt-pop-up {
+        font-family: "Poppins";
+        text-align: center;
+        font-size: 15px;  
+        color: #06CC3D;
+    }
     
 }
