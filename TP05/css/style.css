@@ -1096,6 +1096,10 @@ h3 {
     display: none;
 }
 
+.container-reproductor-mobile {
+    display: none;
+}
+
 @media only screen and (min-width: 1024px) {
     /* HOME - HTML*/
     .container-nav-home {
