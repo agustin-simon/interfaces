@@ -1092,6 +1092,10 @@ h3 {
     opacity: 1;
 }
 
+.only-desktop{
+    display: none;
+}
+
 @media only screen and (min-width: 1024px) {
     /* HOME - HTML*/
     .container-nav-home {
@@ -1482,5 +1486,12 @@ h3 {
     }
     .cancion-reproductor-mobile-grande {
         width: 100%!important;
+    }
+
+    .only-desktop{
+        display: table-cell;
+    }
+    .only-mobile{
+        display: none;
     }
 }
