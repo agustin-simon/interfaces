@@ -1,14 +1,14 @@
 function cargaPagina() {
     let estado = "play";
     let barraProgreso = document.querySelector(".cancion-reproductor-desktop");
-    let barraProgresoMobileGrande = document.querySelector(".cancion-reproductor-mobile-grande");
+    let barraProgresoDesktop = document.querySelector(".cancion-reproductor-mobile-grande");
     let barraProgresoMobile = document.querySelector(".cancion-reproductor-mobile");
     let tiempoTotal = 180;
 
     barraProgreso.max = tiempoTotal;
     barraProgreso.value = 0;
-    barraProgresoMobileGrande.max = tiempoTotal;
-    barraProgresoMobileGrande.value = 0;
+    barraProgresoDesktop.max = tiempoTotal;
+    barraProgresoDesktop.value = 0;
     barraProgresoMobile.max = tiempoTotal;
     barraProgresoMobile.value = 0;
     document.querySelector("#cancion-end").innerHTML = secondsToString(tiempoTotal);
@@ -35,6 +35,7 @@ function cargaPagina() {
         let current = barraProgreso.value;
         let timer = setInterval(function () {
             barraProgreso.value = current;
+            barraProgresoDesktop.value = current;
             barraProgresoMobile.value = current;
             document.querySelector("#cancion-start").innerHTML = secondsToString(current);
             current++;
@@ -57,6 +58,17 @@ function cargaPagina() {
         return minute + ':' + second;
     }
 
+    function abrirReproductor(){
+        document.querySelector(".container-footer").style = "display:none";
+        document.querySelector(".container-reproductor-desktop").style = "display:block";
+        document.querySelector(".container-reproductor-mobile").style = "display:block";
+        changeImage();
+    }
+        
+    botonPlayDesktop = document.querySelectorAll(".play-tabla");
+    for (let index = 0; index < botonPlayDesktop.length; index++) {
+        botonPlayDesktop[index].addEventListener("click", abrirReproductor);  
+    }
     document.querySelector(".playAndPause").addEventListener("click", changeImage);
     document.querySelector(".playAndPauseMobile").addEventListener("click", changeImage);
 

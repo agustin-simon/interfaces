@@ -277,7 +277,110 @@
         </div>
 
     </div>
+    <div class="container container-reproductor container-reproductor-mobile">
+        <div class="row row-reproductor">
+            <div class="col-xs-2 col-reproductor">
+                <a href="Cancion.html" style="text-decoration:none"><img src="img/Icono-flecha-rotate.png" class="img-flecha-rep"></a>
+            </div>
 
+            <div class="col-xs-8">
+                <input type="range" min="0" step="1" class="cancion-reproductor cancion-reproductor-mobile">
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-12">
+                <h3 class="titulo-cancion-reproductor">Led Zeppelin - Stairway to Heaven</h3>
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-3">
+
+            </div>
+            <div class="col-xs-6 col-reproductor">
+                <i class="fas fa-step-backward fa-2x icono-blanco"></i>
+                <i class="fas fa-play fa-2x icono-blanco playAndPauseMobile"></i>
+                <i class="fas fa-step-forward fa-2x icono-blanco"></i>
+            </div>
+            <div class="col-xs-3 col-sonido">
+                <i class="fas fa-volume-up icono-blanco icono-repr-sonido"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container container-reproductor container-reproductor-desktop" style=" display: none;">
+       
+        <div class="row row-reproductor">
+            <div class="col-lg-4 col-reproductor">
+                <div class="box">
+                    
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="box box-izquierda">
+                    <h3 class="num-reproductor" id="cancion-start">00:00</h3>
+                </div>                
+            </div>
+
+            <div class="col-lg-2">
+                <div class="box box-derecha">
+                    <h3 class="num-reproductor" id="cancion-end">03:00</h3>
+                </div>   
+            </div>
+
+            <div class="col-lg-4">
+                
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-4 col-reproductor">
+                <div class="box box-centrado">
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <input type="range" min="0" step="1" class="cancion-reproductor cancion-reproductor-mobile-grande">
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-12">
+                <h3 class="titulo-cancion-reproductor">Led Zeppelin - Stairway to Heaven</h3>
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-4">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">Acerca de</h3>
+                    <h3 class="txt-footer">Ayuda</h3>
+                    <img src="img/Logo.png" class="logo-footer">
+                </div>
+            </div>
+            <div class="col-xs-4 col-reproductor">
+                <i class="fas fa-sync-alt fa-lg icono-blanco"></i>
+                <i class="fas fa-step-backward fa-2x icono-blanco"></i>
+                <i class="fas fa-play fa-2x icono-blanco playAndPause"></i>
+                <i class="fas fa-step-forward fa-2x icono-blanco"></i>
+                <i class="fas fa-volume-up fa-lg icono-blanco"></i>
+            </div>
+            <div class="col-xs-3 col-sonido">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">©2020 Spoiler Five Inc.</h3>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <img src="img/Bandera-Argentina.webp" class="img-bandera-argentina">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="cancion-reproductor-desktop"></div>
+    </div>
     <div class="container container-footer">
 
         <div class="row row-footer">
@@ -301,9 +404,9 @@
                 </div>
             </div>
         </div>
-
     </div>
 
+    <script src="js/reproductor.js"></script>
     <script src="js/script.js"></script>
 </body>
 

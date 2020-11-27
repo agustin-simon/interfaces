@@ -244,7 +244,7 @@
     <div class="container container-reproductor container-reproductor-mobile">
         <div class="row row-reproductor">
             <div class="col-xs-2 col-reproductor">
-                <img src="img/Icono-flecha-rotate.png" class="img-flecha-rep">
+                <a href="Cancion.html" style="text-decoration:none"><img src="img/Icono-flecha-rotate.png" class="img-flecha-rep"></a>
             </div>
 
             <div class="col-xs-8">
@@ -285,13 +285,13 @@
 
             <div class="col-lg-2">
                 <div class="box box-izquierda">
-                    <p class="txt-reproductor">1:04</p>                    
+                    <h3 class="num-reproductor" id="cancion-start">00:00</h3>
                 </div>                
             </div>
 
             <div class="col-lg-2">
                 <div class="box box-derecha">
-                    <p class="txt-reproductor">3:04</p>                 
+                    <h3 class="num-reproductor" id="cancion-end">03:00</h3>
                 </div>   
             </div>
 
@@ -343,9 +343,7 @@
         </div>
     </div>
     <div style=" display: none;">
-        <h3 class="num-reproductor" id="cancion-start">00:00</h3>
-        <h3 class="num-reproductor" id="cancion-end">03:00</h3>
-        <div class="cancion-reproductor-mobile"></div>
+        <div class="cancion-reproductor-desktop"></div>
     </div>
     <div class="container container-footer" style=" display: none;">
 
