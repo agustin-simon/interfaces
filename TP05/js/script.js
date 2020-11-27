@@ -236,5 +236,23 @@ btn_pop_up_comentar.addEventListener("click" , function() {
     pop_up_like.style.display = "none"
 });
 
+let btn_filtros_desktop = document.querySelectorAll(".btn-filtro-secundario-desktop");
+let btn_filtros_cuenta = 0;
+
+btn_filtros_desktop.forEach(boton => {
+    boton.addEventListener("click", function(){
+        
+        if(btn_filtros_cuenta % 2 == 0) {
+            boton.style.backgroundColor = "#66FE90";
+            btn_filtros_cuenta++;
+        }
+
+        else {
+            boton.style.backgroundColor = "#F3F0F0";
+            btn_filtros_cuenta++;
+        }
+    })
+});
+
 
 
