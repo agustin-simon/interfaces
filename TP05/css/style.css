@@ -1473,11 +1473,12 @@ h3 {
         border: 0px solid #000000;
         box-shadow: 0px 4px 4px rgba(206, 194, 194, 0.25);
     }
+    
     /* REPRODUCTOR - DESKTOP */
     .container-reproductor-desktop {
         border-top: 1px solid #FFEFF6;
         display: grid;
-        grid-template-rows: 25px 12px 45px;
+        grid-template-rows: 15px 23px 12px 45px;
         position: fixed;
         width: 100%;
         bottom: 0%;
@@ -1494,6 +1495,23 @@ h3 {
     }
     .only-mobile{
         display: none;
+    }
+
+    .txt-reproductor {
+        color: white;
+        font-family: "Poppins";
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .box-izquierda {
+        display: flex;
+        justify-content: start;
+    }
+
+    .box-derecha {
+        display: flex;
+        justify-content: flex-end;
     }
 
     /* ALBUM */
