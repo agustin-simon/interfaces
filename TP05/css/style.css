@@ -1374,6 +1374,8 @@ h3 {
         grid-column-end: 4;
     }
     .img-album-desktop {
+        position: relative;
+        top: -18%;
         width: 146px;
         height: 196px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
