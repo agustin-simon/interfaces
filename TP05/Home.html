@@ -234,14 +234,14 @@
         </div>
     </div>
 
-    <div class="container container-reproductor">
+    <div class="container container-reproductor container-reproductor-mobile">
         <div class="row row-reproductor">
             <div class="col-xs-2 col-reproductor">
                 <img src="img/Icono-flecha-rotate.png" class="img-flecha-rep">
             </div>
 
-            <div class="col-xs-10">
-                <input type="range" class="linea-reproductor">
+            <div class="col-xs-8">
+                <input type="range" min="0" step="1" class="cancion-reproductor cancion-reproductor-mobile">
             </div>
         </div>
 
@@ -256,27 +256,26 @@
 
             </div>
             <div class="col-xs-6 col-reproductor">
-                <img src="img/Icono-Reproductor-Left.png" class="icono-repr">
-                <img src="img/Icono-Reproductor-Stop.png" class="icono-repr">
-                <img src="img/Icono-Reproductor-Right.png" class="icono-repr">
+                <i class="fas fa-step-backward fa-2x icono-blanco"></i>
+                <i class="fas fa-play fa-2x icono-blanco playAndPauseMobile"></i>
+                <i class="fas fa-step-forward fa-2x icono-blanco"></i>
             </div>
             <div class="col-xs-3 col-sonido">
-                <img src="img/Icono-Reproductor-Sonido.png" class="icono-repr-sonido">
+                <i class="fas fa-volume-up icono-blanco icono-repr-sonido"></i>
             </div>
         </div>
     </div>
 
 
-    <div class="container container-reproductor container-reproductor-desktop" style="display: none;">
+    <div class="container container-reproductor container-reproductor-desktop">
         <div class="row row-reproductor">
             <div class="col-xs-2 col-reproductor">
                 <div class="box box-centrado">
-                    <img src="img/Icono-flecha-rotate.png" class="img-flecha-rep">
                 </div>
             </div>
 
             <div class="col-xs-10">
-                <input type="range" min="0" step="1" class="cancion-reproductor">
+                <input type="range" min="0" step="1" class="cancion-reproductor cancion-reproductor-desktop">
             </div>
         </div>
 

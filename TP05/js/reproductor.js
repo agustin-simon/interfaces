@@ -1,19 +1,28 @@
 function cargaPagina() {
     let estado = "play";
-    let barraProgreso = document.querySelector(".cancion-reproductor");
+    let barraProgreso = document.querySelector(".cancion-reproductor-desktop");
+    let barraProgresoMobile = document.querySelector(".cancion-reproductor-mobile");
+    
+
     let tiempoTotal = 180;
     barraProgreso.max = tiempoTotal;
     barraProgreso.value = 0;
+    barraProgresoMobile.max = tiempoTotal;
+    barraProgresoMobile.value = 0;
     document.querySelector("#cancion-end").innerHTML = secondsToString(tiempoTotal);
 
     function changeImage() {
         if (estado == "pause") {
             document.querySelector(".playAndPause").classList.remove("fa-pause");
             document.querySelector(".playAndPause").classList.add("fa-play");
+            document.querySelector(".playAndPauseMobile").classList.remove("fa-pause");
+            document.querySelector(".playAndPauseMobile").classList.add("fa-play");
             estado = "play";
         } else {
             document.querySelector(".playAndPause").classList.add("fa-pause");
             document.querySelector(".playAndPause").classList.remove("fa-play");
+            document.querySelector(".playAndPauseMobile").classList.add("fa-pause");
+            document.querySelector(".playAndPauseMobile").classList.remove("fa-play");
             estado = "pause";
             play();
         }
@@ -24,6 +33,7 @@ function cargaPagina() {
         let current = barraProgreso.value;
         let timer = setInterval(function () {
             barraProgreso.value = current;
+            barraProgresoMobile.value = current;
             document.querySelector("#cancion-start").innerHTML = secondsToString(current);
             current++;
             if ((estado == "play") || (current == barraProgreso.max)) {
@@ -46,6 +56,8 @@ function cargaPagina() {
     }
 
     document.querySelector(".playAndPause").addEventListener("click", changeImage);
+    document.querySelector(".playAndPauseMobile").addEventListener("click", changeImage);
+
 }
 
 document.addEventListener("DOMContentLoaded", cargaPagina);
