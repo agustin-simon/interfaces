@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
+        type="text/css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
+
+    <title>Cancion</title>
+</head>
+
+<body class="normal">
+    <div class="container container-nav-home">
+        <div class="row nav-home">
+            <div class="col-xs-2 col-md-1  col-lg-1 nav-hamburguesa">
+                <div class="box">
+                    <button id="btn-lupa"><img src="img/Hambur.png" id="img-hambur"></button>
+                    <div id="menu-hamburguesa">
+                        <ul id="menu-lista">
+                            <li>
+                                <i class="fas fa-list icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a"
+                                    href="Playlists.html">Tu biblioteca</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-home icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a"
+                                    href="Home.html">Home</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-headphones-alt icono-blanco-fuerte" id="img-icono-ayuda"></i><a
+                                    class="txt txt-a" id="a-modo">Modo</a> <i class="fas fa-chevron-down icono-blanco"
+                                    id="img-icono-flecha"></i>
+                                <div id="menu-modo">
+                                    <ul id="menu-lista-modo">
+                                        <li>
+                                            <i class="fas fa-car icono-blanco-fuerte" id="img-icono-modo"></i><a
+                                                class="txt txt-a">Conducir</a>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-running icono-blanco-fuerte" id="img-icono-modo"></i><a
+                                                class="txt txt-a">Correr</a>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-walking icono-blanco-fuerte" id="img-icono-modo"></i> <a
+                                                class="txt txt-a">Caminar</a>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-guitar icono-blanco-fuerte" id="img-icono-modo"></i><a
+                                                class="txt txt-a">Normal</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <i class="far fa-question-circle icono-blanco-fuerte" id="img-icono-ayuda"></i><a
+                                class="txt txt-a">Ayuda</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7 col-md-10 col-lg-10 col-buscador">
+                <div class="box box-buscador">
+                    <input type="text" class="buscador" id="input-buscador">
+                    <a><i class="fas fa-search fa-lg icono-blanco-fuerte" id="img-lupa"></i></a>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-md-1 col-lg-1 nav-profile">
+                <div class="box box-nav-iconos">
+                    <a class="nav-icono-campana"><i class="fas fa-bell fa-lg icono-blanco-fuerte"></i></a>
+                    <a class="nav-icono-profile"><i class="fas fa-user-circle fa-2x icono-blanco-fuerte"
+                            id="img-profile"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-nav-buscador" id="col-buscador">
+                <div class="box" id="box-buscador-historial">
+                    <ul class="btn-ul">
+                        <li class="li-filtros-titulo">
+                            <i class="fas fa-chevron-up fa-posicion-icono fa-lg icono-blanco-fuerte"
+                                id="img-icono-up"></i>
+                            <h2 class="fa-posicion-titulo">Filtros</h2>
+                        </li>
+                        <li class="btn-li">
+                            <button class="btn-filtro-principal">Música</button><button
+                                class="btn-filtro-principal">Podcast</button>
+                        </li>
+                        <li class="btn-li">
+                            <button class="btn-filtro-secundario">MAS ESCUCHADOS</button>
+                            <button class="btn-filtro-secundario">ROCK</button>
+                            <button class="btn-filtro-secundario">80'S</button>
+                        </li>
+
+                        <li class="btn-li">
+                            <button class="btn-filtro-secundario">ENTRENAMIENTO</button>
+                            <button class="btn-filtro-secundario">ESTUDIO</button>
+                            <button class="btn-filtro-secundario">RELAX</button>
+                        </li>
+
+                        <li class="btn-li">
+                            <a href="Busqueda-Musica.html" class="btn-filtro-buscar">BUSCAR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container container-cancion">
+
+        <div class="row album-divs">
+            <div class="col-xs-1">
+                <div class="box">
+                    <a href="Album-Reproduciendo.html"><i class="fas fa-angle-left fa-3x icono-blanco"></i></a>
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <div class="box box-icono-medio">
+                    <i class="fas fa-comment-dots fa-2x icono-blanco"></i>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div class="box box-icono-derecho">
+                    <i class="fas fa-plus-circle fa-2x icono-blanco"></i>
+                    <i class="fas fa-heart fa-2x icono-blanco"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cancion">
+            <div class="col-xs-12 col-cancion">
+                <div class="box">
+                    <img src="img/Tema-Stairwais.png" class="img-cancion">
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cancion">
+            <div class="col-xs-12 col-cancion">
+                <div class="div-votacion">
+                    <a class="btn-votacion btn-negativo-activo" id="a-negativo"> <i
+                            class="fas fa-caret-down fa-3x"></i></a>
+                    <h2 class="txt-porcentaje"></h2>
+                    <a class="btn-votacion btn-positivo-activo" id="a-positivo"><i
+                            class=" fas fa-caret-up fa-3x"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container container-cancion-reproductor">
+
+        <div class="row row-cancion">
+            <div class="col-xs-12 col-cancion-sync">
+                <div class="box">
+                    <i class="fas fa-sync-alt icono-blanco"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cancion">
+            <div class="col-xs-12">
+                <div class="box">
+                    <input type="range" min="0" step="1" class="cancion-reproductor cancion-reproductor-desktop">
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cancion">
+            <div class="col-xs-6 ">
+                <div class="box box-cancion-start">
+                    <h3 class="num-reproductor" id="cancion-start">00:00</h3>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="box box-cancion-end">
+                    <h3 class="num-reproductor" id="cancion-end">03:00</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cancion">
+            <div class="col-xs-2">
+                <div class="box">
+
+                </div>
+            </div>
+
+            <div class="col-xs-8">
+                <div class="box box-reproductor">
+                    <i class="fas fa-step-backward fa-3x icono-blanco"></i>
+                    <i class="fas fa-play fa-3x icono-blanco playAndPause"></i>
+                    <i class="fas fa-step-forward fa-3x icono-blanco"></i>
+                </div>
+            </div>
+
+            <div class="col-xs-2 box-reproductor">
+                <i class="fas fa-volume-up fa-lg icono-blanco" id="icono-volumen"></i>
+            </div>
+        </div>
+
+        <div class="row row-cancion">
+            <div class="col-xs-12 col-down">
+                <i class="fas fa-chevron-down fa-2x icono-blanco"></i>
+            </div>
+        </div>
+        <div class="cancion-reproductor-mobile-grande" style="display: none;"></div>
+        <div class="cancion-reproductor-mobile" style="display: none;"></div>
+        <div class="barraProgresoMobile" style="display: none;"></div>
+        <div class="playAndPauseMobile" style="display: none;"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/votation.js"></script>
+    <script src="js/reproductor.js"></script>
+</body>
+
+</html>

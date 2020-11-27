@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
+        type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
+    <title>Busqueda Musica</title>
+</head>
+
+<body class="normal">
+
+    <div class="container container-nav-home">
+        <div class="row nav-home">
+            <div class="col-xs-2 col-md-2 col-lg-2 nav-hamburguesa">
+                <div class="box box-centrado">
+                    <button id="btn-lupa"><img src="img/Hambur.png" id="img-hambur"></button>
+                    <img src="img/Logo.png" class="img-logo-nav img-logo-nav-desktop">
+                    <div id="menu-hamburguesa">
+                        <ul id="menu-lista">
+                            <li>
+                                <i class="fas fa-list icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a"
+                                    href="Playlists.html">Tu biblioteca</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-home icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a"
+                                    href="Home.html">Home</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-headphones-alt icono-blanco-fuerte" id="img-icono-ayuda"></i><a
+                                    class="txt txt-a" id="a-modo">Modo</a> <i class="fas fa-chevron-down icono-blanco"
+                                    id="img-icono-flecha"></i>
+                                <div id="menu-modo">
+                                    <ul id="menu-lista-modo">
+                                        <li>
+                                            <i class="fas fa-car icono-blanco-fuerte" id="img-icono-modo"></i><a
+                                                class="txt txt-a">Conducir</a>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-running icono-blanco-fuerte" id="img-icono-modo"></i><a
+                                                class="txt txt-a">Correr</a>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-walking icono-blanco-fuerte" id="img-icono-modo"></i> <a
+                                                class="txt txt-a">Caminar</a>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-guitar icono-blanco-fuerte" id="img-icono-modo"></i><a
+                                                class="txt txt-a">Normal</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <i class="far fa-question-circle icono-blanco-fuerte" id="img-icono-ayuda"></i><a
+                                class="txt txt-a">Ayuda</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7 col-md-7 col-lg-8 col-buscador">
+                <div class="box box-buscador">
+                    <input type="text" class="buscador" id="input-buscador">
+                    <a><i class="fas fa-search fa-lg icono-blanco-fuerte" id="img-lupa"></i></a>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-md-3 col-lg-2 nav-profile">
+                <div class="box box-nav-iconos">
+                    <a class="nav-icono-campana"><i class="fas fa-bell fa-lg icono-blanco-fuerte"></i></a>
+                    <a class="nav-icono-profile"><i class="fas fa-user-circle fa-2x icono-blanco-fuerte"
+                            id="img-profile"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-nav-buscador" id="col-buscador">
+                <div class="box" id="box-buscador-historial">
+                    <ul class="btn-ul">
+                        <li class="li-filtros-titulo">
+                            <i class="fas fa-chevron-up fa-posicion-icono fa-lg icono-blanco-fuerte"
+                                id="img-icono-up"></i>
+                            <h2 class="fa-posicion-titulo">Filtros</h2>
+                        </li>
+                        <li class="btn-li">
+                            <button class="btn-filtro-principal btn-filtro-principal-desktop">Música</button><button
+                                class="btn-filtro-principal btn-filtro-principal-desktop">Podcast</button>
+                        </li>
+                        <li class="btn-li">
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">MAS ESCUCHADOS</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">ROCK</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">80'S</button>
+                        </li>
+
+                        <li class="btn-li">
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">ENTRENAMIENTO</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">ESTUDIO</button>
+                            <button class="btn-filtro-secundario btn-filtro-secundario-desktop">RELAX</button>
+                        </li>
+
+                        <li class="btn-li">
+                            <button class="btn-filtro-buscar">BUSCAR</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container container-busqueda-musica">
+
+        <div class="row row-publicidad">
+            <div class="col-xs">
+                <div class="box box-menu" id="menu-hamburguesa-desktop">
+                    <ul id="menu-lista-desktop">
+                        <li>
+                            <i class="fas fa-list icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a"
+                                href="Playlists.html">Tu biblioteca</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-home icono-blanco-fuerte" id="img-icono-ayuda"></i><a class="txt txt-a"
+                                href="Home.html">Home</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-headphones-alt icono-blanco-fuerte" id="img-icono-ayuda"></i><a
+                                class="txt txt-a" id="a-modo-desktop">Modo</a> <i
+                                class="fas fa-chevron-down icono-blanco" id="img-icono-flecha-desktop"></i>
+                            <div id="menu-modo-desktop">
+                                <ul id="menu-lista-modo-desktop">
+                                    <li>
+                                        <i class="fas fa-car icono-blanco-fuerte" id="img-icono-modo"></i><a
+                                            class="txt txt-a">Conducir</a>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-running icono-blanco-fuerte" id="img-icono-modo"></i><a
+                                            class="txt txt-a">Correr</a>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-walking icono-blanco-fuerte" id="img-icono-modo"></i> <a
+                                            class="txt txt-a">Caminar</a>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-guitar icono-blanco-fuerte" id="img-icono-modo"></i><a
+                                            class="txt txt-a">Normal</a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row a a-desktop">
+            <div class="col-xs-1 col-lg-4">
+                <div class="box box-centrado">
+                    <a href="Home.html"><i class="fas fa-angle-left fa-3x icono-blanco" id="img-back"></i></a>
+                    <h3 class="titulo-desktop">Resultados</h3>
+                </div>
+            </div>
+            <div class="col-xs-8 col-lg-6">
+                <div class="box">
+                </div>
+            </div>
+            <div class="col-xs-3 col-lg-2">
+                <div class="box box-centrado">
+                </div>
+            </div>
+        </div>
+
+        <div class="row b b-desktop">
+            <div class="col-xs-4">
+                <div class="box">
+                    <h3 class="tags-busqueda">#Musica</h3>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <div class="box">
+                    <h3 class="tags-busqueda">#ROCK</h3>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <div class="box">
+                    <h3 class="tags-busqueda">#RELAX</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row c c-desktop">
+            <div class="col-xs-12">
+                <div class="box">
+                    <h3 class="secondary-text">Álbumes</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d row-carrousel d-desktop">
+            <div class="col-xs col-carrousel">
+                <div class="box">
+                    <img src="img/Profile-PinkFloyd.png" class="img-resultado-profile">
+                    <img src="img/Album-Pink-2.png" class="img-resultado-album">
+                    <img src="img/Album-Pink-3.png" class="img-resultado-album">
+                    <img src="img/Album-Pink-4.png" class="img-resultado-album">
+                    <img src="img/Album-Pink-5.png" class="img-resultado-album">
+                    <img src="img/Album-Pink-6.png" class="img-resultado-album">
+                    <img src="img/Album-Pink-7.png" class="img-resultado-album">
+                    <img src="img/Album-Pink-8.png" class="img-resultado-album">
+                </div>
+            </div>
+        </div>
+
+        <div class="row e e-desktop">
+            <div class="col-xs-12 col-can-tabla-desktop">
+                <div class="box">
+                    <table class="tabla-canciones">
+                        <tr>
+                            <th class="th-desk only-desktop"><i class="fas fa-play elemento-tabla"></i></th>
+                            <th>Canción</th>
+                            <th>Album</th>
+                            <th><i class="fas fa-clock elemento-tabla"></i></th>
+                            <th><i class="fas fa-chart-line elemento-tabla"></i></th>
+                            <th><i class="fas fa-plus-circle"></i></th>
+                            <th><i class="fas fa-heart elemento-tabla"></i></th>
+                        </tr>
+                        <tr>
+                            <td class="play-tabla only-desktop"><a href="#" style="text-decoration:none"><i
+                                        class="fas fa-play elemento-tabla icono-blanco"></i></a></td>
+                            <td class="only-mobile"><a href="Cancion.html" style="text-decoration:none">Stairwais to
+                                    Heaven</a></td>
+                            <td class="only-desktop">Stairwais to Heaven</td>
+                            <td><a href="Album.html" style="text-decoration:none">Mothership</a></td>
+                            <td>4:00</td>
+                            <td>800k</td>
+                            <td><i class="fas fa-plus-circle"></i></td>
+                            <td><i class="fas fa-lg fa-heart btn-corazon"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="play-tabla only-desktop"><a href="#" style="text-decoration:none"><i
+                                        class="fas fa-play elemento-tabla icono-blanco"></i></a></td>
+                            <td class="only-mobile"><a href="Cancion.html" style="text-decoration:none">Communicat</a>
+                            </td>
+                            <td class="only-desktop">Communica..</td>
+                            <td><a href="Album.html" style="text-decoration:none">Mothership</a></td>
+                            <td>4:00</td>
+                            <td>125k</td>
+                            <td><i class="fas fa-plus-circle"></i></td>
+                            <td><i class="fas fa-lg fa-heart btn-corazon"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="play-tabla only-desktop"><a href="#" style="text-decoration:none"><i
+                                        class="fas fa-play elemento-tabla icono-blanco"></i></a></td>
+                            <td class="only-mobile"><a href="Cancion.html" style="text-decoration:none">Communicat</a>
+                            </td>
+                            <td class="only-desktop">Communication..</td>
+                            <td><a href="Album.html" style="text-decoration:none">Mothership</a></td>
+                            <td>4:00</td>
+                            <td>115k</td>
+                            <td><i class="fas fa-plus-circle"></i></td>
+                            <td><i class="fas fa-lg fa-heart btn-corazon"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="play-tabla only-desktop"><a href="#" style="text-decoration:none"><i
+                                        class="fas fa-play elemento-tabla icono-blanco"></i></a></td>
+                            <td class="only-mobile"><a href="Cancion.html" style="text-decoration:none">Dazed and
+                                    Confused</a></td>
+                            <td class="only-desktop">Dazed and Confused</td>
+                            <td><a href="Album.html" style="text-decoration:none">Mothership</a></td>
+                            <td>4:00</td>
+                            <td>105k</td>
+                            <td><i class="fas fa-plus-circle"></i></td>
+                            <td><i class="fas fa-lg fa-heart btn-corazon"></i></td>
+                        </tr>
+
+                        <tr>
+                            <td class="play-tabla only-desktop"><a href="#" style="text-decoration:none"><i
+                                        class="fas fa-play elemento-tabla icono-blanco"></i></a></td>
+                            <td class="only-mobile"><a href="Cancion.html" style="text-decoration:none">Good Times</a>
+                            </td>
+                            <td class="only-desktop">Good Times</td>
+                            <td><a href="Album.html" style="text-decoration:none">Mothership</a></td>
+                            <td>4:00</td>
+                            <td>100k</td>
+                            <td><i class="fas fa-plus-circle"></i></td>
+                            <td><i class="fas fa-lg fa-heart btn-corazon"></i></td>
+                        </tr>
+
+                        <tr>
+                            <td class="play-tabla only-desktop"><a href="#" style="text-decoration:none"><i
+                                        class="fas fa-play elemento-tabla icono-blanco"></i></a></td>
+                            <td class="only-mobile"><a href="Cancion.html" style="text-decoration:none">Babe I'm</a>
+                            </td>
+                            <td class="only-desktop">Babe I'm</td>
+                            <td><a href="Album.html" style="text-decoration:none">Mothership</a></td>
+                            <td>4:00 </td>
+                            <td>100k</td>
+                            <td><i class="fas fa-plus-circle"></i></td>
+                            <td><i class="fas fa-lg fa-heart btn-corazon"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-reproductor container-reproductor-mobile">
+        <div class="row row-reproductor">
+            <div class="col-xs-2 col-reproductor">
+                <a href="Cancion.html" style="text-decoration:none"><img src="img/Icono-flecha-rotate.png"
+                        class="img-flecha-rep"></a>
+            </div>
+
+            <div class="col-xs-8">
+                <input type="range" min="0" step="1" class="cancion-reproductor cancion-reproductor-mobile">
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-12">
+                <h3 class="titulo-cancion-reproductor">Led Zeppelin - Stairway to Heaven</h3>
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-3">
+
+            </div>
+            <div class="col-xs-6 col-reproductor">
+                <i class="fas fa-step-backward fa-2x icono-blanco"></i>
+                <i class="fas fa-play fa-2x icono-blanco playAndPauseMobile"></i>
+                <i class="fas fa-step-forward fa-2x icono-blanco"></i>
+            </div>
+            <div class="col-xs-3 col-sonido">
+                <i class="fas fa-volume-up icono-blanco icono-repr-sonido"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container container-reproductor container-reproductor-desktop" style=" display: none;">
+
+        <div class="row row-reproductor">
+            <div class="col-lg-4 col-reproductor">
+                <div class="box">
+
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="box box-izquierda">
+                    <h3 class="num-reproductor" id="cancion-start">00:00</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="box box-derecha">
+                    <h3 class="num-reproductor" id="cancion-end">03:00</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-4 col-reproductor">
+                <div class="box box-centrado">
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <input type="range" min="0" step="1" class="cancion-reproductor cancion-reproductor-mobile-grande">
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-12">
+                <h3 class="titulo-cancion-reproductor">Led Zeppelin - Stairway to Heaven</h3>
+            </div>
+        </div>
+
+        <div class="row row-reproductor">
+            <div class="col-xs-4">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">Acerca de</h3>
+                    <h3 class="txt-footer">Ayuda</h3>
+                    <img src="img/Logo.png" class="logo-footer">
+                </div>
+            </div>
+            <div class="col-xs-4 col-reproductor">
+                <i class="fas fa-sync-alt fa-lg icono-blanco"></i>
+                <i class="fas fa-step-backward fa-2x icono-blanco"></i>
+                <i class="fas fa-play fa-2x icono-blanco playAndPause"></i>
+                <i class="fas fa-step-forward fa-2x icono-blanco"></i> 
+                <div>
+                    <div id="div-volumen">
+                        <input type="range" id="range-volumen">
+                        <i class="fas fa-volume-up fa-lg" id="icono-volumen-desplegable"></i>    
+                    </div>
+                    <i class="fas fa-volume-up fa-lg icono-blanco" id="icono-volumen"></i>    
+                </div>
+            </div>
+            <div class="col-xs-3 col-sonido">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">©2020 Spoiler Five Inc.</h3>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <img src="img/Bandera-Argentina.webp" class="img-bandera-argentina">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="cancion-reproductor-desktop"></div>
+    </div>
+    <div class="container container-footer">
+
+        <div class="row row-footer">
+            <div class="col-xs-3">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">Acerca de</h3>
+                    <h3 class="txt-footer">Ayuda</h3>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="box box-centrado">
+                    <img src="img/Logo.png" class="logo-footer">
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div class="box box-centrado">
+                    <h3 class="txt-footer">©2020 Spoiler Five Inc.</h3>
+                    <img src="img/Bandera-Argentina.webp" class="img-bandera-argentina">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/reproductor.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
