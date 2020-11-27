@@ -6,26 +6,26 @@ let menu_hamburguesa = document.querySelector("#menu-hamburguesa");
 let menu_lista = document.querySelector("#menu-lista");
 let contador_hamburguesa = 1;
 
-btn_hamburguesa.addEventListener("click", function() {
+btn_hamburguesa.addEventListener("click", function () {
     contador_hamburguesa++;
-    if(contador_hamburguesa % 2 == 0 && contador_buscador % 2 != 0) {
-        menu_hamburguesa.style.height = 150+"px";
-        setTimeout(function(){ 
+    if (contador_hamburguesa % 2 == 0 && contador_buscador % 2 != 0) {
+        menu_hamburguesa.style.height = 150 + "px";
+        setTimeout(function () {
             menu_hamburguesa.style.display = "block";
-            menu_hamburguesa.style.width = 227+"px";
+            menu_hamburguesa.style.width = 227 + "px";
             menu_lista.style.display = "block";
         }, 100);
-       
+
 
     }
     else {
-        menu_hamburguesa.style.height = 1+"px";  
-        menu_hamburguesa.style.width = 1+"px";  
-        menu_lista.style.display = "none";   
+        menu_hamburguesa.style.height = 1 + "px";
+        menu_hamburguesa.style.width = 1 + "px";
+        menu_lista.style.display = "none";
 
-        menu_modo.style.height = 1+"px";  
-        menu_modo.style.width = 1+"px";  
-        menu_lista_modo.style.display = "none";  
+        menu_modo.style.height = 1 + "px";
+        menu_modo.style.width = 1 + "px";
+        menu_lista_modo.style.display = "none";
     }
 });
 
@@ -36,24 +36,24 @@ let menu_modo = document.querySelector("#menu-modo")
 let menu_lista_modo = document.querySelector("#menu-lista-modo");
 let contador_modo = 1;
 
-a_modo.addEventListener("click", function(){
+a_modo.addEventListener("click", function () {
     contador_modo++;
-    if(contador_modo % 2 == 0) {
-        menu_modo.style.height = 130+"px";
-        menu_hamburguesa.style.height = 270+"px";
-        setTimeout(function(){ 
+    if (contador_modo % 2 == 0) {
+        menu_modo.style.height = 130 + "px";
+        menu_hamburguesa.style.height = 270 + "px";
+        setTimeout(function () {
             menu_modo.style.display = "block";
-            menu_modo.style.width = 227+"px";
+            menu_modo.style.width = 227 + "px";
             menu_lista_modo.style.display = "block";
         }, 100);
-       
+
 
     }
     else {
-        menu_hamburguesa.style.height = 150+"px";
-        menu_modo.style.height = 1+"px";  
-        menu_modo.style.width = 1+"px";  
-        menu_lista_modo.style.display = "none";   
+        menu_hamburguesa.style.height = 150 + "px";
+        menu_modo.style.height = 1 + "px";
+        menu_modo.style.width = 1 + "px";
+        menu_lista_modo.style.display = "none";
     }
 });
 
@@ -63,74 +63,74 @@ let buscador = document.querySelector("#input-buscador");
 let contador_buscador = 1;
 
 
-btn_up.addEventListener("click", function() {    
+btn_up.addEventListener("click", function () {
     contador_buscador++;
-    if(contador_buscador % 2 == 0) {
-        setTimeout(function(){ 
-            buscador.style.height = 100+"%";
-            buscador.style.width = 100+"%";
+    if (contador_buscador % 2 == 0) {
+        setTimeout(function () {
+            buscador.style.height = 100 + "%";
+            buscador.style.width = 100 + "%";
             buscador.style.display = "block";
-            col_buscador.style.height = 230+"px";            
+            col_buscador.style.height = 230 + "px";
             box_buscador.style.display = "block";
             btn_lupa.style.display = "none";
             btn_lupa.style.position = "absolute";
         }, 100);
-       
+
 
     }
-    else { 
-        buscador.style.height = 0+"%";
-        buscador.style.width = 0+"%";
+    else {
+        buscador.style.height = 0 + "%";
+        buscador.style.width = 0 + "%";
         buscador.style.display = "none";
-        col_buscador.style.height = 0+"%";
+        col_buscador.style.height = 0 + "%";
         box_buscador.style.display = "none";
         btn_lupa.style.display = "block";
-    }    
+    }
 });
 
 
-buscador.addEventListener("click", function() {
+buscador.addEventListener("click", function () {
     contador_buscador++;
-    if(contador_buscador % 2 == 0) {
-        setTimeout(function(){ 
-            col_buscador.style.height = 230+"px";
-            col_buscador.style.width = 50+"%";
-            col_buscador.style.top = 130+"px";
-            col_buscador.style.left = 25+"%";
+    if (contador_buscador % 2 == 0) {
+        setTimeout(function () {
+            col_buscador.style.height = 230 + "px";
+            col_buscador.style.width = 50 + "%";
+            col_buscador.style.top = 130 + "px";
+            col_buscador.style.left = 25 + "%";
             box_buscador.style.display = "block";
         }, 100);
-       
+
 
     }
-    else { 
-        col_buscador.style.height = 0+"%";
+    else {
+        col_buscador.style.height = 0 + "%";
         box_buscador.style.display = "none";
-    }    
+    }
 });
 
-btn_lupa.addEventListener("click", function() {
+btn_lupa.addEventListener("click", function () {
     contador_buscador++;
-    if(contador_buscador % 2 == 0 && contador_hamburguesa % 2 != 0) {
-        setTimeout(function(){ 
-            buscador.style.height = 50+"%";
-            buscador.style.width = 90+"%";
-            buscador.style.marginTop = 6+"%";
+    if (contador_buscador % 2 == 0 && contador_hamburguesa % 2 != 0) {
+        setTimeout(function () {
+            buscador.style.height = 50 + "%";
+            buscador.style.width = 90 + "%";
+            buscador.style.marginTop = 6 + "%";
             buscador.style.display = "block";
-            col_buscador.style.height = 230+"px";
+            col_buscador.style.height = 230 + "px";
             box_buscador.style.display = "block";
             btn_lupa.style.display = "none";
         }, 100);
-       
+
 
     }
-    else { 
-        buscador.style.height = 0+"%";
-        buscador.style.width = 0+"%";
+    else {
+        buscador.style.height = 0 + "%";
+        buscador.style.width = 0 + "%";
         buscador.style.display = "none";
-        col_buscador.style.height = 0+"%";
+        col_buscador.style.height = 0 + "%";
         box_buscador.style.display = "none";
         btn_lupa.style.display = "block";
-    }    
+    }
 });
 
 
@@ -143,25 +143,25 @@ let btn_filtros_secundarios = document.querySelectorAll(".btn-filtro-secundario"
 let btn_contador_p = true;
 let btn_contador_s = 0;
 
-btn_filtros_principal.forEach( boton => {
-    boton.addEventListener("click", function() {            
-        if(btn_contador_p) {
+btn_filtros_principal.forEach(boton => {
+    boton.addEventListener("click", function () {
+        if (btn_contador_p) {
             boton.classList.remove("btn-filtro-principal");
-            boton.classList.add("btn-filtro-principal-presionado");    
-            btn_contador_p = false;    
-            console.log(false)  
+            boton.classList.add("btn-filtro-principal-presionado");
+            btn_contador_p = false;
+            console.log(false)
         } else {
             boton.classList.remove("btn-filtro-principal-presionado");
             boton.classList.add("btn-filtro-principal");
-            btn_contador_p = true;  
+            btn_contador_p = true;
             console.log(true)
-        }       
+        }
     });
 });
 
-btn_filtros_secundarios.forEach( boton => {
-    boton.addEventListener("click",function() {
-        if(btn_contador_s % 2 == 0) {
+btn_filtros_secundarios.forEach(boton => {
+    boton.addEventListener("click", function () {
+        if (btn_contador_s % 2 == 0) {
             boton.classList.remove("btn-filtro-secundario");
             boton.classList.add("btn-filtro-secundario-presionado");
             btn_contador_s++;
@@ -169,8 +169,8 @@ btn_filtros_secundarios.forEach( boton => {
             boton.classList.remove("btn-filtro-secundario-presionado");
             boton.classList.add("btn-filtro-secundario");
             btn_contador_s++;
-        } 
-        
+        }
+
     });
 });
 
@@ -183,26 +183,26 @@ let menu_hamburguesa_desktop = document.querySelector("#menu-hamburguesa-desktop
 let flecha_abajo = document.querySelector("#img-icono-flecha-desktop");
 let contador_modo_desktop = 1;
 
-flecha_btn.addEventListener("click", function(){
+flecha_btn.addEventListener("click", function () {
     contador_modo_desktop++;
-    if(contador_modo_desktop % 2 == 0) {
-        menu_modo_desktop.style.height = 130+"px";
-        menu_hamburguesa_desktop.style.height = 270+"px";
+    if (contador_modo_desktop % 2 == 0) {
+        menu_modo_desktop.style.height = 130 + "px";
+        menu_hamburguesa_desktop.style.height = 270 + "px";
         flecha_abajo.classList.remove("fa-chevron-down");
         flecha_abajo.classList.add("fa-chevron-up");
-        setTimeout(function(){ 
+        setTimeout(function () {
             menu_modo_desktop.style.display = "block";
-            menu_modo_desktop.style.width = 200+"px";
+            menu_modo_desktop.style.width = 200 + "px";
             menu_lista_modo_desktop.style.display = "block";
         }, 100);
-       
+
 
     }
     else {
-        menu_hamburguesa_desktop.style.height = 150+"px";
-        menu_modo_desktop.style.height = 1+"px";  
-        menu_modo_desktop.style.width = 1+"px";  
-        menu_lista_modo_desktop.style.display = "none";  
+        menu_hamburguesa_desktop.style.height = 150 + "px";
+        menu_modo_desktop.style.height = 1 + "px";
+        menu_modo_desktop.style.width = 1 + "px";
+        menu_lista_modo_desktop.style.display = "none";
         flecha_abajo.classList.remove("fa-chevron-up");
         flecha_abajo.classList.add("fa-chevron-down");
     }
@@ -213,17 +213,17 @@ let btns_corazon = document.querySelectorAll(".btn-corazon");
 let btn_corazon_contador = 0;
 
 
-btns_corazon.forEach( boton => {
-    boton.addEventListener("click", function(){            
-            if(btn_corazon_contador % 2 == 0) {
-                boton.classList.remove("btn-corazon");
-                boton.classList.add("btn-corazon-activado"); 
-                btn_corazon_contador++;
-                
-            } else {
-                boton.classList.remove("btn-corazon-activado");
-                boton.classList.add("btn-corazon"); 
-                btn_corazon_contador++;
-            }         
+btns_corazon.forEach(boton => {
+    boton.addEventListener("click", function () {
+        if (btn_corazon_contador % 2 == 0) {
+            boton.classList.remove("btn-corazon");
+            boton.classList.add("btn-corazon-activado");
+            btn_corazon_contador++;
+
+        } else {
+            boton.classList.remove("btn-corazon-activado");
+            boton.classList.add("btn-corazon");
+            btn_corazon_contador++;
+        }
     });
 });
