@@ -237,31 +237,4 @@ btn_pop_up_comentar.addEventListener("click" , function() {
 });
 
 
-let icono_vol = document.querySelector("#icono-volumen");
-let div_vol = document.querySelector("#div-volumen");
-let rango_vol = document.querySelector("#range-volumen");
-let icono_vol_desplegable = document.querySelector("#icono-volumen-desplegable");
-let contador_vol = 0;
 
-icono_vol.addEventListener("click", function(){
-    
-    if(contador_vol % 2 == 0) {
-        div_vol.style.width = 40+"px";
-        rango_vol.style.display = "block";
-        icono_vol_desplegable.style.display = "block";
-        contador_vol++;        
-    } 
-    else{
-        div_vol.style.width = 0+"px";
-        rango_vol.style.display = "none";
-        icono_vol_desplegable.style.display = "none";
-        contador_vol++;
-    }
-})
-
-icono_vol_desplegable.addEventListener("click", function(){
-    div_vol.style.width = 0+"px";
-    rango_vol.style.display = "none";
-    icono_vol_desplegable.style.display = "none";
-    contador_vol++;
-});
