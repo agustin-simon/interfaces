@@ -1118,7 +1118,7 @@ h3 {
         grid-template-rows: 80px;
         width: 100%;
         position: fixed;
-        top: 93%;
+        bottom: 0%;
         border-top: 1px solid pink;
     }
     .nav-home {
@@ -1132,6 +1132,7 @@ h3 {
         grid-row-end: 12;
         background-color: #292929;
         display: block;
+        height: 130%;
     }
     .row-footer {
         background-color: #292929;
