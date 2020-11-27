@@ -211,6 +211,7 @@ flecha_btn.addEventListener("click", function () {
 
 let btns_corazon = document.querySelectorAll(".btn-corazon");
 let pop_up_like = document.querySelector("#pop-up-like");
+let btn_pop_up_comentar = document.querySelector("#btn-pop-up");
 let btn_corazon_contador = 0;
 
 
@@ -229,6 +230,10 @@ btns_corazon.forEach(boton => {
             btn_corazon_contador++;
         }
     });
+});
+
+btn_pop_up_comentar.addEventListener("click" , function() {
+    pop_up_like.style.display = "none"
 });
 
 
