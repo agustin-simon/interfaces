@@ -782,7 +782,9 @@ h3 {
     grid-template-rows: 25px 12px 45px;
     position: fixed;
     width: 100%;
-    bottom: 0%;
+    bottom: 1%;
+    height: 10%;
+    background-color: #292929;
 }
 
 .container-reproductor-desktop {
@@ -1096,11 +1098,7 @@ h3 {
     opacity: 1;
 }
 
-.only-desktop{
-    display: none;
-}
-
-.container-reproductor-mobile {
+.only-desktop {
     display: none;
 }
 
@@ -1129,6 +1127,24 @@ h3 {
         bottom: 0%;
         border-top: 1px solid pink;
     }
+    .info-actual {
+        margin-top: 6%!important;
+    }
+    .like-reproductor {
+        top: 26%;
+        left: 21%;
+        position: absolute;
+        margin-left: 8px!important;
+    }
+    .col-reproductor {
+        margin-top:2%!important;
+    }
+    .titulo-cancion-reproductor {
+        color: white;
+        font-family: "Poppins-Medium";
+        text-align: center;
+        font-size: 18px;
+    }
     .nav-home {
         background-color: #292929;
         height: 141px;
@@ -1140,7 +1156,7 @@ h3 {
         grid-row-end: 12;
         background-color: #292929;
         display: block;
-        height: 130%;
+        height: 108%;
     }
     .row-footer {
         background-color: #292929;
@@ -1207,8 +1223,10 @@ h3 {
         height: 49px;
     }
     .img-bandera-argentina {
-        width: 48px;
-        height: 30px;
+        width: 50px;
+        height: auto;
+        position: absolute;
+        bottom: 30%;
     }
     #img-hambur {
         display: none;
@@ -1482,7 +1500,6 @@ h3 {
         border: 0px solid #000000;
         box-shadow: 0px 4px 4px rgba(206, 194, 194, 0.25);
     }
-    
     /* REPRODUCTOR - DESKTOP */
     .container-reproductor-desktop {
         border-top: 1px solid #FFEFF6;
@@ -1498,34 +1515,34 @@ h3 {
     .cancion-reproductor-mobile-grande {
         width: 100%!important;
     }
-
-    .only-desktop{
+    .only-desktop {
         display: table-cell;
     }
-    .only-mobile{
+    .only-mobile {
         display: none;
     }
-
+    .reproductor-album {
+        height: 19%;
+        margin: 4%;
+        margin-top: 19%;
+    }
     .txt-reproductor {
         color: white;
         font-family: "Poppins";
         text-align: center;
         font-size: 12px;
     }
-
     .box-izquierda {
         display: flex;
         justify-content: start;
     }
-
     .box-derecha {
         display: flex;
         justify-content: flex-end;
     }
-
     #div-volumen-activado {
         position: absolute;
-        bottom: 8px;
+        bottom: 0%;
         width: 35px;
         height: 140px;
         background-color: white;
@@ -1533,10 +1550,9 @@ h3 {
         border: 0px solid #000000;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
-
     #div-volumen {
         position: absolute;
-        bottom: 8px;
+        bottom: 27%;
         width: 0px;
         height: 140px;
         background-color: white;
@@ -1544,26 +1560,26 @@ h3 {
         border: 0px solid #000000;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
-
     #range-volumen {
         position: absolute;
-        bottom: 8px;
+        bottom: 9%;
         left: -30px;
         width: 100px;
         height: 140px;
         transform: rotate(-90deg);
         display: none;
     }
-
     #icono-volumen-desplegable {
         position: absolute;
-        bottom: 8px;
+        bottom: 8%;
         left: 10px;
-        display:none;
+        display: none;
     }
-
+    #icono-volumen {
+        position: absolute;
+        bottom: 38%;
+    }
     /* ALBUM */
-
     .container-album {
         display: grid;
         row-gap: 10px;
@@ -1573,23 +1589,20 @@ h3 {
         grid-template-columns: 17% 1fr 1fr 1%;
         width: 100%;
     }
-
     .album-divs-desktop {
         grid-column-start: 2;
         grid-column-end: 4;
     }
-
     #pop-up-like {
         display: none;
         position: absolute;
         width: 560px;
         height: 400px;
         left: 35%;
-        background-color:#292929;
+        background-color: #292929;
         bottom: 20%;
-        border-radius: 14px;        
+        border-radius: 14px;
     }
-
     #btn-pop-up {
         position: relative;
         width: 187.59px;
@@ -1600,12 +1613,11 @@ h3 {
         color: BLACK;
         font-family: "Poppins";
         text-align: center;
-        font-size: 20px;             
-        left: 33%; 
+        font-size: 20px;
+        left: 33%;
         margin-top: 10px;
         outline: none;
     }
-
     #input-txt-pop-up {
         margin-top: 5%;
         margin-left: 7%;
@@ -1615,14 +1627,12 @@ h3 {
         border-radius: 14px;
         outline: none;
     }
-
     .txt-pop-up {
         font-family: "Poppins";
         text-align: center;
-        font-size: 15px;  
+        font-size: 15px;
         color: #06CC3D;
-    }    
-
+    }
     .texto-h2-play {
         display: block;
     }

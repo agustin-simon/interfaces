@@ -1,6 +1,3 @@
-"use strict";
-
-
 let btn_hamburguesa = document.querySelector("#img-hambur");
 let menu_hamburguesa = document.querySelector("#menu-hamburguesa");
 let menu_lista = document.querySelector("#menu-lista");

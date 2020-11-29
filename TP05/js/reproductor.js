@@ -59,9 +59,6 @@ function cargaPagina() {
     }
 
     function abrirReproductor(){
-        document.querySelector(".container-footer").style = "display:none";
-        document.querySelector(".container-reproductor-desktop").style = "display:block";
-        document.querySelector(".container-reproductor-mobile").style = "display:block";
         changeImage();
     }
         
@@ -82,20 +79,23 @@ function cargaPagina() {
         
         if(contador_vol % 2 == 0) {
             div_vol.style.width = 40+"px";
+            icono_vol.style.display ="none";
             rango_vol.style.display = "block";
             icono_vol_desplegable.style.display = "block";
             contador_vol++;        
         } 
         else{
             div_vol.style.width = 0+"px";
+            icono_vol.style.display ="block";
             rango_vol.style.display = "none";
             icono_vol_desplegable.style.display = "none";
             contador_vol++;
         }
-    })
+    });
 
     icono_vol_desplegable.addEventListener("click", function(){
         div_vol.style.width = 0+"px";
+        icono_vol.style.display ="block";
         rango_vol.style.display = "none";
         icono_vol_desplegable.style.display = "none";
         contador_vol++;
