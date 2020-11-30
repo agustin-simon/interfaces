@@ -23,6 +23,10 @@ a {
     border-bottom: 1px solid #8a111150;
 }
 
+.cruz-mobile {
+    display: none ;
+}
+
 .ayuda {
     background-color: #5a5e5c;
     height: 100%;
