@@ -1578,8 +1578,9 @@ h3 {
     .desktop-display {
         display: none;
     }
-    .tags-bordes {
-        width: 70%;
+
+    .tags-bordes{ 
+        width: 80%;
         color: grey;
         font-family: "Poppins";
         text-align: center;
@@ -1764,11 +1765,8 @@ h3 {
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
-    /* Safari */
     backface-visibility: hidden;
 }
-
-.flip-card-back {}
 
 .flip-card-back {
     background-color: black;
