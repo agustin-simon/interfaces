@@ -16,6 +16,13 @@ a {
     background-attachment: fixed;
 }
 
+.tag-titulo-dis {
+    font-family: "Poppins-Medium";
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #8a111150;
+}
+
 .ayuda {
     background-color: #5a5e5c;
     height: 100%;
@@ -150,8 +157,16 @@ h3 {
     display: none;
 }
 
+.mobile-display {
+    display: none;
+}
+
 #menu-lista {
     list-style: none;
+}
+
+.desktop-display {
+    display: block;
 }
 
 /* HOME - HTML */
@@ -594,12 +609,17 @@ h3 {
     width: 32px;
 }
 
+
+.box-canciones-titulo {
+    width: 100%;
+}
+
 /* FILTROS-BUSQUEDA-MUSICA - HTML */
 
 .container-busqueda-musica {
     display: grid;
     row-gap: 10px;
-    grid-template-rows: 45px 35px 30px 150px 250px;
+    grid-template-rows: 45px 35px 25px 125px 18px 125px 250px;
     grid-template-columns: 20px 1fr 20px;
 }
 
@@ -633,7 +653,7 @@ h3 {
     color: #292929;
     font-family: "Poppins";
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .img-resultado-album {
@@ -653,7 +673,8 @@ h3 {
     display: inline-block;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 100px;
-    border: white 2px solid;
+    border: white 2px solid;  
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
 }
 
 .list-canciones {
@@ -1176,8 +1197,8 @@ h3 {
         overflow-x: scroll;
         overflow-y: hidden;
         white-space: nowrap;
-        background: rgba(255, 255, 255, 0.075);
-        border-radius: 25px;
+        /*background: rgba(255, 255, 255, 0.075);
+        border-radius: 25px;*/
     }
     #img-lupa {
         display: none;
@@ -1464,9 +1485,10 @@ h3 {
     .container-busqueda-musica {
         display: grid;
         row-gap: 10px;
-        column-gap: 10px;
-        grid-template-rows: 10% 5% 5% 20% 20% 50%;
+        column-gap: 55px;
+        grid-template-rows: 10% 5% 3% 20% 55% 5%;
         grid-template-columns: 17% 1fr 1fr 1%;
+        grid-auto-flow: column;
         width: 100%;
     }
     .a-desktop {
@@ -1478,14 +1500,25 @@ h3 {
         grid-column-end: 4;
         border-bottom: 1px solid rgba(255, 246, 246, 0.288);
     }
-    .c-desktop {
+    .c-desktop-albumes {
         grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .c-desktop-artistas {
+        grid-column-start: 3;
         grid-column-end: 4;
     }
-    .d-desktop {
+    .d-desktop-albumes {
         grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .d-desktop-artistas {
+        grid-column-start: 3;
         grid-column-end: 4;
     }
+
     .e-desktop {
         grid-column-start: 2;
         grid-column-end: 4;
@@ -1497,9 +1530,17 @@ h3 {
         list-style: none;
     }
     .col-can-tabla-desktop {
-        border: 0px solid #000000;
-        box-shadow: 0px 4px 4px rgba(206, 194, 194, 0.25);
     }
+
+    .col-resultados-albumes {
+        grid: flex;
+        justify-content: start;
+    }
+
+    .desktop-display {
+        display: none;
+    }
+
     /* REPRODUCTOR - DESKTOP */
     .container-reproductor-desktop {
         border-top: 1px solid #FFEFF6;
@@ -1578,6 +1619,10 @@ h3 {
     #icono-volumen {
         position: absolute;
         bottom: 38%;
+    }
+
+    .mobile-display {
+        display: block;
     }
     /* ALBUM */
     .container-album {
