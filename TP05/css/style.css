@@ -1541,6 +1541,50 @@ h3 {
         display: none;
     }
 
+    .tags-bordes{ 
+        width: 70%;
+        color: grey;
+        font-family: "Poppins";
+        text-align: center;
+        font-size: 17px;
+        background-color: rgba(255, 246, 246, 0.493);
+        border-radius: 5px;
+    }
+    
+    .tag-cruz-uno {
+        margin-left: 7px;
+        cursor: pointer;
+    }
+    
+    .tag-cruz-dos {
+        margin-left: 15px;
+        cursor: pointer;
+    }
+    
+    .tag-cruz-tres {
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .tag-cruz-uno:hover {
+        color: black;
+        margin-left: 7px;
+        cursor: pointer;
+    }
+    
+    .tag-cruz-dos:hover {
+        color: black;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+    
+    .tag-cruz-tres:hover {
+        color: black;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    
+
     /* REPRODUCTOR - DESKTOP */
     .container-reproductor-desktop {
         border-top: 1px solid #FFEFF6;
