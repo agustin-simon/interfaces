@@ -24,7 +24,7 @@ a {
 }
 
 .cruz-mobile {
-    display: none ;
+    display: none;
 }
 
 .ayuda {
@@ -122,10 +122,6 @@ h3 {
     border: 0px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     outline: none;
-}
-
-.texto-h2-play {
-    display: none;
 }
 
 .primary-btn-desktop {
@@ -613,7 +609,6 @@ h3 {
     width: 32px;
 }
 
-
 .box-canciones-titulo {
     width: 100%;
 }
@@ -677,8 +672,8 @@ h3 {
     display: inline-block;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 100px;
-    border: white 2px solid;  
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
+    border: white 2px solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .list-canciones {
@@ -1127,6 +1122,57 @@ h3 {
     display: none;
 }
 
+#pop-up-like {
+    display: none;
+    border-radius: 14px;
+    position: absolute;
+    width: 320px;
+    height: 350px;
+    left: 5%;
+    background-color: #292929;
+    bottom: 27%;
+}
+.txt-pop-up {
+    font-family: "Poppins";
+    text-align: center;
+    font-size: 15px;
+    color: #06CC3D;
+}
+#input-txt-pop-up {
+    margin-top: 5%;
+    margin-left: 7%;
+    width: 85%;
+    height: 50%;
+    border: none;
+    border-radius: 14px;
+    outline: none;
+}
+
+.texto-h2-play {
+    display: block;
+}
+
+#btn-pop-up {
+    position: relative;
+    width: 187.59px;
+    height: 36.78px;
+    background: linear-gradient(180deg, #66FE90 0%, rgba(255, 255, 255, 0) 100%), #06CC3D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    color: BLACK;
+    font-family: "Poppins";
+    text-align: center;
+    font-size: 20px;
+    left: 21%;
+    margin-top: 10px;
+    outline: none;
+}
+.btn-corazon-activado {
+    color: red;
+}
+.busqueda-popup{
+    bottom:-15%!important;
+}
 @media only screen and (min-width: 1024px) {
     /* HOME - HTML*/
     .container-nav-home {
@@ -1162,7 +1208,7 @@ h3 {
         margin-left: 8px!important;
     }
     .col-reproductor {
-        margin-top:2%!important;
+        margin-top: 2%!important;
     }
     .titulo-cancion-reproductor {
         color: white;
@@ -1201,8 +1247,6 @@ h3 {
         overflow-x: scroll;
         overflow-y: hidden;
         white-space: nowrap;
-        /*background: rgba(255, 255, 255, 0.075);
-        border-radius: 25px;*/
     }
     #img-lupa {
         display: none;
@@ -1476,9 +1520,6 @@ h3 {
     .elemento-desactivar {
         display: block;
     }
-    .btn-corazon-activado {
-        color: red;
-    }
     .btn-corazon {
         color: white;
     }
@@ -1508,7 +1549,6 @@ h3 {
         grid-column-start: 2;
         grid-column-end: 3;
     }
-
     .c-desktop-artistas {
         grid-column-start: 3;
         grid-column-end: 4;
@@ -1517,12 +1557,10 @@ h3 {
         grid-column-start: 2;
         grid-column-end: 3;
     }
-
     .d-desktop-artistas {
         grid-column-start: 3;
         grid-column-end: 4;
     }
-
     .e-desktop {
         grid-column-start: 2;
         grid-column-end: 4;
@@ -1533,19 +1571,14 @@ h3 {
     #menu-lista-desktop {
         list-style: none;
     }
-    .col-can-tabla-desktop {
-    }
-
     .col-resultados-albumes {
         grid: flex;
         justify-content: start;
     }
-
     .desktop-display {
         display: none;
     }
-
-    .tags-bordes{ 
+    .tags-bordes {
         width: 70%;
         color: grey;
         font-family: "Poppins";
@@ -1554,41 +1587,33 @@ h3 {
         background-color: rgba(255, 246, 246, 0.493);
         border-radius: 5px;
     }
-    
     .tag-cruz-uno {
         margin-left: 7px;
         cursor: pointer;
     }
-    
     .tag-cruz-dos {
         margin-left: 15px;
         cursor: pointer;
     }
-    
     .tag-cruz-tres {
         margin-left: 10px;
         cursor: pointer;
     }
-
     .tag-cruz-uno:hover {
         color: black;
         margin-left: 7px;
         cursor: pointer;
     }
-    
     .tag-cruz-dos:hover {
         color: black;
         margin-left: 15px;
         cursor: pointer;
     }
-    
     .tag-cruz-tres:hover {
         color: black;
         margin-left: 10px;
         cursor: pointer;
     }
-    
-
     /* REPRODUCTOR - DESKTOP */
     .container-reproductor-desktop {
         border-top: 1px solid #FFEFF6;
@@ -1668,7 +1693,6 @@ h3 {
         position: absolute;
         bottom: 38%;
     }
-
     .mobile-display {
         display: block;
     }
@@ -1696,21 +1720,6 @@ h3 {
         bottom: 20%;
         border-radius: 14px;
     }
-    #btn-pop-up {
-        position: relative;
-        width: 187.59px;
-        height: 36.78px;
-        background: linear-gradient(180deg, #66FE90 0%, rgba(255, 255, 255, 0) 100%), #06CC3D;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 100px;
-        color: BLACK;
-        font-family: "Poppins";
-        text-align: center;
-        font-size: 20px;
-        left: 33%;
-        margin-top: 10px;
-        outline: none;
-    }
     #input-txt-pop-up {
         margin-top: 5%;
         margin-left: 7%;
@@ -1720,52 +1729,49 @@ h3 {
         border-radius: 14px;
         outline: none;
     }
-    .txt-pop-up {
-        font-family: "Poppins";
-        text-align: center;
-        font-size: 15px;
-        color: #06CC3D;
+    #btn-pop-up {
+        left: 33%;
     }
-    .texto-h2-play {
-        display: block;
+    .busqueda-popup{
+        bottom:20%!important;
     }
 }
 
 /*EFECTO 3D IMAGEN ALBUM*/
- .flip-card {
+
+.flip-card {
     background-color: transparent;
     width: 150px;
     height: 200px;
-    perspective: 1000px; 
-  }
-  
-  .flip-card-inner {
+    perspective: 1000px;
+}
+
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-  }
-  
-  .flip-card:hover .flip-card-inner {
+}
+
+.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
+}
+
+.flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
+    /* Safari */
     backface-visibility: hidden;
-  }
+}
 
-  .flip-card-back{
-      
-  }
+.flip-card-back {}
 
-  .flip-card-back {
+.flip-card-back {
     background-color: black;
     border-radius: 7%;
     transform: rotateY(180deg);
-  } 
+}

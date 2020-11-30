@@ -50,5 +50,5 @@ btn_filtros_desktop.forEach(boton => {
             txt_pop_up.style.display = "none";
             btn_filtros_cuenta++;
         }
-    })
+    });
 });

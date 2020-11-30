@@ -119,7 +119,7 @@
         <div class="row album-divs">
             <div class="col-xs-1">
                 <div class="box">
-                    <a href="Album-Reproduciendo.html"><i class="fas fa-angle-left fa-3x icono-blanco"></i></a>
+                    <a href="Album.html"><i class="fas fa-angle-left fa-3x icono-blanco"></i></a>
                 </div>
             </div>
             <div class="col-xs-8">
@@ -131,7 +131,7 @@
             <div class="col-xs-3">
                 <div class="box box-icono-derecho">
                     <i class="fas fa-plus-circle fa-2x icono-blanco"></i>
-                    <i class="fas fa-heart fa-2x icono-blanco"></i>
+                    <i class="fas fa-heart fa-2x icono-blanco btn-corazon"></i>
                 </div>
             </div>
         </div>
@@ -157,7 +157,13 @@
         </div>
 
     </div>
-
+    <div id="pop-up-like">
+        <h2 class="texto-h2-play">¡Gracias por el corazón!</h2>
+        <input type="text" id="input-txt-pop-up" class="texto-h2-play">
+        <input type="button" value="COMENTAR" id="btn-pop-up" class="texto-h2-play">
+        <p class="txt-pop-up texto-h2-play">Recorda que si dejas 50 comentarios en un mes, tendras un 10% de descuento
+            en tu proxima factura!</p>
+    </div>
     <div class="container container-cancion-reproductor">
 
         <div class="row row-cancion">
@@ -221,6 +227,7 @@
         <div class="playAndPauseMobile" style="display: none;"></div>
     </div>
 
+    <script src="js/pop-up.js"></script>
     <script src="js/script.js"></script>
     <script src="js/votation.js"></script>
     <script src="js/reproductor.js"></script>

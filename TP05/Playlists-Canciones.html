@@ -216,7 +216,7 @@
             </div>
         </div>
 
-        <div class="row album-divs row-playlist-tabla-canciones">
+        <div class="row album-divs row-playlist-tabla-canciones" style="margin-bottom: 20px;">
             <div class="col-xs-12 col-album-canciones box-centrado">
                 <table class="tabla-canciones">
                     <tr>
@@ -278,7 +278,13 @@
             </div>
         </div>
     </div>
-
+    <div id="pop-up-like">
+        <h2 class="texto-h2-play">¡Gracias por el corazón!</h2>
+        <input type="text" id="input-txt-pop-up" class="texto-h2-play">
+        <input type="button" value="COMENTAR" id="btn-pop-up" class="texto-h2-play">
+        <p class="txt-pop-up texto-h2-play">Recorda que si dejas 50 comentarios en un mes, tendras un 10% de descuento
+            en tu proxima factura!</p>
+    </div>
     <div class="container container-reproductor container-reproductor-mobile">
         <div class="row row-reproductor">
             <div class="col-xs-2 col-reproductor">
@@ -329,7 +335,7 @@
                         </div>
                     </div>
                     <div class="col-lg-2 like-reproductor">
-                        <i class="far fa-lg fa-heart icono-blanco"></i>
+                        <i class="fas fa-lg fa-heart icono-blanco btn-corazon"></i>
                     </div>
                 </div>
             </div>
@@ -393,6 +399,7 @@
         <div class="cancion-reproductor-desktop"></div>
     </div>
 
+    <script src="js/pop-up.js"></script>
     <script src="js/script.js"></script>
     <script src="js/votation.js"></script>
     <script src="js/reproductor.js"></script>
