@@ -169,6 +169,17 @@ h3 {
     display: block;
 }
 
+.tags-bordes{ 
+    width: 95%;
+    color: grey;
+    font-family: "Poppins";
+    text-align: center;
+    font-size: 17px;
+    background-color: rgba(255, 246, 246, 0.493);
+    border-radius: 5px;
+}
+
+
 /* HOME - HTML */
 
 .container-home {
@@ -630,6 +641,7 @@ h3 {
 .b {
     grid-column-start: 2;
     grid-column-end: 3;
+    border-bottom: 1px solid #8a111150;
 }
 
 .c {
