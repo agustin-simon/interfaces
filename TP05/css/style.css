@@ -174,9 +174,22 @@ h3 {
     color: grey;
     font-family: "Poppins";
     text-align: center;
-    font-size: 17px;
+    font-size: 16px;
     background-color: rgba(255, 246, 246, 0.493);
     border-radius: 5px;
+}
+
+.tag-cruz-uno {
+    margin-left: 4px;
+    cursor: pointer;
+}
+.tag-cruz-dos {
+    margin-left: 15px;
+    cursor: pointer;
+}
+.tag-cruz-tres {
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 
@@ -313,7 +326,7 @@ h3 {
 }
 
 .fa-posicion-titulo {
-    padding-left: 25%;
+    padding-left: 40%;
 }
 
 .fa-posicion-icono {
