@@ -100,6 +100,13 @@ function cargaPagina() {
         icono_vol_desplegable.style.display = "none";
         contador_vol++;
     });
+
+    let iconos = document.querySelectorAll(".cambiaColorClick");
+    for(let i = 0; i < iconos.length; i++){
+        iconos[i].addEventListener("click", function(e){
+            iconos[i].classList.toggle("cambiaColor");
+        });
+    }
 }
 
 document.addEventListener("DOMContentLoaded", cargaPagina);
